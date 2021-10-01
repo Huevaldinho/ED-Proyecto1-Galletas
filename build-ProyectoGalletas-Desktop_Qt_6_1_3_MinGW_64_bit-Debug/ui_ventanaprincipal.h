@@ -23,9 +23,10 @@ class Ui_VentanaPrincipal
 {
 public:
     QWidget *centralwidget;
-    QPushButton *btn_Start;
-    QPushButton *btn_Pause;
-    QPushButton *btn_Reset;
+    QPushButton *btn_Iniciar;
+    QPushButton *btn_Pausar;
+    QPushButton *btn_Reiniciar;
+    QPushButton *btn_Modificar;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -33,30 +34,25 @@ public:
     {
         if (VentanaPrincipal->objectName().isEmpty())
             VentanaPrincipal->setObjectName(QString::fromUtf8("VentanaPrincipal"));
-        VentanaPrincipal->resize(1027, 679);
-        VentanaPrincipal->setTabShape(QTabWidget::Rounded);
+        VentanaPrincipal->resize(800, 600);
         centralwidget = new QWidget(VentanaPrincipal);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        btn_Start = new QPushButton(centralwidget);
-        btn_Start->setObjectName(QString::fromUtf8("btn_Start"));
-        btn_Start->setGeometry(QRect(320, 530, 151, 61));
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Times New Roman")});
-        font.setPointSize(12);
-        btn_Start->setFont(font);
-        btn_Pause = new QPushButton(centralwidget);
-        btn_Pause->setObjectName(QString::fromUtf8("btn_Pause"));
-        btn_Pause->setGeometry(QRect(510, 530, 151, 61));
-        btn_Pause->setFont(font);
-        btn_Reset = new QPushButton(centralwidget);
-        btn_Reset->setObjectName(QString::fromUtf8("btn_Reset"));
-        btn_Reset->setGeometry(QRect(700, 530, 151, 61));
-        btn_Reset->setFont(font);
-        btn_Reset->setAutoFillBackground(false);
+        btn_Iniciar = new QPushButton(centralwidget);
+        btn_Iniciar->setObjectName(QString::fromUtf8("btn_Iniciar"));
+        btn_Iniciar->setGeometry(QRect(30, 420, 151, 81));
+        btn_Pausar = new QPushButton(centralwidget);
+        btn_Pausar->setObjectName(QString::fromUtf8("btn_Pausar"));
+        btn_Pausar->setGeometry(QRect(200, 420, 161, 81));
+        btn_Reiniciar = new QPushButton(centralwidget);
+        btn_Reiniciar->setObjectName(QString::fromUtf8("btn_Reiniciar"));
+        btn_Reiniciar->setGeometry(QRect(370, 420, 151, 81));
+        btn_Modificar = new QPushButton(centralwidget);
+        btn_Modificar->setObjectName(QString::fromUtf8("btn_Modificar"));
+        btn_Modificar->setGeometry(QRect(540, 420, 171, 81));
         VentanaPrincipal->setCentralWidget(centralwidget);
         menubar = new QMenuBar(VentanaPrincipal);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1027, 25));
+        menubar->setGeometry(QRect(0, 0, 800, 25));
         VentanaPrincipal->setMenuBar(menubar);
         statusbar = new QStatusBar(VentanaPrincipal);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -70,9 +66,10 @@ public:
     void retranslateUi(QMainWindow *VentanaPrincipal)
     {
         VentanaPrincipal->setWindowTitle(QCoreApplication::translate("VentanaPrincipal", "VentanaPrincipal", nullptr));
-        btn_Start->setText(QCoreApplication::translate("VentanaPrincipal", "Start", nullptr));
-        btn_Pause->setText(QCoreApplication::translate("VentanaPrincipal", "Pause", nullptr));
-        btn_Reset->setText(QCoreApplication::translate("VentanaPrincipal", "Reset", nullptr));
+        btn_Iniciar->setText(QCoreApplication::translate("VentanaPrincipal", "Iniciar", nullptr));
+        btn_Pausar->setText(QCoreApplication::translate("VentanaPrincipal", "Pausa", nullptr));
+        btn_Reiniciar->setText(QCoreApplication::translate("VentanaPrincipal", "Reiniciar", nullptr));
+        btn_Modificar->setText(QCoreApplication::translate("VentanaPrincipal", "Modificar", nullptr));
     } // retranslateUi
 
 };

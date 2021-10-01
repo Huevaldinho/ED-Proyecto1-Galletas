@@ -10,13 +10,16 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
+    ventanaconfigurar.cpp \
     ventanaprincipal.cpp
 
 HEADERS += \
     Clases.h \
+    ventanaconfigurar.h \
     ventanaprincipal.h
 
 FORMS += \
+    ventanaconfigurar.ui \
     ventanaprincipal.ui
 
 # Default rules for deployment.
