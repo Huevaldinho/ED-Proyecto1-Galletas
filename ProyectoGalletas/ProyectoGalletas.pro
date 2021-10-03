@@ -9,12 +9,26 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Almacen.cpp \
+    BandaTransportadora.cpp \
+    Carrito.cpp \
+    Cola.cpp \
+    Horno.cpp \
+    ListaPaquetes.cpp \
+    MaquinaEmpacadora.cpp \
+    MaquinaEnsambladora.cpp \
+    MaquinaMezclaMasaChocolate.cpp \
+    Paquete.cpp \
+    Receta.cpp \
+    Supervisores.cpp \
+    controlador.cpp \
     main.cpp \
     ventanaconfigurar.cpp \
     ventanaprincipal.cpp
 
 HEADERS += \
-    Clases.h \
+    Estructuras.h \
+    controlador.h \
     ventanaconfigurar.h \
     ventanaprincipal.h
 

@@ -7,15 +7,12 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class VentanaPrincipal; }
 QT_END_NAMESPACE
 
-class VentanaPrincipal : public QMainWindow
-{
-    Q_OBJECT
+class VentanaPrincipal : public QMainWindow{Q_OBJECT
+    public:
+        VentanaPrincipal(QWidget *parent = nullptr);
+        ~VentanaPrincipal();
 
-public:
-    VentanaPrincipal(QWidget *parent = nullptr);
-    ~VentanaPrincipal();
-
-private:
-    Ui::VentanaPrincipal *ui;
+    private:
+        Ui::VentanaPrincipal *ui;
 };
 #endif // VENTANAPRINCIPAL_H
