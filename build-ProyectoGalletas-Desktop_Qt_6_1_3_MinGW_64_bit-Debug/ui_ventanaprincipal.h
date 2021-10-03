@@ -10,7 +10,10 @@
 #define UI_VENTANAPRINCIPAL_H
 
 #include <QtCore/QVariant>
+#include <QtWidgets/QAbstractButton>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -27,6 +30,8 @@ public:
     QPushButton *btn_Pausar;
     QPushButton *btn_Reiniciar;
     QPushButton *btn_Modificar;
+    QCheckBox *checkBox;
+    QDialogButtonBox *buttonBox;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -49,10 +54,17 @@ public:
         btn_Modificar = new QPushButton(centralwidget);
         btn_Modificar->setObjectName(QString::fromUtf8("btn_Modificar"));
         btn_Modificar->setGeometry(QRect(540, 420, 171, 81));
+        checkBox = new QCheckBox(centralwidget);
+        checkBox->setObjectName(QString::fromUtf8("checkBox"));
+        checkBox->setGeometry(QRect(160, 120, 61, 61));
+        buttonBox = new QDialogButtonBox(centralwidget);
+        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
+        buttonBox->setGeometry(QRect(270, 290, 171, 71));
+        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         VentanaPrincipal->setCentralWidget(centralwidget);
         menubar = new QMenuBar(VentanaPrincipal);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 25));
+        menubar->setGeometry(QRect(0, 0, 800, 22));
         VentanaPrincipal->setMenuBar(menubar);
         statusbar = new QStatusBar(VentanaPrincipal);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -70,6 +82,7 @@ public:
         btn_Pausar->setText(QCoreApplication::translate("VentanaPrincipal", "Pausa", nullptr));
         btn_Reiniciar->setText(QCoreApplication::translate("VentanaPrincipal", "Reiniciar", nullptr));
         btn_Modificar->setText(QCoreApplication::translate("VentanaPrincipal", "Modificar", nullptr));
+        checkBox->setText(QCoreApplication::translate("VentanaPrincipal", "Gay", nullptr));
     } // retranslateUi
 
 };
