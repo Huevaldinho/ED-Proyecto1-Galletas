@@ -17,6 +17,9 @@ struct Paquete;
 struct ListaPaquetes;
 struct Cola;
 struct Supervisores;
+struct Planificador;
+
+
 
 struct Supervisores{
 
@@ -115,25 +118,8 @@ struct Almacen{
     double darCantidades(double _solicitud){return _solicitud;}
     double verPeticiones();//ver peticiones en cola pendientes y las que ha procesado
 };
-struct Receta{
-    double cantidadMasa;
-    double cantidadChocolate;
-    string unidad;
-    Receta(){
-        //Valores por defecto
-        cantidadMasa=10;
-        cantidadChocolate=5;
-        unidad="gramos";
-    }
-    Receta(double _cantidadMasa, double _cantidadChocolate){
-        cantidadMasa=_cantidadMasa;
-        cantidadChocolate=_cantidadChocolate;
-        unidad="gramos";
-    }
-    void setCantidadMasa(double _cantidadMasa){cantidadMasa=_cantidadMasa;}
-    void setCantidadChocolate(double _cantidadChocolate){cantidadChocolate=_cantidadChocolate;}
-};
-struct Nodo{
+
+/*struct Nodo{
     int cantidadGalletas;
     string nombre;
     Nodo * siguiente;
@@ -152,7 +138,8 @@ struct Nodo{
     void imprimir(){
         cout <<" <-"<< cantidadGalletas<<"|" <<nombre<< "-> ";
     }
-};
+};*/
+/*
 struct ListaPaquetes{
     Paquete * primerNodo;
     Paquete * ultimoNodo;
@@ -172,6 +159,47 @@ struct ListaPaquetes{
     Paquete * buscar(int,string);
     void insertarEnPosicion(int,string);
     int getLargo();
+};*/
+
+
+struct Nodo{
+    int cantidadPaquetes;
+    int cantidadGalletas;
+    string nombre;
+    Nodo * siguiente;
+    Nodo * anterior;
+
+
+    Nodo(int d,string _nombre,int _cantidadPaquetes){
+        cantidadPaquetes= _cantidadPaquetes;
+        cantidadGalletas = d;
+        nombre=_nombre;
+        siguiente = anterior = NULL;
+    }
+    Nodo(){
+        cantidadPaquetes=1;
+        cantidadGalletas = 0;
+        nombre="N/A";
+        siguiente = anterior = NULL;
+    }
+    void imprimir (){
+        cout << "<-|" << cantidadGalletas << "|-> ";
+    }
+};
+
+struct ListaPaquetes{
+    Nodo * primerNodo;
+
+    int largo;
+    ListaPaquetes();
+
+    bool estaVacia();
+    void insertar(int,string,int);
+    void imprimir();
+    Nodo * buscar(int,string);
+    Nodo * eliminar(int,string);
+    double getCantidadGalletas();
+
 };
 struct Cola{
     Nodo * primerNodo;//creo que se llaman diferente xd
@@ -184,18 +212,28 @@ struct Cola{
     void insertarAlFinal(string);
     void imprimir();
 };
-struct Planificador{
-    //Recibe paquetes de x cantidad.
-    ListaPaquetes * listaPaquetes;//Guarda las ordenes de paquetes en la lista
-    double cantidadSolicitada;
-    Receta * receta;//Cantidad de masa y chocolate por galleta
+struct Receta{
+    public:
+        double cantidadMasa;
+        double cantidadChocolate;
+        string unidad;
+        Receta();
+        Receta(double,double);
+        void setCantidadMasa(double);
+        void setCantidadChocolate(double);
 
-    Planificador(){
-        listaPaquetes=NULL;
-        receta = NULL;
-        cantidadSolicitada=0;
-    }
-    double calcularCantidadGalletasSolicitadas;//(paquete1*cantidadDeGalletas) + (paquete2*cantidadDeGalletas). se guarda en cantidadSolicitada
-    void modificarReceta(double, double);//Cambia la cantidad de masa y chocolate
+};
+struct Planificador{
+    public:
+        //Recibe paquetes de x cantidad.
+        ListaPaquetes * listaPaquetes;//Guarda las ordenes de paquetes en la lista
+        double cantidadSolicitadaGalletas;
+        double cantidadNecesariaMasa;
+        double cantidadNecesariaChocolate;
+        Receta * receta;//Cantidad de masa y chocolate por galleta
+        Planificador();
+        void leerListaPaquetes(ListaPaquetes * lista);
+        double calcularCantidadGalletasSolicitadas();//(paquete1*cantidadDeGalletas) + (paquete2*cantidadDeGalletas). se guarda en cantidadSolicitada
+        void modificarReceta(double, double);//Cambia la cantidad de masa y chocolate
 };
 #endif // ESTRUCTURAS_H

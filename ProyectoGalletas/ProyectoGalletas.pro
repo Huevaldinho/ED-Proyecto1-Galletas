@@ -19,6 +19,7 @@ SOURCES += \
     MaquinaEnsambladora.cpp \
     MaquinaMezclaMasaChocolate.cpp \
     Paquete.cpp \
+    Planificador.cpp \
     Receta.cpp \
     Supervisores.cpp \
     controlador.cpp \

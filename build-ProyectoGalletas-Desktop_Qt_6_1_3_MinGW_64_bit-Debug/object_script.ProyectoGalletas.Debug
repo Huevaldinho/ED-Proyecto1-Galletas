@@ -8,6 +8,7 @@ debug/MaquinaEmpacadora.o
 debug/MaquinaEnsambladora.o
 debug/MaquinaMezclaMasaChocolate.o
 debug/Paquete.o
+debug/Planificador.o
 debug/Receta.o
 debug/Supervisores.o
 debug/controlador.o
