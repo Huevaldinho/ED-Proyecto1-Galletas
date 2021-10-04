@@ -10,9 +10,8 @@ CONFIG += c++11
 
 SOURCES += \
     Almacen.cpp \
-    BandaTransportadora.cpp \
     Carrito.cpp \
-    Cola.cpp \
+    ColaAlmacen.cpp \
     Horno.cpp \
     ListaPaquetes.cpp \
     MaquinaEmpacadora.cpp \
@@ -22,6 +21,7 @@ SOURCES += \
     Planificador.cpp \
     Receta.cpp \
     Supervisores.cpp \
+    TransportadoraMezcladoraEnsambladora.cpp \
     controlador.cpp \
     main.cpp \
     ventanaconfigurar.cpp \

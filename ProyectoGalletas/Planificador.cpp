@@ -12,7 +12,7 @@ void Planificador::leerListaPaquetes(ListaPaquetes * lista){
         nombre del paquete y cantidad de paquetes de ese tipo). (4,"Paquetitos",100)
 
     */
-    this->listaPaquetes=lista;
+    this->listaPaquetes=lista;//Supongamos que se crea la lista en el controlador
 }
 double Planificador::calcularCantidadGalletasSolicitadas(){
     /*
@@ -21,13 +21,14 @@ double Planificador::calcularCantidadGalletasSolicitadas(){
         Luego calcula la cantidad necesaria de masa y chocolate para crear ese total de galletas
         retorna la cantidad de galletas por si  alguien mas necesita saber o algo asi jaja xd
 
+        Cada vez que se ingrese un pedido nuevo a la lista debe recalcular la cantidad necesaria de materiales
+
     */
-    //Primero calcula la cantidad de galletas que hay que hacer usando la lista de pedidos en la doblemente enlazada
+    //Pide la cantidad de galletas a la lista
     if (this->listaPaquetes!=NULL){
         this->cantidadSolicitadaGalletas=this->listaPaquetes->getCantidadGalletas();
         this->cantidadNecesariaMasa=cantidadSolicitadaGalletas*this->receta->cantidadMasa;
         this->cantidadNecesariaChocolate=cantidadSolicitadaGalletas*this->receta->cantidadChocolate;
-        //qDebug()<<"Cantidad galletas solicitidas: "<<this->calcularCantidadGalletasSolicitadas()<<", cantidad masa necesaria: "<<this->cantidadNecesariaMasa<<", cantidad chocolate necesario: "<<this->cantidadNecesariaChocolate;
     }
     return cantidadSolicitadaGalletas;
 };

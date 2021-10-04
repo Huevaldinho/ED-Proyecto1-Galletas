@@ -1,7 +1,7 @@
 debug/Almacen.o
 debug/BandaTransportadora.o
 debug/Carrito.o
-debug/Cola.o
+debug/ColaAlmacen.o
 debug/Horno.o
 debug/ListaPaquetes.o
 debug/MaquinaEmpacadora.o
