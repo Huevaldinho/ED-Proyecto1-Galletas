@@ -2,7 +2,7 @@
 
 ColaAlmacen::ColaAlmacen(){
     this->totalPeticiones=0;
-    this->pendientes;
+    this->pendientes=0;
     this->frente=NULL;
 }
 bool ColaAlmacen::estaVacia(){

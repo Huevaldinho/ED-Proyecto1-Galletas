@@ -17,6 +17,9 @@ double Almacen::darCantidades(double _solicitud){
     return _solicitud;
 
 }
+void Almacen::setCarrito(Carrito * carro){
+    this->carrito=carro;
+}
 void Almacen::setColaPeticiones(ColaAlmacen * _colaPeticiones){
     this->colaPeticiones=_colaPeticiones;
 }

@@ -12,7 +12,8 @@ MaquinaMezclaMasaChocolate::MaquinaMezclaMasaChocolate(){
     this->estado=true;
 }
 MaquinaMezclaMasaChocolate::MaquinaMezclaMasaChocolate(int _id,double _minimaCapacidad,double _maximaCapacidad,
-                                                       int _tiempoProceso,bool _estado, ColaBandas * _cola){
+                                                       int _tiempoProceso,bool _estado, ColaBandas * _cola,
+                                                       Carrito * _carrito, ColaAlmacen * _colaPeticiones){
     this->id=_id;
     this->estado=_estado;
     this->minimaCapacidad=_minimaCapacidad;
@@ -22,6 +23,8 @@ MaquinaMezclaMasaChocolate::MaquinaMezclaMasaChocolate(int _id,double _minimaCap
     this->cantidadEnProceso=0;
     this->capacidadActual=0;
     this->cola=_cola;
+    this->carrito=_carrito;
+    this->colaPeticiones=_colaPeticiones;
 }
 
 void MaquinaMezclaMasaChocolate::setCapacidades(double _minimaCapacidad,double _maximaCapacidad){
@@ -34,8 +37,10 @@ double MaquinaMezclaMasaChocolate::pedirMaterial(){//Se pide al almacen directam
         pedir = this->maximaCapacidad-this->capacidadActual;
     return pedir;
 }
-void MaquinaMezclaMasaChocolate::setCola(ColaBandas * _cola){
+void MaquinaMezclaMasaChocolate::setPunteros(ColaBandas * _cola, ColaAlmacen * _colaPeticiones, Carrito * _carrito){
     this->cola=_cola;
+    this->colaPeticiones=_colaPeticiones;
+    this->carrito=_carrito;
 }
 //Procesos
 void MaquinaMezclaMasaChocolate::procesar(){//El proceso es meter datos a la cola de la banda y disminuir los contadores

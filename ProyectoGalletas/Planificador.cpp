@@ -6,13 +6,15 @@ Planificador::Planificador(){
     this->receta = new Receta();
     this->cantidadSolicitadaGalletas=0;
 }
-void Planificador::leerListaPaquetes(ListaPaquetes * lista){
-    /*
-        Recibe de controlador un puntero a una lista de paquetes creados (cada paquete tiene una cantidad de galletas,
-        nombre del paquete y cantidad de paquetes de ese tipo). (4,"Paquetitos",100)
 
-    */
-    this->listaPaquetes=lista;//Supongamos que se crea la lista en el controlador
+void Planificador::setPunteros(ListaPaquetes * _listaPaquetes,Almacen * _almacen,MaquinaMezclaMasaChocolate *_maquinaMasa1,
+                               MaquinaMezclaMasaChocolate *_maquinaMasa2, MaquinaMezclaMasaChocolate *_maquinaChocolate){
+    this->almacen=_almacen;
+    this->maquinaMasa1=_maquinaMasa1;
+    this->maquinaMasa2=_maquinaMasa2;
+    this->maquinaChocolate=_maquinaChocolate;
+    this->listaPaquetes=_listaPaquetes;
+
 }
 double Planificador::calcularCantidadGalletasSolicitadas(){
     /*
@@ -32,7 +34,9 @@ double Planificador::calcularCantidadGalletasSolicitadas(){
     }
     return cantidadSolicitadaGalletas;
 };
-
+void Planificador::setAlmacen(Almacen * _almacen){
+    this->almacen=_almacen;
+}
 void Planificador::modificarReceta(double masa, double chocolate){
     //Cambia la cantidad de masa y chocolate
     receta->setCantidadMasa(masa);

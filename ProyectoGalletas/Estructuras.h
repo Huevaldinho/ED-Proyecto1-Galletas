@@ -117,6 +117,7 @@ struct Horno{
         ColaBandas * colaEntrada;
         ColaBandas * colaSalida;
         Horno();
+        void setPunteros(ListaBandejas *, ColaBandas *, ColaBandas *);
         void HornearGalletas();
 
 };
@@ -132,9 +133,11 @@ struct MaquinaMezclaMasaChocolate{//se usan 2 de masa y 1 de chocolate
         double maximaCapacidad;
         double capacidadActual;//cambia conforme crea la mazcla
         ColaBandas * cola;
+        Carrito * carrito;
+        ColaAlmacen * colaPeticiones;
         MaquinaMezclaMasaChocolate();
-        MaquinaMezclaMasaChocolate(int,double,double, int,bool,ColaBandas *);
-        void setCola(ColaBandas *);
+        MaquinaMezclaMasaChocolate(int,double,double, int,bool,ColaBandas *,Carrito *,ColaAlmacen*);
+        void setPunteros(ColaBandas *,ColaAlmacen *, Carrito *);
         void setCapacidades(double,double);
         //Cada vez que llega por debajo del minimo pedir al almacen lo que falte para completar el maximo(van a una cola del almacen)
         double pedirMaterial();//le pide al carrito que le traiga maximaCapacidad-capacidadActual
@@ -153,7 +156,8 @@ struct MaquinaEnsambladora{
 
         //Recibe materia prima y retorna deliciosas galletas
         MaquinaEnsambladora();
-        MaquinaEnsambladora(ColaBandas *,ColaBandas *,ColaBandas *);
+
+        void setPunteros(ColaBandas *,ColaBandas *,ColaBandas *);
         void setEstado(bool);
 
 
@@ -182,6 +186,7 @@ struct Almacen{//Falta
         Almacen();
         Almacen(double,double,int,ColaAlmacen *);
         void setColaPeticiones(ColaAlmacen * _colaPeticiones);
+        void setCarrito(Carrito *);
         double darCantidades(double);
         double verPeticiones();//ver peticiones en cola pendientes y las que ha procesado
 
@@ -268,12 +273,16 @@ struct Planificador{
     public:
         //Recibe paquetes de x cantidad.
         ListaPaquetes * listaPaquetes;//Guarda las ordenes de paquetes en la lista
+        Almacen * almacen;
+        MaquinaMezclaMasaChocolate * maquinaMasa1;
+        MaquinaMezclaMasaChocolate * maquinaMasa2;
+        MaquinaMezclaMasaChocolate * maquinaChocolate;
         double cantidadSolicitadaGalletas;
         double cantidadNecesariaMasa;
         double cantidadNecesariaChocolate;
         Receta * receta;//Cantidad de masa y chocolate por galleta
         Planificador();
-        void leerListaPaquetes(ListaPaquetes * lista);
+        void setPunteros(ListaPaquetes *,Almacen *,MaquinaMezclaMasaChocolate *,MaquinaMezclaMasaChocolate *, MaquinaMezclaMasaChocolate *);
         double calcularCantidadGalletasSolicitadas();//(paquete1*cantidadDeGalletas) + (paquete2*cantidadDeGalletas). se guarda en cantidadSolicitada
         void modificarReceta(double, double);//Cambia la cantidad de masa y chocolate
 };

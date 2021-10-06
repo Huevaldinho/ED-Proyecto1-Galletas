@@ -29,6 +29,8 @@ SOURCES += \
     ventanaprincipal.cpp
 
 HEADERS += \
+    ../../../../../Escritorio/TEC/Cursos - Semestre 2/Estructuras de Datos/Semana 9/EjemploMutex/CrearPunteros.h \
+    CrearPunteros.h \
     Estructuras.h \
     controlador.h \
     ventanaconfigurar.h \
