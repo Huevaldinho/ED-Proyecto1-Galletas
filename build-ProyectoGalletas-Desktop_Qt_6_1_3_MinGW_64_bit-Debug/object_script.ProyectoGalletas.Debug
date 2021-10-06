@@ -1,8 +1,9 @@
 debug/Almacen.o
-debug/BandaTransportadora.o
 debug/Carrito.o
 debug/ColaAlmacen.o
+debug/ColaBandas.o
 debug/Horno.o
+debug/ListaBandejas.o
 debug/ListaPaquetes.o
 debug/MaquinaEmpacadora.o
 debug/MaquinaEnsambladora.o

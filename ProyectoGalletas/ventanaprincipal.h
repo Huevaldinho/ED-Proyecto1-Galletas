@@ -2,6 +2,8 @@
 #define VENTANAPRINCIPAL_H
 
 #include <QMainWindow>
+#include <QMovie>
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class VentanaPrincipal; }
@@ -14,5 +16,6 @@ class VentanaPrincipal : public QMainWindow{Q_OBJECT
 
     private:
         Ui::VentanaPrincipal *ui;
+
 };
 #endif // VENTANAPRINCIPAL_H

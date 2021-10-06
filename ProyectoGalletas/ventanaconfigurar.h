@@ -12,6 +12,7 @@ class VentanaConfigurar : public QMainWindow{Q_OBJECT
         explicit VentanaConfigurar(QWidget *parent = nullptr);
         ~VentanaConfigurar();
 
+
     private:
         Ui::VentanaConfigurar *ui;
 };

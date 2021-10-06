@@ -12,7 +12,9 @@ SOURCES += \
     Almacen.cpp \
     Carrito.cpp \
     ColaAlmacen.cpp \
+    ColaBandas.cpp \
     Horno.cpp \
+    ListaBandejas.cpp \
     ListaPaquetes.cpp \
     MaquinaEmpacadora.cpp \
     MaquinaEnsambladora.cpp \
@@ -21,7 +23,6 @@ SOURCES += \
     Planificador.cpp \
     Receta.cpp \
     Supervisores.cpp \
-    TransportadoraMezcladoraEnsambladora.cpp \
     controlador.cpp \
     main.cpp \
     ventanaconfigurar.cpp \

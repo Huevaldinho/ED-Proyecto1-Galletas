@@ -1,8 +1,9 @@
 release/Almacen.o
-release/BandaTransportadora.o
 release/Carrito.o
 release/ColaAlmacen.o
+release/ColaBandas.o
 release/Horno.o
+release/ListaBandejas.o
 release/ListaPaquetes.o
 release/MaquinaEmpacadora.o
 release/MaquinaEnsambladora.o

@@ -21,122 +21,104 @@ struct Supervisores;
 struct Planificador;
 struct Cola;
 struct ColaAlmacen;
+struct ColaBandas;
+struct NodoBandas;
+struct ListaBandejas;
 
-
-// estructura nodo para lista simple
-struct NodoBandaT {
-       int dato; // parte de datos
-
-       NodoBandaT* siguiente;// puntero para enlazar nodos
-       // constructor
-
-       NodoBandaT(int d)
-       {
+struct NodoBandas {//Guarda la cantidad de masa o galletas
+       double dato; //cantidad de masa, chocolate o galletas
+       NodoBandas * siguiente;// puntero para enlazar nodos
+       NodoBandas(double d){
                 dato = d; // asigna los datos
                 siguiente = NULL; // sig es null
        }
-
       void imprimir();
-
 };
-
-struct ColaBandaT {
-       // solo con pN es suficiente
-       NodoBandaT * frente; // ERROR sin ultimo nodo
-       int maximaCapacidad;
-
-       ColaBandaT(){
-            frente = NULL;
-       }
-       NodoBandaT* verFrente(void);
+struct ColaBandas {//Cola de masa o galletas
+       NodoBandas * frente; // ERROR sin ultimo nodo <- eso lo escribio el profe
+       double maximaCapacidad;//Ejemplo: 5000000 gramos o 10000 galletas HAY que calcularlo
+       double actual;//cantidad de nodos actuales, revisar cuanta cantidad tiene los nodos
+       ColaBandas();
+       NodoBandas * verFrente(void);
        void imprimir(void);
-
-       void encolar(int cantidad){
-            if (vacia())
-                frente = new NodoBandaT (cantidad);
-            else
-            {
-                    // referencia al primero para recorrer la lista
-                    NodoBandaT * actual = frente;
-                    // recorre la lista hasta llegar al penultimo nodo
-                    while (actual->siguiente != NULL)
-                                  actual = actual->siguiente;
-
-                    // Crea nuevo nodo, lo apunta con uN
-                    NodoBandaT * nuevo = new NodoBandaT (cantidad);
-                    //le quita el enlace al que era ultimo
-                    actual->siguiente = nuevo;
-            }
-       }
-       NodoBandaT * desencolar(void){
-             // si no hay elementos, no borra nada, retorna null
-             if (vacia()){
-                return NULL;
-             }else{
-                 // un puntero que apunta al nodo que se
-                 // "despegara" de la lista y se retorna
-                 NodoBandaT* borrado = frente;
-                 // pN se pasa al segundo de la lista
-                 // porque el primero se eliminara
-                 frente = frente->siguiente;
-                 // el nodo borrado, se debe despegar
-                 // entonces siguiente apunta a null y no
-                 // al segundo de la lista que ahora es pN
-                 borrado->siguiente = NULL;
-                 // aca se deberia liberar la memoria si no se
-                 // retornara el borrado
-                 return borrado;
-             }
-       }
-       bool vacia (void){
-            if (frente == NULL)
-               return true;
-            else
-                return false;
-       }
+       void modificarMaximaCapacidada(double);
+       void encolar(double);
+       NodoBandas * desencolar(void);
+       bool vacia (void);
+       bool puedeEncolar();
+       void calcularMaxActual();
 };
 
 struct Supervisores{
     public:
 
 };
-struct TransportadoraMezcladoraEnsambladora{
-    public:
-        //son colas
-        int id;
-        bool estado;
-        double capacidadMaxima;//puede ser mezcla o galleta, debe ser modificable
-        double actual;//Cuanto tiene la banda en el  momento
-        //se debe mostrar la cantidad de galletas o mezcla que hay en cada cola y el máximo seteado.
-        //pausar la maquina que la alimenta cuando se alcance la capacidadMaxima.
-        ColaBandaT * cola;
-        MaquinaEmpacadora * salida;//No necesita saber quien es su entrada, solo le entran datos a la cola.
-        TransportadoraMezcladoraEnsambladora();
-        TransportadoraMezcladoraEnsambladora(int,bool,int,int,ColaBandaT *,MaquinaEmpacadora *);
-        bool estaLlena();
-        void setCapacidadMaxima(int);
-        void setEstado(bool);
-        void setSalida(MaquinaEmpacadora * );
-        double cantidadMezclaEnBanda();
-        double cantidadChocolateEnBanda();
 
-};
 struct MaquinaEmpacadora{
     //Antes de ella tiene dos inspectores
     //Si se llena la banda el horno se apaga
     //Se manejan paquetes
     public:
+        //Dos supervisores
 
 
 };
+struct NodoBandeja{
+    int horneadas;//cuantas galletas ha horneado
+    int actual;//son las galletas en espera, o sea, las que se estan horneando en ese momento
+    bool estado;
+    NodoBandeja * siguienteBandeja;
+    NodoBandeja * anteriorBandeja;
+
+
+    NodoBandeja(){
+        horneadas = 0;
+        actual = 0;
+        estado=true;
+        siguienteBandeja = NULL;
+        anteriorBandeja=NULL;
+    }
+
+    NodoBandeja(int galletas){
+        estado=true;
+        actual += galletas;
+        horneadas += galletas;
+
+    }
+    void setEstado(bool _estado){
+        estado=_estado;
+    }
+    void imprimir(){
+        cout << " | " << actual << " | -> ";
+    }
+
+};
+struct ListaBandejas{//usar lista simple o doble
+    NodoBandeja * primeraBandeja;
+    NodoBandeja * ultimaBandeja;
+    int cantidadActual;
+    int maximoBandejas;
+    ListaBandejas();
+    bool estaVacia();
+    void insertarAlFinal(int);
+    NodoBandeja *  borrarAlFinal();
+    void imprimir();
+
+};
 struct Horno{
-    //Tiene dos bandejas por defecto, se puede agregar hasta 6.
-    //Se hornea hasta que la cantidad de bandejas que tiene esten llenas
-    //Se puede modificar la cantidad de galletas por bandejas
-    //Tiene un tiempo de horneado
-    //Las bandejas tienen contadores de cuantas han horneado y cuantas tienen actualmente
-    //encendido/apagado
+    //El horneado se empiza cuando se llenen las bandejas activas
     public:
+        int bandejasFuncionando;
+        int maximoBandejas;
+        int capacidadBandeja;
+        int duracionHorneado;
+        bool estado;
+        ListaBandejas * bandejas;
+        ColaBandas * colaEntrada;
+        ColaBandas * colaSalida;
+        Horno();
+        void HornearGalletas();
+
 };
 struct MaquinaMezclaMasaChocolate{//se usan 2 de masa y 1 de chocolate
     public:
@@ -149,9 +131,10 @@ struct MaquinaMezclaMasaChocolate{//se usan 2 de masa y 1 de chocolate
         double minimaCapacidad;
         double maximaCapacidad;
         double capacidadActual;//cambia conforme crea la mazcla
-        TransportadoraMezcladoraEnsambladora * banda;
+        ColaBandas * cola;
         MaquinaMezclaMasaChocolate();
-        MaquinaMezclaMasaChocolate(int,double,double, int,bool);
+        MaquinaMezclaMasaChocolate(int,double,double, int,bool,ColaBandas *);
+        void setCola(ColaBandas *);
         void setCapacidades(double,double);
         //Cada vez que llega por debajo del minimo pedir al almacen lo que falte para completar el maximo(van a una cola del almacen)
         double pedirMaterial();//le pide al carrito que le traiga maximaCapacidad-capacidadActual
@@ -161,13 +144,18 @@ struct MaquinaEnsambladora{
     public:
         int galletasHechas;
         int galletasEnProceso;
-        TransportadoraMezcladoraEnsambladora * entradaMasa;
-        TransportadoraMezcladoraEnsambladora * entradaChocolate;
-        //falta una transportadora TransportadoraEnsambladoraHorno
+        int duracion;
+        bool estado;
+        ColaBandas * colaEntradaMasa;
+        ColaBandas * colaEntradaChocolate;
+        ColaBandas * colaSalida;
+
 
         //Recibe materia prima y retorna deliciosas galletas
         MaquinaEnsambladora();
-        MaquinaEnsambladora(TransportadoraMezcladoraEnsambladora * ,TransportadoraMezcladoraEnsambladora * );
+        MaquinaEnsambladora(ColaBandas *,ColaBandas *,ColaBandas *);
+        void setEstado(bool);
+
 
 };
 struct Carrito{
@@ -198,7 +186,7 @@ struct Almacen{//Falta
         double verPeticiones();//ver peticiones en cola pendientes y las que ha procesado
 
 };
-struct Nodo{//Un nodo es un paquete con nombre, galletas, cantidad paquetes de ese tipo
+struct Nodo{//Nodo de la lista doblemente enlazada
     public:
         int cantidadPaquetes;
         int cantidadGalletas;
@@ -222,7 +210,7 @@ struct Nodo{//Un nodo es un paquete con nombre, galletas, cantidad paquetes de e
             cout << "<-|" << cantidadGalletas << "|-> ";
         }
 };
-struct ListaPaquetes{//Doblemente enlazada circular
+struct ListaPaquetes{//Doblemente enlazada circular, son los paquetes
     public:
         Nodo * primerNodo;
         ListaPaquetes();
