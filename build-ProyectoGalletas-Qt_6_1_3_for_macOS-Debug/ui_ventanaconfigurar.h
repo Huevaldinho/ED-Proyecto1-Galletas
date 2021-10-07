@@ -21,8 +21,8 @@ QT_BEGIN_NAMESPACE
 class Ui_VentanaConfigurar
 {
 public:
-    QMenuBar *menubar;
     QWidget *centralwidget;
+    QMenuBar *menubar;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *VentanaConfigurar)
@@ -30,12 +30,13 @@ public:
         if (VentanaConfigurar->objectName().isEmpty())
             VentanaConfigurar->setObjectName(QString::fromUtf8("VentanaConfigurar"));
         VentanaConfigurar->resize(800, 600);
-        menubar = new QMenuBar(VentanaConfigurar);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        VentanaConfigurar->setMenuBar(menubar);
         centralwidget = new QWidget(VentanaConfigurar);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         VentanaConfigurar->setCentralWidget(centralwidget);
+        menubar = new QMenuBar(VentanaConfigurar);
+        menubar->setObjectName(QString::fromUtf8("menubar"));
+        menubar->setGeometry(QRect(0, 0, 800, 25));
+        VentanaConfigurar->setMenuBar(menubar);
         statusbar = new QStatusBar(VentanaConfigurar);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         VentanaConfigurar->setStatusBar(statusbar);

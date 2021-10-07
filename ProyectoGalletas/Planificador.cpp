@@ -34,9 +34,6 @@ double Planificador::calcularCantidadGalletasSolicitadas(){
     }
     return cantidadSolicitadaGalletas;
 };
-void Planificador::setAlmacen(Almacen * _almacen){
-    this->almacen=_almacen;
-}
 void Planificador::modificarReceta(double masa, double chocolate){
     //Cambia la cantidad de masa y chocolate
     receta->setCantidadMasa(masa);

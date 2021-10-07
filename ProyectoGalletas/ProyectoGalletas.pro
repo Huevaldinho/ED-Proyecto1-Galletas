@@ -23,6 +23,7 @@ SOURCES += \
     Planificador.cpp \
     Receta.cpp \
     Supervisores.cpp \
+    Transportador.cpp \
     controlador.cpp \
     main.cpp \
     ventanaconfigurar.cpp \

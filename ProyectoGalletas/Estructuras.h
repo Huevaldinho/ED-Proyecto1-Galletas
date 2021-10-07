@@ -3,6 +3,7 @@
 
 
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 
 struct BandaTransportadora;
@@ -17,16 +18,18 @@ struct Paquete;
 struct ListaPaquetes;
 struct Cola;
 struct NodoCola;
-struct Supervisores;
+struct Supervisor;
 struct Planificador;
 struct Cola;
 struct ColaAlmacen;
 struct ColaBandas;
 struct NodoBandas;
 struct ListaBandejas;
+struct Transportador;
+struct Nodo;
 
 struct NodoBandas {//Guarda la cantidad de masa o galletas
-       double dato; //cantidad de masa, chocolate o galletas
+       double dato; //cantidad de galletas
        NodoBandas * siguiente;// puntero para enlazar nodos
        NodoBandas(double d){
                 dato = d; // asigna los datos
@@ -49,18 +52,39 @@ struct ColaBandas {//Cola de masa o galletas
        void calcularMaxActual();
 };
 
-struct Supervisores{
+struct Supervisor{
+    //esta es como cualquier otra cola de banda, solo que los "supervisores" quitan galletas que llegan y manda otras
+    // se crea la banda por aparte y los supervisores pueden mandar a desencolar a la banda con su probabilidad
     public:
+        ColaBandas * colaSupervisores;
+        double probabilidadDesecho;
+        int galletasAceptadas;
+        int galletasRechazadas;
+        ListaPaquetes*listaPaquetes; //esto es solo para actualizar la lista cuando termine de evaluar //como en el planificador
+
+        Supervisor();
+        void setPunteros(ColaBandas*,ListaPaquetes*);
+        void setProbabilidad(double);
+        void quitarGalletas(); //realmente es solo desencolar desde la cola.
+        ListaPaquetes*actualizarListaPaquetes();
 
 };
 
-struct MaquinaEmpacadora{
+struct MaquinaEmpacadora{    //COMO VAMOS A PASAR LOS DATOS DE LA COLA DE SUPERVISORES A LA MAQUINA (SE DEBE TENER EN CANTIDAD DE GALLETAS)
     //Antes de ella tiene dos inspectores
     //Si se llena la banda el horno se apaga
     //Se manejan paquetes
     public:
-        //Dos supervisores
+        int cantidadDePaquetes;
+        int tiempoEmpaque;
+        Nodo*paqueteActual;
+        int cantidadActual;
+        int galletasAceptadas; //tiene que recibir la cantidad de galletas aceptadas por el supervisor
 
+        void probabilidadDeEmpaque(); //esta se usa en empacar
+        void empacar(); //aqui manda al transportador
+
+        //Dos supervisores
 
 };
 struct NodoBandeja{
@@ -103,7 +127,6 @@ struct ListaBandejas{//usar lista simple o doble
     void insertarAlFinal(int);
     NodoBandeja *  borrarAlFinal();
     void imprimir();
-
 };
 struct Horno{
     //El horneado se empiza cuando se llenen las bandejas activas
@@ -191,7 +214,7 @@ struct Almacen{//Falta
         double verPeticiones();//ver peticiones en cola pendientes y las que ha procesado
 
 };
-struct Nodo{//Nodo de la lista doblemente enlazada
+struct Nodo{//Nodo de la lista doblemente enlazada //Nodo equivale a paquete
     public:
         int cantidadPaquetes;
         int cantidadGalletas;
@@ -285,5 +308,15 @@ struct Planificador{
         void setPunteros(ListaPaquetes *,Almacen *,MaquinaMezclaMasaChocolate *,MaquinaMezclaMasaChocolate *, MaquinaMezclaMasaChocolate *);
         double calcularCantidadGalletasSolicitadas();//(paquete1*cantidadDeGalletas) + (paquete2*cantidadDeGalletas). se guarda en cantidadSolicitada
         void modificarReceta(double, double);//Cambia la cantidad de masa y chocolate
+};
+struct Transportador{
+    int maximo;
+    int tiempoTransporte;
+    string tipoPaquete;
+    MaquinaEmpacadora*maquinaEmpacadora;
+
+    Transportador();
+    Transportador(int,int,string);
+    void setEmpacadora(MaquinaEmpacadora);
 };
 #endif // ESTRUCTURAS_H

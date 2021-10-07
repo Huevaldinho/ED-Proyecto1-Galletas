@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = ProyectoGalletas1.0.0
-DISTDIR = /Users/sebastianbermudez/Documents/Codes/GitHub/ED-Proyecto1-Galletas/build-ProyectoGalletas-Qt_6_1_3_for_macOS-Debug/.tmp/ProyectoGalletas1.0.0
+DISTDIR = /Users/sebastianbermudez/Documents/CodesS2/GitHub/ED-Proyecto1-Galletas/build-ProyectoGalletas-Qt_6_1_3_for_macOS-Debug/.tmp/ProyectoGalletas1.0.0
 LINK          = /Library/Developer/CommandLineTools/usr/bin/clang++
 LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=10.14 -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/Users/sebastianbermudez/Qt/6.1.3/macos/lib
 LIBS          = $(SUBLIBS) -F/Users/sebastianbermudez/Qt/6.1.3/macos/lib -framework QtWidgets -framework QtGui -framework AppKit -framework ImageIO -framework Metal -framework QtCore -framework DiskArbitration -framework IOKit -framework AGL -framework OpenGL   
@@ -52,11 +52,43 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../ProyectoGalletas/main.cpp \
+SOURCES       = ../ProyectoGalletas/Almacen.cpp \
+		../ProyectoGalletas/Carrito.cpp \
+		../ProyectoGalletas/ColaAlmacen.cpp \
+		../ProyectoGalletas/ColaBandas.cpp \
+		../ProyectoGalletas/Horno.cpp \
+		../ProyectoGalletas/ListaBandejas.cpp \
+		../ProyectoGalletas/ListaPaquetes.cpp \
+		../ProyectoGalletas/MaquinaEmpacadora.cpp \
+		../ProyectoGalletas/MaquinaEnsambladora.cpp \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp \
+		../ProyectoGalletas/Paquete.cpp \
+		../ProyectoGalletas/Planificador.cpp \
+		../ProyectoGalletas/Receta.cpp \
+		../ProyectoGalletas/Supervisores.cpp \
+		../ProyectoGalletas/Transportador.cpp \
+		../ProyectoGalletas/controlador.cpp \
+		../ProyectoGalletas/main.cpp \
 		../ProyectoGalletas/ventanaconfigurar.cpp \
 		../ProyectoGalletas/ventanaprincipal.cpp moc_ventanaconfigurar.cpp \
 		moc_ventanaprincipal.cpp
-OBJECTS       = main.o \
+OBJECTS       = Almacen.o \
+		Carrito.o \
+		ColaAlmacen.o \
+		ColaBandas.o \
+		Horno.o \
+		ListaBandejas.o \
+		ListaPaquetes.o \
+		MaquinaEmpacadora.o \
+		MaquinaEnsambladora.o \
+		MaquinaMezclaMasaChocolate.o \
+		Paquete.o \
+		Planificador.o \
+		Receta.o \
+		Supervisores.o \
+		Transportador.o \
+		controlador.o \
+		main.o \
 		ventanaconfigurar.o \
 		ventanaprincipal.o \
 		moc_ventanaconfigurar.o \
@@ -160,6 +192,7 @@ DIST          = /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/spec_pr
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/qt_config.prf \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/macx-clang/qmake.conf \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/spec_post.prf \
+		../ProyectoGalletas/.qmake.stash \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/exclusive_builds.prf \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/mac/sdk.prf \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/toolchain.prf \
@@ -188,9 +221,34 @@ DIST          = /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/spec_pr
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/exceptions.prf \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/yacc.prf \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/lex.prf \
-		../ProyectoGalletas/ProyectoGalletas.pro ../ProyectoGalletas/Clases.h \
+		../ProyectoGalletas/ProyectoGalletas.pro ../../../../../Escritorio/TEC/Cursos \
+		- \
+		Semestre \
+		2/Estructuras \
+		de \
+		Datos/Semana \
+		9/EjemploMutex/CrearPunteros.h \
+		../ProyectoGalletas/CrearPunteros.h \
+		../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/controlador.h \
 		../ProyectoGalletas/ventanaconfigurar.h \
-		../ProyectoGalletas/ventanaprincipal.h ../ProyectoGalletas/main.cpp \
+		../ProyectoGalletas/ventanaprincipal.h ../ProyectoGalletas/Almacen.cpp \
+		../ProyectoGalletas/Carrito.cpp \
+		../ProyectoGalletas/ColaAlmacen.cpp \
+		../ProyectoGalletas/ColaBandas.cpp \
+		../ProyectoGalletas/Horno.cpp \
+		../ProyectoGalletas/ListaBandejas.cpp \
+		../ProyectoGalletas/ListaPaquetes.cpp \
+		../ProyectoGalletas/MaquinaEmpacadora.cpp \
+		../ProyectoGalletas/MaquinaEnsambladora.cpp \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp \
+		../ProyectoGalletas/Paquete.cpp \
+		../ProyectoGalletas/Planificador.cpp \
+		../ProyectoGalletas/Receta.cpp \
+		../ProyectoGalletas/Supervisores.cpp \
+		../ProyectoGalletas/Transportador.cpp \
+		../ProyectoGalletas/controlador.cpp \
+		../ProyectoGalletas/main.cpp \
 		../ProyectoGalletas/ventanaconfigurar.cpp \
 		../ProyectoGalletas/ventanaprincipal.cpp
 QMAKE_TARGET  = ProyectoGalletas
@@ -201,11 +259,11 @@ TARGET        = ProyectoGalletas.app/Contents/MacOS/ProyectoGalletas
 EXPORT_QMAKE_MAC_SDK = macosx
 EXPORT_QMAKE_MAC_SDK_VERSION = 11.1
 EXPORT_QMAKE_XCODE_DEVELOPER_PATH = /Library/Developer/CommandLineTools
-EXPORT__QMAKE_STASH_ = 
+EXPORT__QMAKE_STASH_ = /Users/sebastianbermudez/Documents/CodesS2/GitHub/ED-Proyecto1-Galletas/build-ProyectoGalletas-Qt_6_1_3_for_macOS-Debug/.qmake.stash
 EXPORT_VALID_ARCHS = x86_64
 EXPORT_ACTIVE_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(ARCHS))
 EXPORT_ARCH_ARGS = $(foreach arch, $(if $(EXPORT_ACTIVE_ARCHS), $(EXPORT_ACTIVE_ARCHS), $(EXPORT_VALID_ARCHS)), -arch $(arch))
-EXPORT__PRO_FILE_ = /Users/sebastianbermudez/Documents/Codes/GitHub/ED-Proyecto1-Galletas/ProyectoGalletas/ProyectoGalletas.pro
+EXPORT__PRO_FILE_ = /Users/sebastianbermudez/Documents/CodesS2/GitHub/ED-Proyecto1-Galletas/ProyectoGalletas/ProyectoGalletas.pro
 
 
 include /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/mac/sdk.mk
@@ -315,6 +373,7 @@ Makefile: ../ProyectoGalletas/ProyectoGalletas.pro /Users/sebastianbermudez/Qt/6
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/qt_config.prf \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/macx-clang/qmake.conf \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/exclusive_builds.prf \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/mac/sdk.prf \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/toolchain.prf \
@@ -447,6 +506,7 @@ Makefile: ../ProyectoGalletas/ProyectoGalletas.pro /Users/sebastianbermudez/Qt/6
 /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/qt_config.prf:
 /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/macx-clang/qmake.conf:
 /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/exclusive_builds.prf:
 /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/mac/sdk.prf:
 /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/toolchain.prf:
@@ -509,8 +569,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../ProyectoGalletas/Clases.h ../ProyectoGalletas/ventanaconfigurar.h ../ProyectoGalletas/ventanaprincipal.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../ProyectoGalletas/main.cpp ../ProyectoGalletas/ventanaconfigurar.cpp ../ProyectoGalletas/ventanaprincipal.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../../../../Escritorio/TEC/Cursos - Semestre 2/Estructuras de Datos/Semana 9/EjemploMutex/CrearPunteros.h ../ProyectoGalletas/CrearPunteros.h ../ProyectoGalletas/Estructuras.h ../ProyectoGalletas/controlador.h ../ProyectoGalletas/ventanaconfigurar.h ../ProyectoGalletas/ventanaprincipal.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../ProyectoGalletas/Almacen.cpp ../ProyectoGalletas/Carrito.cpp ../ProyectoGalletas/ColaAlmacen.cpp ../ProyectoGalletas/ColaBandas.cpp ../ProyectoGalletas/Horno.cpp ../ProyectoGalletas/ListaBandejas.cpp ../ProyectoGalletas/ListaPaquetes.cpp ../ProyectoGalletas/MaquinaEmpacadora.cpp ../ProyectoGalletas/MaquinaEnsambladora.cpp ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp ../ProyectoGalletas/Paquete.cpp ../ProyectoGalletas/Planificador.cpp ../ProyectoGalletas/Receta.cpp ../ProyectoGalletas/Supervisores.cpp ../ProyectoGalletas/Transportador.cpp ../ProyectoGalletas/controlador.cpp ../ProyectoGalletas/main.cpp ../ProyectoGalletas/ventanaconfigurar.cpp ../ProyectoGalletas/ventanaprincipal.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../ProyectoGalletas/ventanaconfigurar.ui ../ProyectoGalletas/ventanaprincipal.ui $(DISTDIR)/
 
 
@@ -521,6 +581,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r ProyectoGalletas.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -553,14 +614,18 @@ moc_ventanaconfigurar.cpp: ../ProyectoGalletas/ventanaconfigurar.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		moc_predefs.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/libexec/moc
-	/Users/sebastianbermudez/Qt/6.1.3/macos/libexec/moc $(DEFINES) --include /Users/sebastianbermudez/Documents/Codes/GitHub/ED-Proyecto1-Galletas/build-ProyectoGalletas-Qt_6_1_3_for_macOS-Debug/moc_predefs.h -I/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/macx-clang -I/Users/sebastianbermudez/Documents/Codes/GitHub/ED-Proyecto1-Galletas/ProyectoGalletas -I/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers -I/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers -I/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/sebastianbermudez/Qt/6.1.3/macos/lib ../ProyectoGalletas/ventanaconfigurar.h -o moc_ventanaconfigurar.cpp
+	/Users/sebastianbermudez/Qt/6.1.3/macos/libexec/moc $(DEFINES) --include /Users/sebastianbermudez/Documents/CodesS2/GitHub/ED-Proyecto1-Galletas/build-ProyectoGalletas-Qt_6_1_3_for_macOS-Debug/moc_predefs.h -I/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/macx-clang -I/Users/sebastianbermudez/Documents/CodesS2/GitHub/ED-Proyecto1-Galletas/ProyectoGalletas -I/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers -I/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers -I/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/sebastianbermudez/Qt/6.1.3/macos/lib ../ProyectoGalletas/ventanaconfigurar.h -o moc_ventanaconfigurar.cpp
 
 moc_ventanaprincipal.cpp: ../ProyectoGalletas/ventanaprincipal.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers/QMovie \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers/qmovie.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlabel.h \
 		moc_predefs.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/libexec/moc
-	/Users/sebastianbermudez/Qt/6.1.3/macos/libexec/moc $(DEFINES) --include /Users/sebastianbermudez/Documents/Codes/GitHub/ED-Proyecto1-Galletas/build-ProyectoGalletas-Qt_6_1_3_for_macOS-Debug/moc_predefs.h -I/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/macx-clang -I/Users/sebastianbermudez/Documents/Codes/GitHub/ED-Proyecto1-Galletas/ProyectoGalletas -I/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers -I/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers -I/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/sebastianbermudez/Qt/6.1.3/macos/lib ../ProyectoGalletas/ventanaprincipal.h -o moc_ventanaprincipal.cpp
+	/Users/sebastianbermudez/Qt/6.1.3/macos/libexec/moc $(DEFINES) --include /Users/sebastianbermudez/Documents/CodesS2/GitHub/ED-Proyecto1-Galletas/build-ProyectoGalletas-Qt_6_1_3_for_macOS-Debug/moc_predefs.h -I/Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/macx-clang -I/Users/sebastianbermudez/Documents/CodesS2/GitHub/ED-Proyecto1-Galletas/ProyectoGalletas -I/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers -I/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers -I/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/sebastianbermudez/Qt/6.1.3/macos/lib ../ProyectoGalletas/ventanaprincipal.h -o moc_ventanaprincipal.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -589,12 +654,78 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
+Almacen.o: ../ProyectoGalletas/Almacen.cpp ../ProyectoGalletas/Estructuras.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Almacen.o ../ProyectoGalletas/Almacen.cpp
+
+Carrito.o: ../ProyectoGalletas/Carrito.cpp ../ProyectoGalletas/Estructuras.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Carrito.o ../ProyectoGalletas/Carrito.cpp
+
+ColaAlmacen.o: ../ProyectoGalletas/ColaAlmacen.cpp ../ProyectoGalletas/Estructuras.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ColaAlmacen.o ../ProyectoGalletas/ColaAlmacen.cpp
+
+ColaBandas.o: ../ProyectoGalletas/ColaBandas.cpp ../ProyectoGalletas/Estructuras.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ColaBandas.o ../ProyectoGalletas/ColaBandas.cpp
+
+Horno.o: ../ProyectoGalletas/Horno.cpp ../ProyectoGalletas/Estructuras.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Horno.o ../ProyectoGalletas/Horno.cpp
+
+ListaBandejas.o: ../ProyectoGalletas/ListaBandejas.cpp ../ProyectoGalletas/Estructuras.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ListaBandejas.o ../ProyectoGalletas/ListaBandejas.cpp
+
+ListaPaquetes.o: ../ProyectoGalletas/ListaPaquetes.cpp ../ProyectoGalletas/Estructuras.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ListaPaquetes.o ../ProyectoGalletas/ListaPaquetes.cpp
+
+MaquinaEmpacadora.o: ../ProyectoGalletas/MaquinaEmpacadora.cpp ../ProyectoGalletas/Estructuras.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MaquinaEmpacadora.o ../ProyectoGalletas/MaquinaEmpacadora.cpp
+
+MaquinaEnsambladora.o: ../ProyectoGalletas/MaquinaEnsambladora.cpp ../ProyectoGalletas/Estructuras.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MaquinaEnsambladora.o ../ProyectoGalletas/MaquinaEnsambladora.cpp
+
+MaquinaMezclaMasaChocolate.o: ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp ../ProyectoGalletas/Estructuras.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MaquinaMezclaMasaChocolate.o ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp
+
+Paquete.o: ../ProyectoGalletas/Paquete.cpp ../ProyectoGalletas/Estructuras.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Paquete.o ../ProyectoGalletas/Paquete.cpp
+
+Planificador.o: ../ProyectoGalletas/Planificador.cpp ../ProyectoGalletas/Estructuras.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/QDebug \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qdebug.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Planificador.o ../ProyectoGalletas/Planificador.cpp
+
+Receta.o: ../ProyectoGalletas/Receta.cpp ../ProyectoGalletas/Estructuras.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Receta.o ../ProyectoGalletas/Receta.cpp
+
+Supervisores.o: ../ProyectoGalletas/Supervisores.cpp ../ProyectoGalletas/Estructuras.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Supervisores.o ../ProyectoGalletas/Supervisores.cpp
+
+Transportador.o: ../ProyectoGalletas/Transportador.cpp ../ProyectoGalletas/Estructuras.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Transportador.o ../ProyectoGalletas/Transportador.cpp
+
+controlador.o: ../ProyectoGalletas/controlador.cpp ../ProyectoGalletas/controlador.h \
+		../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/VentanaModificar.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		../ProyectoGalletas/ventanaprincipal.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers/QMovie \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers/qmovie.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlabel.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o controlador.o ../ProyectoGalletas/controlador.cpp
+
 main.o: ../ProyectoGalletas/main.cpp ../ProyectoGalletas/ventanaprincipal.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers/QMovie \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers/qmovie.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlabel.h \
 		../ProyectoGalletas/ventanaconfigurar.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QApplication \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qapplication.h
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qapplication.h \
+		../ProyectoGalletas/Estructuras.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../ProyectoGalletas/main.cpp
 
 ventanaconfigurar.o: ../ProyectoGalletas/ventanaconfigurar.cpp ../ProyectoGalletas/ventanaconfigurar.h \
@@ -606,6 +737,10 @@ ventanaconfigurar.o: ../ProyectoGalletas/ventanaconfigurar.cpp ../ProyectoGallet
 ventanaprincipal.o: ../ProyectoGalletas/ventanaprincipal.cpp ../ProyectoGalletas/ventanaprincipal.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers/QMovie \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers/qmovie.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlabel.h \
 		ui_ventanaprincipal.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ventanaprincipal.o ../ProyectoGalletas/ventanaprincipal.cpp
 
