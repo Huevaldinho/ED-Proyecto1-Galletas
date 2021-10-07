@@ -38,7 +38,6 @@ struct CrearPunteros{
         //transporte
 
         //almacen final
-
     }
 };
 

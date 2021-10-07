@@ -9,6 +9,8 @@ MaquinaMezclaMasaChocolate::MaquinaMezclaMasaChocolate(){
     this->cantidadEnProceso=0;
     this->capacidadActual=0;
     this->cola = NULL;
+    this->colaPeticiones=NULL;
+    this->carrito=NULL;
     this->estado=true;
 }
 MaquinaMezclaMasaChocolate::MaquinaMezclaMasaChocolate(int _id,double _minimaCapacidad,double _maximaCapacidad,
