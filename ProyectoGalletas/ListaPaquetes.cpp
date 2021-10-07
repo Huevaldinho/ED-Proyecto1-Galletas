@@ -74,3 +74,4 @@ double ListaPaquetes::getCantidadGalletas(){
     }
     return galletas;
 }
+

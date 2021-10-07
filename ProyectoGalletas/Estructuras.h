@@ -81,8 +81,11 @@ struct MaquinaEmpacadora{    //COMO VAMOS A PASAR LOS DATOS DE LA COLA DE SUPERV
         int cantidadActual;
         int galletasAceptadas; //tiene que recibir la cantidad de galletas aceptadas por el supervisor
 
+        MaquinaEmpacadora();
+        void setGalletasAceptadas(Supervisor*supervisorA, Supervisor*supervisorB);
         void probabilidadDeEmpaque(); //esta se usa en empacar
-        void empacar(); //aqui manda al transportador
+        void enviarAlTransportador(string tipoPaquete,int cantidadPaquetes);
+        void empacar();
 
         //Dos supervisores
 
@@ -317,6 +320,7 @@ struct Transportador{
 
     Transportador();
     Transportador(int,int,string);
-    void setEmpacadora(MaquinaEmpacadora);
+    void setEmpacadora(MaquinaEmpacadora*);
 };
+
 #endif // ESTRUCTURAS_H

@@ -1,6 +1,6 @@
 #include "Estructuras.h"
 
-Transportador::Transportador(){};
+Transportador::Transportador(){}
 
 Transportador::Transportador(int _maximo,int _tiempoTransporte,string _tipoPaquete){
     this->maximo=_maximo;

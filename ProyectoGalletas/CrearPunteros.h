@@ -56,6 +56,7 @@ struct Punteros{
 
         //transporte
 
+
         //almacen final
 
         //------------------------SET PUNTEROS------------------------//
@@ -74,7 +75,22 @@ struct Punteros{
 
         supervisor1->setPunteros(colaSupervisores,paquetes);//pts supervisores
         supervisor2->setPunteros(colaSupervisores,paquetes);//pts supervisores
+
+        maquinaEmpacadora->setGalletasAceptadas(supervisor1,supervisor2);
+
+
+        /*
+
+         se crean n transportadores según la n cantidad de paquetes que hay, pero si lo hago aquí no va a servir porque obvio
+        la lista de paquetes está vacia entonces no sé como hacer eso, me dejo bateadisimo
+
+        */
+
+
+
+
     }
+
 };
 
 
