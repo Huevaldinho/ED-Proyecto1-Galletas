@@ -3,7 +3,7 @@
 
 #include <QApplication>
 #include "Estructuras.h"
-#include "CrearPunteros.h"
+#include "Punteros.h"
 
 int main(int argc, char *argv[]){
 
@@ -17,8 +17,8 @@ int main(int argc, char *argv[]){
     p->setPunteros();
 
 
-    p->maquinaMasa1->id=1;
-    p->maquinaMasa2->id=2;
+    p->maquinaMasa1->id=88888888;
+    p->maquinaMasa2->id=9380918;
     qDebug()<<"Planificador->maquinaMasa1->id: "<<p->planificador->maquinaMasa1->id;
     qDebug()<<"Planificador->maquinaMasa2->id: "<<p->planificador->maquinaMasa2->id;
 

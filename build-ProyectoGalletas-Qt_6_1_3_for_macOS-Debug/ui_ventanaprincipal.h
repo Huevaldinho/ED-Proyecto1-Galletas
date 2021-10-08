@@ -12,8 +12,10 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAbstractButton>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCalendarWidget>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -32,6 +34,8 @@ public:
     QPushButton *btn_Modificar;
     QCheckBox *checkBox;
     QDialogButtonBox *buttonBox;
+    QCalendarWidget *calendarWidget;
+    QLCDNumber *lcdNumber;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -56,15 +60,21 @@ public:
         btn_Modificar->setGeometry(QRect(540, 420, 171, 81));
         checkBox = new QCheckBox(centralwidget);
         checkBox->setObjectName(QString::fromUtf8("checkBox"));
-        checkBox->setGeometry(QRect(160, 120, 61, 61));
+        checkBox->setGeometry(QRect(40, 0, 61, 61));
         buttonBox = new QDialogButtonBox(centralwidget);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         buttonBox->setGeometry(QRect(270, 290, 171, 71));
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        calendarWidget = new QCalendarWidget(centralwidget);
+        calendarWidget->setObjectName(QString::fromUtf8("calendarWidget"));
+        calendarWidget->setGeometry(QRect(100, 110, 361, 171));
+        lcdNumber = new QLCDNumber(centralwidget);
+        lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
+        lcdNumber->setGeometry(QRect(590, 320, 141, 61));
         VentanaPrincipal->setCentralWidget(centralwidget);
         menubar = new QMenuBar(VentanaPrincipal);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 800, 21));
         VentanaPrincipal->setMenuBar(menubar);
         statusbar = new QStatusBar(VentanaPrincipal);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

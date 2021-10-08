@@ -63,10 +63,12 @@ SOURCES       = ../ProyectoGalletas/Almacen.cpp \
 		../ProyectoGalletas/MaquinaEnsambladora.cpp \
 		../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp \
 		../ProyectoGalletas/Paquete.cpp \
+		../ProyectoGalletas/Paquete.cpp \
 		../ProyectoGalletas/Planificador.cpp \
 		../ProyectoGalletas/Receta.cpp \
 		../ProyectoGalletas/Supervisores.cpp \
 		../ProyectoGalletas/Transportador.cpp \
+		../ProyectoGalletas/Transportadores.cpp \
 		../ProyectoGalletas/controlador.cpp \
 		../ProyectoGalletas/main.cpp \
 		../ProyectoGalletas/ventanaconfigurar.cpp \
@@ -83,10 +85,12 @@ OBJECTS       = Almacen.o \
 		MaquinaEnsambladora.o \
 		MaquinaMezclaMasaChocolate.o \
 		Paquete.o \
+		Paquete.o \
 		Planificador.o \
 		Receta.o \
 		Supervisores.o \
 		Transportador.o \
+		Transportadores.o \
 		controlador.o \
 		main.o \
 		ventanaconfigurar.o \
@@ -228,8 +232,27 @@ DIST          = /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/spec_pr
 		de \
 		Datos/Semana \
 		9/EjemploMutex/CrearPunteros.h \
-		../ProyectoGalletas/CrearPunteros.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
 		../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Punteros.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/controlador.h \
 		../ProyectoGalletas/ventanaconfigurar.h \
 		../ProyectoGalletas/ventanaprincipal.h ../ProyectoGalletas/Almacen.cpp \
@@ -243,10 +266,12 @@ DIST          = /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/spec_pr
 		../ProyectoGalletas/MaquinaEnsambladora.cpp \
 		../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp \
 		../ProyectoGalletas/Paquete.cpp \
+		../ProyectoGalletas/Paquete.cpp \
 		../ProyectoGalletas/Planificador.cpp \
 		../ProyectoGalletas/Receta.cpp \
 		../ProyectoGalletas/Supervisores.cpp \
 		../ProyectoGalletas/Transportador.cpp \
+		../ProyectoGalletas/Transportadores.cpp \
 		../ProyectoGalletas/controlador.cpp \
 		../ProyectoGalletas/main.cpp \
 		../ProyectoGalletas/ventanaconfigurar.cpp \
@@ -569,8 +594,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../../../../Escritorio/TEC/Cursos - Semestre 2/Estructuras de Datos/Semana 9/EjemploMutex/CrearPunteros.h ../ProyectoGalletas/CrearPunteros.h ../ProyectoGalletas/Estructuras.h ../ProyectoGalletas/controlador.h ../ProyectoGalletas/ventanaconfigurar.h ../ProyectoGalletas/ventanaprincipal.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../ProyectoGalletas/Almacen.cpp ../ProyectoGalletas/Carrito.cpp ../ProyectoGalletas/ColaAlmacen.cpp ../ProyectoGalletas/ColaBandas.cpp ../ProyectoGalletas/Horno.cpp ../ProyectoGalletas/ListaBandejas.cpp ../ProyectoGalletas/ListaPaquetes.cpp ../ProyectoGalletas/MaquinaEmpacadora.cpp ../ProyectoGalletas/MaquinaEnsambladora.cpp ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp ../ProyectoGalletas/Paquete.cpp ../ProyectoGalletas/Planificador.cpp ../ProyectoGalletas/Receta.cpp ../ProyectoGalletas/Supervisores.cpp ../ProyectoGalletas/Transportador.cpp ../ProyectoGalletas/controlador.cpp ../ProyectoGalletas/main.cpp ../ProyectoGalletas/ventanaconfigurar.cpp ../ProyectoGalletas/ventanaprincipal.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../../../../Escritorio/TEC/Cursos - Semestre 2/Estructuras de Datos/Semana 9/EjemploMutex/CrearPunteros.h ../ProyectoGalletas/Almacen.h ../ProyectoGalletas/Carrito.h ../ProyectoGalletas/ColaAlmacen.h ../ProyectoGalletas/ColaBandas.h ../ProyectoGalletas/Estructuras.h ../ProyectoGalletas/Horno.h ../ProyectoGalletas/ListaBandejas.h ../ProyectoGalletas/ListaPaquetes.h ../ProyectoGalletas/MaquinaEmpacadora.h ../ProyectoGalletas/MaquinaEnsambladora.h ../ProyectoGalletas/MaquinaMezclaMasaChocolate.h ../ProyectoGalletas/Nodo.h ../ProyectoGalletas/NodoBandas.h ../ProyectoGalletas/NodoBandeja.h ../ProyectoGalletas/NodoColaPeticiones.h ../ProyectoGalletas/Planificador.h ../ProyectoGalletas/Punteros.h ../ProyectoGalletas/Receta.h ../ProyectoGalletas/Supervisor.h ../ProyectoGalletas/Transportador.h ../ProyectoGalletas/Transportadores.h ../ProyectoGalletas/controlador.h ../ProyectoGalletas/ventanaconfigurar.h ../ProyectoGalletas/ventanaprincipal.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../ProyectoGalletas/Almacen.cpp ../ProyectoGalletas/Carrito.cpp ../ProyectoGalletas/ColaAlmacen.cpp ../ProyectoGalletas/ColaBandas.cpp ../ProyectoGalletas/Horno.cpp ../ProyectoGalletas/ListaBandejas.cpp ../ProyectoGalletas/ListaPaquetes.cpp ../ProyectoGalletas/MaquinaEmpacadora.cpp ../ProyectoGalletas/MaquinaEnsambladora.cpp ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp ../ProyectoGalletas/Paquete.cpp ../ProyectoGalletas/Paquete.cpp ../ProyectoGalletas/Planificador.cpp ../ProyectoGalletas/Receta.cpp ../ProyectoGalletas/Supervisores.cpp ../ProyectoGalletas/Transportador.cpp ../ProyectoGalletas/Transportadores.cpp ../ProyectoGalletas/controlador.cpp ../ProyectoGalletas/main.cpp ../ProyectoGalletas/ventanaconfigurar.cpp ../ProyectoGalletas/ventanaprincipal.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../ProyectoGalletas/ventanaconfigurar.ui ../ProyectoGalletas/ventanaprincipal.ui $(DISTDIR)/
 
 
@@ -654,55 +679,365 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-Almacen.o: ../ProyectoGalletas/Almacen.cpp ../ProyectoGalletas/Estructuras.h
+Almacen.o: ../ProyectoGalletas/Almacen.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Almacen.o ../ProyectoGalletas/Almacen.cpp
 
-Carrito.o: ../ProyectoGalletas/Carrito.cpp ../ProyectoGalletas/Estructuras.h
+Carrito.o: ../ProyectoGalletas/Carrito.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Carrito.o ../ProyectoGalletas/Carrito.cpp
 
-ColaAlmacen.o: ../ProyectoGalletas/ColaAlmacen.cpp ../ProyectoGalletas/Estructuras.h
+ColaAlmacen.o: ../ProyectoGalletas/ColaAlmacen.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ColaAlmacen.o ../ProyectoGalletas/ColaAlmacen.cpp
 
-ColaBandas.o: ../ProyectoGalletas/ColaBandas.cpp ../ProyectoGalletas/Estructuras.h
+ColaBandas.o: ../ProyectoGalletas/ColaBandas.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ColaBandas.o ../ProyectoGalletas/ColaBandas.cpp
 
-Horno.o: ../ProyectoGalletas/Horno.cpp ../ProyectoGalletas/Estructuras.h
+Horno.o: ../ProyectoGalletas/Horno.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Horno.o ../ProyectoGalletas/Horno.cpp
 
-ListaBandejas.o: ../ProyectoGalletas/ListaBandejas.cpp ../ProyectoGalletas/Estructuras.h
+ListaBandejas.o: ../ProyectoGalletas/ListaBandejas.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ListaBandejas.o ../ProyectoGalletas/ListaBandejas.cpp
 
-ListaPaquetes.o: ../ProyectoGalletas/ListaPaquetes.cpp ../ProyectoGalletas/Estructuras.h
+ListaPaquetes.o: ../ProyectoGalletas/ListaPaquetes.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ListaPaquetes.o ../ProyectoGalletas/ListaPaquetes.cpp
 
-MaquinaEmpacadora.o: ../ProyectoGalletas/MaquinaEmpacadora.cpp ../ProyectoGalletas/Estructuras.h
+MaquinaEmpacadora.o: ../ProyectoGalletas/MaquinaEmpacadora.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MaquinaEmpacadora.o ../ProyectoGalletas/MaquinaEmpacadora.cpp
 
-MaquinaEnsambladora.o: ../ProyectoGalletas/MaquinaEnsambladora.cpp ../ProyectoGalletas/Estructuras.h
+MaquinaEnsambladora.o: ../ProyectoGalletas/MaquinaEnsambladora.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MaquinaEnsambladora.o ../ProyectoGalletas/MaquinaEnsambladora.cpp
 
-MaquinaMezclaMasaChocolate.o: ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp ../ProyectoGalletas/Estructuras.h
+MaquinaMezclaMasaChocolate.o: ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MaquinaMezclaMasaChocolate.o ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp
 
-Paquete.o: ../ProyectoGalletas/Paquete.cpp ../ProyectoGalletas/Estructuras.h
+Paquete.o: ../ProyectoGalletas/Paquete.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Paquete.o ../ProyectoGalletas/Paquete.cpp
+
+Paquete.o: ../ProyectoGalletas/Paquete.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Paquete.o ../ProyectoGalletas/Paquete.cpp
 
 Planificador.o: ../ProyectoGalletas/Planificador.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/QDebug \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Planificador.o ../ProyectoGalletas/Planificador.cpp
 
-Receta.o: ../ProyectoGalletas/Receta.cpp ../ProyectoGalletas/Estructuras.h
+Receta.o: ../ProyectoGalletas/Receta.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Receta.o ../ProyectoGalletas/Receta.cpp
 
-Supervisores.o: ../ProyectoGalletas/Supervisores.cpp ../ProyectoGalletas/Estructuras.h
+Supervisores.o: ../ProyectoGalletas/Supervisores.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Supervisores.o ../ProyectoGalletas/Supervisores.cpp
 
-Transportador.o: ../ProyectoGalletas/Transportador.cpp ../ProyectoGalletas/Estructuras.h
+Transportador.o: ../ProyectoGalletas/Transportador.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Transportador.o ../ProyectoGalletas/Transportador.cpp
+
+Transportadores.o: ../ProyectoGalletas/Transportadores.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Transportadores.o ../ProyectoGalletas/Transportadores.cpp
 
 controlador.o: ../ProyectoGalletas/controlador.cpp ../ProyectoGalletas/controlador.h \
 		../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/VentanaModificar.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -725,7 +1060,27 @@ main.o: ../ProyectoGalletas/main.cpp ../ProyectoGalletas/ventanaprincipal.h \
 		../ProyectoGalletas/ventanaconfigurar.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QApplication \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qapplication.h \
-		../ProyectoGalletas/Estructuras.h
+		../ProyectoGalletas/Punteros.h \
+		../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../ProyectoGalletas/main.cpp
 
 ventanaconfigurar.o: ../ProyectoGalletas/ventanaconfigurar.cpp ../ProyectoGalletas/ventanaconfigurar.h \

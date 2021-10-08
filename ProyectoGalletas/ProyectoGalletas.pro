@@ -20,6 +20,7 @@ SOURCES += \
     MaquinaEnsambladora.cpp \
     MaquinaMezclaMasaChocolate.cpp \
     Paquete.cpp \
+    Paquete.cpp \
     Planificador.cpp \
     Receta.cpp \
     Supervisores.cpp \
@@ -32,8 +33,27 @@ SOURCES += \
 
 HEADERS += \
     ../../../../../Escritorio/TEC/Cursos - Semestre 2/Estructuras de Datos/Semana 9/EjemploMutex/CrearPunteros.h \
-    CrearPunteros.h \
+    Almacen.h \
+    Carrito.h \
+    ColaAlmacen.h \
+    ColaBandas.h \
     Estructuras.h \
+    Horno.h \
+    ListaBandejas.h \
+    ListaPaquetes.h \
+    MaquinaEmpacadora.h \
+    MaquinaEnsambladora.h \
+    MaquinaMezclaMasaChocolate.h \
+    Nodo.h \
+    NodoBandas.h \
+    NodoBandeja.h \
+    NodoColaPeticiones.h \
+    Planificador.h \
+    Punteros.h \
+    Receta.h \
+    Supervisor.h \
+    Transportador.h \
+    Transportadores.h \
     controlador.h \
     ventanaconfigurar.h \
     ventanaprincipal.h

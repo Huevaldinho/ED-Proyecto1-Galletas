@@ -1,7 +1,8 @@
-#ifndef CREARPUNTEROS_H
-#define CREARPUNTEROS_H
+#ifndef PUNTEROS_H
+#define PUNTEROS_H
 
 #include "Estructuras.h"
+
 
 struct Punteros{
     //planificador
@@ -120,4 +121,4 @@ struct Punteros{
 
 
 
-#endif // CREARPUNTEROS_H
+#endif // PUNTEROS_H
