@@ -3,39 +3,24 @@
 
 #include <QApplication>
 #include "Estructuras.h"
+#include "CrearPunteros.h"
 
 int main(int argc, char *argv[]){
 
     QApplication a(argc, argv);
     //VentanaConfigurar config;//primero se tiene que ejecutar la configuracion
     //config.show();
-    VentanaPrincipal w;
-    w.show();
-    ListaPaquetes * l = new ListaPaquetes();
-    l->insertar(4,"Paquetitos",100);
-    l->insertar(16,"Tubos",250);
-    qDebug()<<"Lista retorna: galleta"<<l->getCantidadGalletas();
-    Planificador * plani = new Planificador();
-    qDebug()<<"Plani retorna: por defecto tiene "<<plani->calcularCantidadGalletasSolicitadas();
-    plani->leerListaPaquetes(l);
-    qDebug()<<"Plani ahora con la lista retorna:  "<<plani->calcularCantidadGalletasSolicitadas();
-    qDebug()<<"Plani necesita masa:  "<<plani->cantidadNecesariaMasa;
-    qDebug()<<"Plani necesita chocolate:  "<<plani->cantidadNecesariaChocolate;
+    //VentanaPrincipal w;
+    //w.show();
 
-    ColaBandas * colaBanda =  new ColaBandas();
-    colaBanda->encolar(10);
-    colaBanda->encolar(5);
-    colaBanda->encolar(5);
-    colaBanda->encolar(20);
-    colaBanda->calcularMaxActual();
-    qDebug()<<"Prueba cola bandas\n";
-    qDebug()<<"Actual: "<<colaBanda->actual;
-    colaBanda->modificarMaximaCapacidada(5000);
-    qDebug()<<"MaximaCapacidad"<<colaBanda->maximaCapacidad;
+    Punteros * p = new Punteros();
+    p->setPunteros();
 
-    MaquinaMezclaMasaChocolate * maquina = new MaquinaMezclaMasaChocolate();
-    maquina->setCola(colaBanda);
-    qDebug()<<"Cola de la maquina: "<<maquina->cola->actual;
+
+    p->maquinaMasa1->id=1;
+    p->maquinaMasa2->id=2;
+    qDebug()<<"Planificador->maquinaMasa1->id: "<<p->planificador->maquinaMasa1->id;
+    qDebug()<<"Planificador->maquinaMasa2->id: "<<p->planificador->maquinaMasa2->id;
 
 
 

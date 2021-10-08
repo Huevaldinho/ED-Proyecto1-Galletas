@@ -12,6 +12,8 @@ release/Paquete.o
 release/Planificador.o
 release/Receta.o
 release/Supervisores.o
+release/Transportador.o
+release/Transportadores.o
 release/controlador.o
 release/main.o
 release/ventanaconfigurar.o

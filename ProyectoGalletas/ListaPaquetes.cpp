@@ -8,18 +8,19 @@ ListaPaquetes::ListaPaquetes(){
 bool ListaPaquetes::estaVacia(){
     return this->primerNodo==NULL;
 }
-void ListaPaquetes::insertar(int d,string _nombre,int _cantidadPaquetes){
+void ListaPaquetes::insertar(int cantidadGalletasPorPaquete,string _nombre,int _cantidadPaquetes){
     if (this->primerNodo == NULL){
-        this->primerNodo = new Nodo(d, _nombre,_cantidadPaquetes);
+        this->primerNodo = new Nodo(cantidadGalletasPorPaquete, _nombre,_cantidadPaquetes);
         this->primerNodo->siguiente= primerNodo;
         this->primerNodo->anterior = primerNodo;
     }else{
-        Nodo * nuevo = new Nodo (d, _nombre,_cantidadPaquetes);
+        Nodo * nuevo = new Nodo (cantidadGalletasPorPaquete, _nombre,_cantidadPaquetes);
         nuevo->siguiente = primerNodo;
         nuevo->anterior = primerNodo->anterior;
         this->primerNodo->anterior->siguiente = nuevo;
         this->primerNodo->anterior = nuevo;
-    }
+    }//(int _maximo,int _tiempoTransporte,string _tipoPaquete){
+    this->listaTransportadores->insertarTransportedor(_nombre,100,0,5);
 }
 void ListaPaquetes::imprimir(){
     if (this->primerNodo != NULL){
@@ -73,5 +74,8 @@ double ListaPaquetes::getCantidadGalletas(){
         }while(tmp!=this->primerNodo);
     }
     return galletas;
+}
+Transportadores * ListaPaquetes::getTransportadores(){
+    return this->listaTransportadores;
 }
 

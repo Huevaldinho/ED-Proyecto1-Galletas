@@ -28,6 +28,7 @@ void ColaBandas::encolar(double cantidad){
              //le quita el enlace al que era ultimo
              actual->siguiente = nuevo;
      }
+     this->actual++;
 }
 NodoBandas * ColaBandas::desencolar(void){
       // si no hay elementos, no borra nada, retorna null
@@ -46,6 +47,7 @@ NodoBandas * ColaBandas::desencolar(void){
           borrado->siguiente = NULL;
           // aca se deberia liberar la memoria si no se
           // retornara el borrado
+          this->actual--;
           return borrado;
       }
 }

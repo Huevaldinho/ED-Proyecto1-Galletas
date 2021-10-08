@@ -23,9 +23,9 @@ void ColaAlmacen::encolar(double _cantidadSolicitada,int _idMaquina){
         NodoColaPeticiones * nuevo = new NodoColaPeticiones (_cantidadSolicitada,_idMaquina);
         //le quita el enlace al que era ultimo
         actual->siguiente = nuevo;
-        this->totalPeticiones++;
-        this->pendientes++;
     }
+    this->totalPeticiones++;
+    this->pendientes++;
 }
 NodoColaPeticiones * ColaAlmacen::desencolar(void){
       // si no hay elementos, no borra nada, retorna null

@@ -3,17 +3,24 @@
 #include <QDebug>
 Planificador::Planificador(){
     this->listaPaquetes=NULL;
-    this->receta = new Receta();
+    this->receta = NULL;
+    this->almacen=NULL;
     this->cantidadSolicitadaGalletas=0;
+    this->cantidadNecesariaChocolate=0;
+    this->cantidadNecesariaMasa=0;
+    this->maquinaMasa1=NULL;
+    this->maquinaChocolate=NULL;
+    this->maquinaMasa2=NULL;
 }
 
 void Planificador::setPunteros(ListaPaquetes * _listaPaquetes,Almacen * _almacen,MaquinaMezclaMasaChocolate *_maquinaMasa1,
-                               MaquinaMezclaMasaChocolate *_maquinaMasa2, MaquinaMezclaMasaChocolate *_maquinaChocolate){
+                               MaquinaMezclaMasaChocolate *_maquinaMasa2, MaquinaMezclaMasaChocolate *_maquinaChocolate,Receta * _receta){
     this->almacen=_almacen;
     this->maquinaMasa1=_maquinaMasa1;
     this->maquinaMasa2=_maquinaMasa2;
     this->maquinaChocolate=_maquinaChocolate;
     this->listaPaquetes=_listaPaquetes;
+    this->receta=_receta;
 
 }
 double Planificador::calcularCantidadGalletasSolicitadas(){

@@ -12,6 +12,8 @@ debug/Paquete.o
 debug/Planificador.o
 debug/Receta.o
 debug/Supervisores.o
+debug/Transportador.o
+debug/Transportadores.o
 debug/controlador.o
 debug/main.o
 debug/ventanaconfigurar.o

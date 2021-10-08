@@ -24,6 +24,7 @@ SOURCES += \
     Receta.cpp \
     Supervisores.cpp \
     Transportador.cpp \
+    Transportadores.cpp \
     controlador.cpp \
     main.cpp \
     ventanaconfigurar.cpp \
