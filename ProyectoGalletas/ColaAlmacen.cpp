@@ -58,7 +58,7 @@ void ColaAlmacen::imprimir(){
      // mientras tmp no sea nulo, avanza
      while (tmp != NULL){
            // imprime el dato del nodo en el que esta tmp
-           cout << tmp->cantidadSolicitada <<"id maquina: "<<tmp->idMaquina<< "  " << endl;
+           cout << tmp->cantidadSolicitada <<" - id maquina: "<<tmp->idMaquina<< "  " << endl;
            // tmp avanza al siguiente nodo
            // esto no puede faltar porque se encicla
            tmp = tmp->siguiente;

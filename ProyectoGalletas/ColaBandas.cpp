@@ -51,6 +51,19 @@ NodoBandas * ColaBandas::desencolar(void){
           return borrado;
       }
 }
+void ColaBandas::imprimir(){
+    NodoBandas *tmp = frente;
+
+    // mientras tmp no sea nulo, avanza
+    while (tmp != NULL){
+          // imprime el dato del nodo en el que esta tmp
+          tmp->imprimir();
+          // tmp avanza al siguiente nodo
+          // esto no puede faltar porque se encicla
+          tmp = tmp->siguiente;
+    }
+    cout <<"fin metodo imprimir"<< endl;
+}
 void ColaBandas::modificarMaximaCapacidada(double _nuevoMaximo){
     this->maximaCapacidad=_nuevoMaximo;
 }

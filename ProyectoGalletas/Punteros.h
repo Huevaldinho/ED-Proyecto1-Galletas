@@ -6,68 +6,129 @@
 
 struct Punteros{
     //planificador
-    Planificador * planificador = new Planificador();
+    Planificador * planificador;
 
     //receta
-    Receta * _receta = new Receta();
+    Receta * receta;
 
     //paquetes
-    ListaPaquetes * paquetes = new ListaPaquetes();
+    ListaPaquetes * paquetes;
 
     //cola almacen
-    ColaAlmacen * colaAlmacen = new ColaAlmacen();
+    ColaAlmacen * colaAlmacen;
 
     //almacen
-    Almacen * almacen = new Almacen();
+    Almacen * almacen;
 
     //carrito
-    Carrito * carrito = new Carrito();
+    Carrito * carrito;
 
     //mezcladora masa 1
-    MaquinaMezclaMasaChocolate * maquinaMasa1 = new MaquinaMezclaMasaChocolate();
+    MaquinaMezclaMasaChocolate * maquinaMasa1;
 
     //mezcladora masa 2
-    MaquinaMezclaMasaChocolate * maquinaMasa2 = new MaquinaMezclaMasaChocolate();
+    MaquinaMezclaMasaChocolate * maquinaMasa2;
 
     //mezcladora chocolate
-    MaquinaMezclaMasaChocolate * maquinaChocolate = new MaquinaMezclaMasaChocolate();
+    MaquinaMezclaMasaChocolate * maquinaChocolate;
 
     //banda de masa - ensambladora
-    ColaBandas * colaMasaEnsambladora = new ColaBandas();
+    ColaBandas * colaMasaEnsambladora;
 
     //banda de chocolate - ensambladora
-    ColaBandas * colaChocolateEnsambladora = new ColaBandas();
+    ColaBandas * colaChocolateEnsambladora;
 
     //ensambladora
-    MaquinaEnsambladora * maquinaEnsambladora = new MaquinaEnsambladora();
+    MaquinaEnsambladora * maquinaEnsambladora;
 
     //banda ensambladora - horno
-    ColaBandas * colaEnsambladoraHorno = new ColaBandas();
+    ColaBandas * colaEnsambladoraHorno;
 
     //horno
-    Horno * horno = new Horno();
+    Horno * horno;
         //listaBandejas
-        ListaBandejas * listaBandejas = new ListaBandejas();//falta agregarle nodosbandeja
+        ListaBandejas * listaBandejas;
             //Bandejas
-            NodoBandeja * nodoBandeja1 = new NodoBandeja();
-            NodoBandeja * nodoBandeja2 = new NodoBandeja();
+            NodoBandeja * nodoBandeja1;
+            NodoBandeja * nodoBandeja2;
 
     //supervisores (banda nueva)
-    ColaBandas * colaSupervisores = new ColaBandas();
-    Supervisor * supervisor1 = new Supervisor();
-    Supervisor * supervisor2 = new Supervisor();
+    ColaBandas * colaSupervisores;
+    Supervisor * supervisor1;
+    Supervisor * supervisor2;
 
     //empacadora
-    MaquinaEmpacadora * maquinaEmpacadora = new MaquinaEmpacadora();
+    MaquinaEmpacadora * maquinaEmpacadora;
+
 
     //transporte
-
+    Transportadores * trans;
 
     //almacen final
-    Punteros(){}
+    Punteros(){
+        //planificador
+        planificador = new Planificador();
+
+        //receta
+        receta = new Receta();
+
+        //paquetes
+        paquetes = new ListaPaquetes();
+
+        //cola almacen
+        colaAlmacen = new ColaAlmacen();
+
+        //almacen
+        almacen = new Almacen();
+
+        //carrito
+        carrito = new Carrito();
+
+        //mezcladora masa 1
+        maquinaMasa1 = new MaquinaMezclaMasaChocolate();
+
+        //mezcladora masa 2
+        maquinaMasa2 = new MaquinaMezclaMasaChocolate();
+
+        //mezcladora chocolate
+        maquinaChocolate = new MaquinaMezclaMasaChocolate();
+
+        //banda de masa - ensambladora
+        colaMasaEnsambladora = new ColaBandas();
+
+        //banda de chocolate - ensambladora
+        colaChocolateEnsambladora = new ColaBandas();
+
+        //ensambladora
+        maquinaEnsambladora = new MaquinaEnsambladora();
+
+        //banda ensambladora - horno
+        colaEnsambladoraHorno = new ColaBandas();
+
+        //horno
+        horno = new Horno();
+            //listaBandejas
+            listaBandejas = new ListaBandejas();//falta agregarle nodosbandeja
+                //Bandejas
+                nodoBandeja1 = new NodoBandeja();
+                nodoBandeja2 = new NodoBandeja();
+
+        //supervisores (banda nueva)
+        colaSupervisores = new ColaBandas();
+        supervisor1 = new Supervisor();
+        supervisor2 = new Supervisor();
+
+        //empacadora
+        maquinaEmpacadora = new MaquinaEmpacadora();
+
+
+        //transporte
+        trans=new Transportadores();
+    }
     void setPunteros(){
         //------------------------SET PUNTEROS------------------------//
-        planificador->setPunteros(paquetes,almacen,maquinaMasa1,maquinaMasa2,maquinaChocolate, _receta);//pts planificador
+        paquetes->setTransportadores(trans);
+        planificador->setPunteros(paquetes,almacen,maquinaMasa1,maquinaMasa2,maquinaChocolate, receta);//pts planificador
 
         almacen->setCarrito(carrito);//pt carrito almacen
         almacen->setColaPeticiones(colaAlmacen);//pt colaAlmacen
@@ -89,7 +150,7 @@ struct Punteros{
         listaBandejas->insertarAlFinal(nodoBandeja2);
 
 
-        Transportadores * trans = paquetes->getTransportadores();
+
         /*
 
          se crean n transportadores según la n cantidad de paquetes que hay, pero si lo hago aquí no va a servir porque obvio

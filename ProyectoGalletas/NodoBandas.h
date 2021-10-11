@@ -9,6 +9,8 @@ struct NodoBandas {//Guarda la cantidad de masa o galletas
                 dato = d; // asigna los datos
                 siguiente = NULL; // sig es null
        }
-      void imprimir();
+       void imprimir(){
+           cout<<"|"<< dato << "|-> ";
+       }
 };
 #endif // NODOBANDAS_H

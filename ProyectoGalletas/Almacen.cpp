@@ -11,7 +11,7 @@ Almacen::Almacen(double capacidadTransporteCarritoMasa,
                  double capacidadTransporteCarritoChocolate,
                  int duracionCarrito,ColaAlmacen * _colaPeticiones){
     this->colaPeticiones=_colaPeticiones;
-    this->carrito = new Carrito(capacidadTransporteCarritoMasa,capacidadTransporteCarritoChocolate,duracionCarrito,true);
+
 }
 double Almacen::darCantidades(double _solicitud){
     return _solicitud;

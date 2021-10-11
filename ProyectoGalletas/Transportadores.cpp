@@ -5,13 +5,13 @@ Transportadores::Transportadores(){
     this->pn=NULL;
     this->un=NULL;
 }
-void Transportadores::insertarTransportedor(string _tipoPaquete,int _maximo, int _tiempoTransporte,int _actuales){
+void Transportadores::insertarTransportador(string _tipoPaquete,int _maximo, int _tiempoTransporte,int _actuales){
     if (this->pn == NULL){
-        this->pn = new Transportador();
+        this->pn = new Transportador(_maximo,_tiempoTransporte,_actuales,_tipoPaquete);
         this->pn->siguiente= pn;
         this->pn->anterior = pn;
     }else{
-        Transportador * nuevo = new Transportador (_maximo,_tiempoTransporte,0,_tipoPaquete);
+        Transportador * nuevo = new Transportador (_maximo,_tiempoTransporte,_actuales,_tipoPaquete);
         nuevo->siguiente = this->pn;
         nuevo->anterior = this->pn->anterior;
         this->pn->anterior->siguiente = nuevo;

@@ -15,6 +15,7 @@ struct ListaPaquetes{//Doblemente enlazada circular, son los paquetes
         Nodo * eliminar(int,string);
         double getCantidadGalletas();
         Transportadores * getTransportadores();
+        void setTransportadores(Transportadores *);
 
 };
 #endif // LISTAPAQUETES_H

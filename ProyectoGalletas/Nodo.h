@@ -2,7 +2,6 @@
 #define NODO_H
 #include "Estructuras.h"
 
-
 struct Nodo{//Nodo de la lista doblemente enlazada //Nodo equivale a paquete
     public:
         int cantidadPaquetes;
@@ -24,7 +23,8 @@ struct Nodo{//Nodo de la lista doblemente enlazada //Nodo equivale a paquete
             siguiente = anterior = NULL;
         }
         void imprimir (){
-            cout << "<-|" << cantidadGalletas << "|-> ";
+
+            cout << "<-|" << nombre << "|-> ";
         }
 };
 #endif // NODO_H

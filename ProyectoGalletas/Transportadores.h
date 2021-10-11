@@ -7,6 +7,6 @@ struct Transportadores{
     Transportador * un;
     int largo;
     Transportadores();
-    void insertarTransportedor(string,int, int,int);
+    void insertarTransportador(string,int, int,int);
 };
 #endif // TRANSPORTADORES_H
