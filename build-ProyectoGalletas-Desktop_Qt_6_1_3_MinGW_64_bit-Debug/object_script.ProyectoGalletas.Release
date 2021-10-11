@@ -9,6 +9,7 @@ release/MaquinaEmpacadora.o
 release/MaquinaEnsambladora.o
 release/MaquinaMezclaMasaChocolate.o
 release/Paquete.o
+release/Paquete.o
 release/Planificador.o
 release/Receta.o
 release/Supervisores.o

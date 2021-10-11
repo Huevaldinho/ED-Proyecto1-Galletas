@@ -3,7 +3,7 @@
 MaquinaEnsambladora::MaquinaEnsambladora(){
     this->galletasEnProceso=0;
     this->galletasHechas=0;
-    this->estado=true;
+    this->estado=false;
     this->colaEntradaChocolate=NULL;
     this->colaEntradaMasa=NULL;
     this->colaSalida=NULL;

@@ -61,6 +61,7 @@ SOURCES       = ..\ProyectoGalletas\Almacen.cpp \
 		..\ProyectoGalletas\MaquinaEnsambladora.cpp \
 		..\ProyectoGalletas\MaquinaMezclaMasaChocolate.cpp \
 		..\ProyectoGalletas\Paquete.cpp \
+		..\ProyectoGalletas\Paquete.cpp \
 		..\ProyectoGalletas\Planificador.cpp \
 		..\ProyectoGalletas\Receta.cpp \
 		..\ProyectoGalletas\Supervisores.cpp \
@@ -82,6 +83,7 @@ OBJECTS       = release/Almacen.o \
 		release/MaquinaEnsambladora.o \
 		release/MaquinaMezclaMasaChocolate.o \
 		release/Paquete.o \
+		release/Paquete.o \
 		release/Planificador.o \
 		release/Receta.o \
 		release/Supervisores.o \
@@ -101,8 +103,27 @@ DIST          =  ../../../../../Escritorio/TEC/Cursos \
 		de \
 		Datos/Semana \
 		9/EjemploMutex/CrearPunteros.h \
-		..\ProyectoGalletas\CrearPunteros.h \
+		..\ProyectoGalletas\Almacen.h \
+		..\ProyectoGalletas\Carrito.h \
+		..\ProyectoGalletas\ColaAlmacen.h \
+		..\ProyectoGalletas\ColaBandas.h \
 		..\ProyectoGalletas\Estructuras.h \
+		..\ProyectoGalletas\Horno.h \
+		..\ProyectoGalletas\ListaBandejas.h \
+		..\ProyectoGalletas\ListaPaquetes.h \
+		..\ProyectoGalletas\MaquinaEmpacadora.h \
+		..\ProyectoGalletas\MaquinaEnsambladora.h \
+		..\ProyectoGalletas\MaquinaMezclaMasaChocolate.h \
+		..\ProyectoGalletas\Nodo.h \
+		..\ProyectoGalletas\NodoBandas.h \
+		..\ProyectoGalletas\NodoBandeja.h \
+		..\ProyectoGalletas\NodoColaPeticiones.h \
+		..\ProyectoGalletas\Planificador.h \
+		..\ProyectoGalletas\Punteros.h \
+		..\ProyectoGalletas\Receta.h \
+		..\ProyectoGalletas\Supervisor.h \
+		..\ProyectoGalletas\Transportador.h \
+		..\ProyectoGalletas\Transportadores.h \
 		..\ProyectoGalletas\controlador.h \
 		..\ProyectoGalletas\ventanaconfigurar.h \
 		..\ProyectoGalletas\ventanaprincipal.h ..\ProyectoGalletas\Almacen.cpp \
@@ -115,6 +136,7 @@ DIST          =  ../../../../../Escritorio/TEC/Cursos \
 		..\ProyectoGalletas\MaquinaEmpacadora.cpp \
 		..\ProyectoGalletas\MaquinaEnsambladora.cpp \
 		..\ProyectoGalletas\MaquinaMezclaMasaChocolate.cpp \
+		..\ProyectoGalletas\Paquete.cpp \
 		..\ProyectoGalletas\Paquete.cpp \
 		..\ProyectoGalletas\Planificador.cpp \
 		..\ProyectoGalletas\Receta.cpp \
@@ -144,10 +166,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) ProyectoGalletas.zip $(SOURCES) $(DIST) ..\ProyectoGalletas\ProyectoGalletas.pro C:\Qt\6.1.3\mingw81_64\mkspecs\features\spec_pre.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\device_config.prf C:\Qt\6.1.3\mingw81_64\mkspecs\common\sanitize.conf C:\Qt\6.1.3\mingw81_64\mkspecs\common\gcc-base.conf C:\Qt\6.1.3\mingw81_64\mkspecs\common\g++-base.conf C:\Qt\6.1.3\mingw81_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\6.1.3\mingw81_64\mkspecs\common\windows-vulkan.conf C:\Qt\6.1.3\mingw81_64\mkspecs\common\g++-win32.conf C:\Qt\6.1.3\mingw81_64\mkspecs\common\windows-desktop.conf C:\Qt\6.1.3\mingw81_64\mkspecs\qconfig.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_ext_freetype.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_ext_libpng.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_core.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_entrypoint_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_help.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labsanimation.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labsanimation_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labsqmlmodels.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labssettings.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labssettings_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labssharedimage.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labssharedimage_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_linguist.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_linguist_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_network.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_openglwidgets.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_openglwidgets_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmldom_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmllocalstorage.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quicklayouts.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quicklayouts_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_svgwidgets.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_svgwidgets_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_tools_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\features\qt_functions.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\qt_config.prf C:\Qt\6.1.3\mingw81_64\mkspecs\win32-g++\qmake.conf C:\Qt\6.1.3\mingw81_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\6.1.3\mingw81_64\mkspecs\features\exclusive_builds.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\toolchain.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\default_pre.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\win32\default_pre.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\resolve_config.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\default_post.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\build_pass.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\qml_debug.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\entrypoint.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\precompile_header.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\warn_on.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\qt.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\resources_functions.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\resources.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\moc.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\win32\opengl.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\uic.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\qmake_use.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\file_copies.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\win32\windows.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\testcase_targets.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\exceptions.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\yacc.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\lex.prf ..\ProyectoGalletas\ProyectoGalletas.pro C:\Qt\6.1.3\mingw81_64\lib\Qt6Widgets.prl C:\Qt\6.1.3\mingw81_64\lib\Qt6Gui.prl C:\Qt\6.1.3\mingw81_64\lib\Qt6Core.prl C:\Qt\6.1.3\mingw81_64\lib\Qt6EntryPoint.prl    C:\Qt\6.1.3\mingw81_64\mkspecs\features\data\dummy.cpp ../../../../../Escritorio/TEC/Cursos - Semestre 2/Estructuras de Datos/Semana 9/EjemploMutex/CrearPunteros.h ..\ProyectoGalletas\CrearPunteros.h ..\ProyectoGalletas\Estructuras.h ..\ProyectoGalletas\controlador.h ..\ProyectoGalletas\ventanaconfigurar.h ..\ProyectoGalletas\ventanaprincipal.h  ..\ProyectoGalletas\Almacen.cpp ..\ProyectoGalletas\Carrito.cpp ..\ProyectoGalletas\ColaAlmacen.cpp ..\ProyectoGalletas\ColaBandas.cpp ..\ProyectoGalletas\Horno.cpp ..\ProyectoGalletas\ListaBandejas.cpp ..\ProyectoGalletas\ListaPaquetes.cpp ..\ProyectoGalletas\MaquinaEmpacadora.cpp ..\ProyectoGalletas\MaquinaEnsambladora.cpp ..\ProyectoGalletas\MaquinaMezclaMasaChocolate.cpp ..\ProyectoGalletas\Paquete.cpp ..\ProyectoGalletas\Planificador.cpp ..\ProyectoGalletas\Receta.cpp ..\ProyectoGalletas\Supervisores.cpp ..\ProyectoGalletas\Transportador.cpp ..\ProyectoGalletas\Transportadores.cpp ..\ProyectoGalletas\controlador.cpp ..\ProyectoGalletas\main.cpp ..\ProyectoGalletas\ventanaconfigurar.cpp ..\ProyectoGalletas\ventanaprincipal.cpp ..\ProyectoGalletas\ventanaconfigurar.ui ..\ProyectoGalletas\ventanaprincipal.ui    
+	$(ZIP) ProyectoGalletas.zip $(SOURCES) $(DIST) ..\ProyectoGalletas\ProyectoGalletas.pro C:\Qt\6.1.3\mingw81_64\mkspecs\features\spec_pre.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\device_config.prf C:\Qt\6.1.3\mingw81_64\mkspecs\common\sanitize.conf C:\Qt\6.1.3\mingw81_64\mkspecs\common\gcc-base.conf C:\Qt\6.1.3\mingw81_64\mkspecs\common\g++-base.conf C:\Qt\6.1.3\mingw81_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\6.1.3\mingw81_64\mkspecs\common\windows-vulkan.conf C:\Qt\6.1.3\mingw81_64\mkspecs\common\g++-win32.conf C:\Qt\6.1.3\mingw81_64\mkspecs\common\windows-desktop.conf C:\Qt\6.1.3\mingw81_64\mkspecs\qconfig.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_ext_freetype.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_ext_libpng.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_core.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_entrypoint_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_help.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labsanimation.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labsanimation_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labsqmlmodels.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labssettings.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labssettings_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labssharedimage.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labssharedimage_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_linguist.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_linguist_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_network.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_openglwidgets.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_openglwidgets_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmldom_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmllocalstorage.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quicklayouts.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quicklayouts_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_svgwidgets.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_svgwidgets_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_tools_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\6.1.3\mingw81_64\mkspecs\features\qt_functions.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\qt_config.prf C:\Qt\6.1.3\mingw81_64\mkspecs\win32-g++\qmake.conf C:\Qt\6.1.3\mingw81_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\6.1.3\mingw81_64\mkspecs\features\exclusive_builds.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\toolchain.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\default_pre.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\win32\default_pre.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\resolve_config.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\default_post.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\build_pass.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\qml_debug.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\entrypoint.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\precompile_header.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\warn_on.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\qt.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\resources_functions.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\resources.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\moc.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\win32\opengl.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\uic.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\qmake_use.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\file_copies.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\win32\windows.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\testcase_targets.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\exceptions.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\yacc.prf C:\Qt\6.1.3\mingw81_64\mkspecs\features\lex.prf ..\ProyectoGalletas\ProyectoGalletas.pro C:\Qt\6.1.3\mingw81_64\lib\Qt6Widgets.prl C:\Qt\6.1.3\mingw81_64\lib\Qt6Gui.prl C:\Qt\6.1.3\mingw81_64\lib\Qt6Core.prl C:\Qt\6.1.3\mingw81_64\lib\Qt6EntryPoint.prl    C:\Qt\6.1.3\mingw81_64\mkspecs\features\data\dummy.cpp ../../../../../Escritorio/TEC/Cursos - Semestre 2/Estructuras de Datos/Semana 9/EjemploMutex/CrearPunteros.h ..\ProyectoGalletas\Almacen.h ..\ProyectoGalletas\Carrito.h ..\ProyectoGalletas\ColaAlmacen.h ..\ProyectoGalletas\ColaBandas.h ..\ProyectoGalletas\Estructuras.h ..\ProyectoGalletas\Horno.h ..\ProyectoGalletas\ListaBandejas.h ..\ProyectoGalletas\ListaPaquetes.h ..\ProyectoGalletas\MaquinaEmpacadora.h ..\ProyectoGalletas\MaquinaEnsambladora.h ..\ProyectoGalletas\MaquinaMezclaMasaChocolate.h ..\ProyectoGalletas\Nodo.h ..\ProyectoGalletas\NodoBandas.h ..\ProyectoGalletas\NodoBandeja.h ..\ProyectoGalletas\NodoColaPeticiones.h ..\ProyectoGalletas\Planificador.h ..\ProyectoGalletas\Punteros.h ..\ProyectoGalletas\Receta.h ..\ProyectoGalletas\Supervisor.h ..\ProyectoGalletas\Transportador.h ..\ProyectoGalletas\Transportadores.h ..\ProyectoGalletas\controlador.h ..\ProyectoGalletas\ventanaconfigurar.h ..\ProyectoGalletas\ventanaprincipal.h  ..\ProyectoGalletas\Almacen.cpp ..\ProyectoGalletas\Carrito.cpp ..\ProyectoGalletas\ColaAlmacen.cpp ..\ProyectoGalletas\ColaBandas.cpp ..\ProyectoGalletas\Horno.cpp ..\ProyectoGalletas\ListaBandejas.cpp ..\ProyectoGalletas\ListaPaquetes.cpp ..\ProyectoGalletas\MaquinaEmpacadora.cpp ..\ProyectoGalletas\MaquinaEnsambladora.cpp ..\ProyectoGalletas\MaquinaMezclaMasaChocolate.cpp ..\ProyectoGalletas\Paquete.cpp ..\ProyectoGalletas\Paquete.cpp ..\ProyectoGalletas\Planificador.cpp ..\ProyectoGalletas\Receta.cpp ..\ProyectoGalletas\Supervisores.cpp ..\ProyectoGalletas\Transportador.cpp ..\ProyectoGalletas\Transportadores.cpp ..\ProyectoGalletas\controlador.cpp ..\ProyectoGalletas\main.cpp ..\ProyectoGalletas\ventanaconfigurar.cpp ..\ProyectoGalletas\ventanaprincipal.cpp ..\ProyectoGalletas\ventanaconfigurar.ui ..\ProyectoGalletas\ventanaprincipal.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\Almacen.o release\Carrito.o release\ColaAlmacen.o release\ColaBandas.o release\Horno.o release\ListaBandejas.o release\ListaPaquetes.o release\MaquinaEmpacadora.o release\MaquinaEnsambladora.o release\MaquinaMezclaMasaChocolate.o release\Paquete.o release\Planificador.o release\Receta.o release\Supervisores.o release\Transportador.o release\Transportadores.o release\controlador.o release\main.o release\ventanaconfigurar.o release\ventanaprincipal.o release\moc_ventanaconfigurar.o release\moc_ventanaprincipal.o
+	-$(DEL_FILE) release\Almacen.o release\Carrito.o release\ColaAlmacen.o release\ColaBandas.o release\Horno.o release\ListaBandejas.o release\ListaPaquetes.o release\MaquinaEmpacadora.o release\MaquinaEnsambladora.o release\MaquinaMezclaMasaChocolate.o release\Paquete.o release\Paquete.o release\Planificador.o release\Receta.o release\Supervisores.o release\Transportador.o release\Transportadores.o release\controlador.o release\main.o release\ventanaconfigurar.o release\ventanaprincipal.o release\moc_ventanaconfigurar.o release\moc_ventanaprincipal.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -492,40 +514,252 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-release/Almacen.o: ../ProyectoGalletas/Almacen.cpp ../ProyectoGalletas/Estructuras.h
+release/Almacen.o: ../ProyectoGalletas/Almacen.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Almacen.o ..\ProyectoGalletas\Almacen.cpp
 
-release/Carrito.o: ../ProyectoGalletas/Carrito.cpp ../ProyectoGalletas/Estructuras.h
+release/Carrito.o: ../ProyectoGalletas/Carrito.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Carrito.o ..\ProyectoGalletas\Carrito.cpp
 
-release/ColaAlmacen.o: ../ProyectoGalletas/ColaAlmacen.cpp ../ProyectoGalletas/Estructuras.h
+release/ColaAlmacen.o: ../ProyectoGalletas/ColaAlmacen.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ColaAlmacen.o ..\ProyectoGalletas\ColaAlmacen.cpp
 
-release/ColaBandas.o: ../ProyectoGalletas/ColaBandas.cpp ../ProyectoGalletas/Estructuras.h
+release/ColaBandas.o: ../ProyectoGalletas/ColaBandas.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ColaBandas.o ..\ProyectoGalletas\ColaBandas.cpp
 
-release/Horno.o: ../ProyectoGalletas/Horno.cpp ../ProyectoGalletas/Estructuras.h
+release/Horno.o: ../ProyectoGalletas/Horno.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Horno.o ..\ProyectoGalletas\Horno.cpp
 
-release/ListaBandejas.o: ../ProyectoGalletas/ListaBandejas.cpp ../ProyectoGalletas/Estructuras.h
+release/ListaBandejas.o: ../ProyectoGalletas/ListaBandejas.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ListaBandejas.o ..\ProyectoGalletas\ListaBandejas.cpp
 
-release/ListaPaquetes.o: ../ProyectoGalletas/ListaPaquetes.cpp ../ProyectoGalletas/Estructuras.h
+release/ListaPaquetes.o: ../ProyectoGalletas/ListaPaquetes.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\ListaPaquetes.o ..\ProyectoGalletas\ListaPaquetes.cpp
 
-release/MaquinaEmpacadora.o: ../ProyectoGalletas/MaquinaEmpacadora.cpp ../ProyectoGalletas/Estructuras.h
+release/MaquinaEmpacadora.o: ../ProyectoGalletas/MaquinaEmpacadora.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\MaquinaEmpacadora.o ..\ProyectoGalletas\MaquinaEmpacadora.cpp
 
-release/MaquinaEnsambladora.o: ../ProyectoGalletas/MaquinaEnsambladora.cpp ../ProyectoGalletas/Estructuras.h
+release/MaquinaEnsambladora.o: ../ProyectoGalletas/MaquinaEnsambladora.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\MaquinaEnsambladora.o ..\ProyectoGalletas\MaquinaEnsambladora.cpp
 
-release/MaquinaMezclaMasaChocolate.o: ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp ../ProyectoGalletas/Estructuras.h
+release/MaquinaMezclaMasaChocolate.o: ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\MaquinaMezclaMasaChocolate.o ..\ProyectoGalletas\MaquinaMezclaMasaChocolate.cpp
 
-release/Paquete.o: ../ProyectoGalletas/Paquete.cpp ../ProyectoGalletas/Estructuras.h
+release/Paquete.o: ../ProyectoGalletas/Paquete.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Paquete.o ..\ProyectoGalletas\Paquete.cpp
+
+release/Paquete.o: ../ProyectoGalletas/Paquete.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Paquete.o ..\ProyectoGalletas\Paquete.cpp
 
 release/Planificador.o: ../ProyectoGalletas/Planificador.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/QDebug \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qdebug.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qalgorithms.h \
@@ -606,20 +840,115 @@ release/Planificador.o: ../ProyectoGalletas/Planificador.cpp ../ProyectoGalletas
 		C:/Qt/6.1.3/mingw81_64/include/QtCore/qpropertyprivate.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Planificador.o ..\ProyectoGalletas\Planificador.cpp
 
-release/Receta.o: ../ProyectoGalletas/Receta.cpp ../ProyectoGalletas/Estructuras.h
+release/Receta.o: ../ProyectoGalletas/Receta.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Receta.o ..\ProyectoGalletas\Receta.cpp
 
-release/Supervisores.o: ../ProyectoGalletas/Supervisores.cpp ../ProyectoGalletas/Estructuras.h
+release/Supervisores.o: ../ProyectoGalletas/Supervisores.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Supervisores.o ..\ProyectoGalletas\Supervisores.cpp
 
-release/Transportador.o: ../ProyectoGalletas/Transportador.cpp ../ProyectoGalletas/Estructuras.h
+release/Transportador.o: ../ProyectoGalletas/Transportador.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Transportador.o ..\ProyectoGalletas\Transportador.cpp
 
-release/Transportadores.o: ../ProyectoGalletas/Transportadores.cpp ../ProyectoGalletas/Estructuras.h
+release/Transportadores.o: ../ProyectoGalletas/Transportadores.cpp ../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Transportadores.o ..\ProyectoGalletas\Transportadores.cpp
 
 release/controlador.o: ../ProyectoGalletas/controlador.cpp ../ProyectoGalletas/controlador.h \
 		../ProyectoGalletas/Estructuras.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/VentanaModificar.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/QDialog \
 		C:/Qt/6.1.3/mingw81_64/include/QtWidgets/qdialog.h \
@@ -935,7 +1264,26 @@ release/main.o: ../ProyectoGalletas/main.cpp ../ProyectoGalletas/ventanaprincipa
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qguiapplication.h \
 		C:/Qt/6.1.3/mingw81_64/include/QtGui/qinputmethod.h \
 		../ProyectoGalletas/Estructuras.h \
-		../ProyectoGalletas/CrearPunteros.h
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h \
+		../ProyectoGalletas/Punteros.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\ProyectoGalletas\main.cpp
 
 release/ventanaconfigurar.o: ../ProyectoGalletas/ventanaconfigurar.cpp ../ProyectoGalletas/ventanaconfigurar.h \

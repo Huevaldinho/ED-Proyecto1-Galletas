@@ -6,6 +6,7 @@ MaquinaEmpacadora::MaquinaEmpacadora(){
     this->galletasAceptadas=0;
     this->paqueteActual=NULL;
     this->tiempoEmpaque=2;
+    this->estado=false;
 }
 
 void MaquinaEmpacadora::setGalletasAceptadas(Supervisor*supervisorA,Supervisor*supervisorB){

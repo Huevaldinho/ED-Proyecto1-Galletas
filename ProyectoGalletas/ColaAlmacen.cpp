@@ -49,7 +49,7 @@ NodoColaPeticiones * ColaAlmacen::desencolar(void){
       }
 }
 void ColaAlmacen::imprimir(){
-    cout << "Frente" << endl;
+    cout << "Metodo ColaAlmacen imprimir" << endl;
      // puntero temporal que avanza
      // por toda la lista
      // apunta a los mismo que pN
@@ -63,6 +63,6 @@ void ColaAlmacen::imprimir(){
            // esto no puede faltar porque se encicla
            tmp = tmp->siguiente;
      }
-     cout << "Final" << endl;
+     cout << "Final metodo" << endl;
 }
 

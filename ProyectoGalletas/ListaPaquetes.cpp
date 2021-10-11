@@ -23,14 +23,15 @@ void ListaPaquetes::insertar(int cantidadGalletasPorPaquete,string _nombre,int _
     this->listaTransportadores->insertarTransportedor(_nombre,100,0,5);
 }
 void ListaPaquetes::imprimir(){
+    cout <<"Metodo ListaPaquetes imprimir"<< endl;
     if (this->primerNodo != NULL){
         Nodo * tmp = this->primerNodo;
         do{
             tmp->imprimir();
             tmp = tmp->siguiente;
         }while(tmp!=this->primerNodo);
-        cout << endl;
     }
+    cout <<"Fin metodo"<< endl;
 }
 Nodo * ListaPaquetes::buscar(int _dato,string _nombre){
     if (this->primerNodo != NULL){

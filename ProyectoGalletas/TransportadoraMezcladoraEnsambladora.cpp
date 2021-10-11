@@ -1,7 +1,7 @@
 #include "Estructuras.h"
 TransportadoraMezcladoraEnsambladora::TransportadoraMezcladoraEnsambladora(){
     this->id=0;
-    this->estado=true;
+    this->estado=false;
     this->actual=0;
     this->capacidadMaxima=100;
     this->cola=NULL;

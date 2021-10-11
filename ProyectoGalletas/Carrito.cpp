@@ -4,7 +4,7 @@ Carrito::Carrito(){
      this->capacidadTransporteMezcla=100;
      this->capacidadTransporteChocolate=50;
      this->duracion=2;
-     this->estado=true;
+     this->estado=false;
 }
 Carrito::Carrito(double _capacidadTransporteMezcla,double _capacidadTransporteChocolate,int _duracion, bool _estado){
      this->capacidadTransporteMezcla=_capacidadTransporteMezcla;

@@ -11,6 +11,7 @@ struct MaquinaEmpacadora{    //COMO VAMOS A PASAR LOS DATOS DE LA COLA DE SUPERV
         int tiempoEmpaque;
         Nodo * paqueteActual;
         int cantidadActual;
+        bool estado;
         int galletasAceptadas; //tiene que recibir la cantidad de galletas aceptadas por el supervisor
 
         MaquinaEmpacadora();

@@ -5,7 +5,7 @@ Horno::Horno(){
     this->maximoBandejas=6;
     this->colaEntrada=NULL;
     this->colaSalida=NULL;
-    this->estado=true;
+    this->estado=false;
 }
 void Horno::setPunteros(ListaBandejas * _bandejas, ColaBandas * colaIN, ColaBandas *ColaOUT){
     this->bandejas=_bandejas;

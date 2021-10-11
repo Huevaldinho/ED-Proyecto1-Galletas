@@ -15,13 +15,20 @@ int main(int argc, char *argv[]){
 
     Punteros * p = new Punteros();
     p->setPunteros();
-
-
-    p->maquinaMasa1->id=88888888;
-    p->maquinaMasa2->id=9380918;
-    qDebug()<<"Planificador->maquinaMasa1->id: "<<p->planificador->maquinaMasa1->id;
-    qDebug()<<"Planificador->maquinaMasa2->id: "<<p->planificador->maquinaMasa2->id;
-
+    qDebug()<<"Cantidad masa por defecto: "<<p->_receta->cantidadMasa;
+    qDebug()<<"Cantidad chocolate por defecto: "<<p->_receta->cantidadChocolate;
+    qDebug()<<"Cola almacen:";//primero se ejecutan los qDebug
+    p->colaAlmacen->imprimir();
+    qDebug()<<"Lista peticiones:";
+    p->paquetes->imprimir();
+    qDebug()<<"Cantidad de galleta solicitadas: "<<p->planificador->cantidadSolicitadaGalletas;
+    qDebug()<<"Cantidad de masa necesaria: "<<p->planificador->cantidadNecesariaMasa;
+    qDebug()<<"Cantidad de chocolate necesaria: "<<p->planificador->cantidadNecesariaChocolate;
+    qDebug()<<"Cantidad producida de maquina masa 1: "<<p->planificador->maquinaMasa1->cantidadProcesada;
+    qDebug()<<"Cantidad producida de maquina masa 2: "<<p->planificador->maquinaMasa2->cantidadProcesada;
+    qDebug()<<"Cantidad producida de maquina chocolate: "<<p->planificador->maquinaChocolate->cantidadProcesada;
+    qDebug()<<"Total peticiones cola almacen: "<<p->colaAlmacen->totalPeticiones;
+    qDebug()<<"Pendientes cola almacen: "<<p->colaAlmacen->pendientes;
 
 
     return a.exec();
