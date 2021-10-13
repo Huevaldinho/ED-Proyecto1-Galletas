@@ -8,6 +8,8 @@
 Controlador::Controlador(Punteros * punte){
     this->punteros = punte;
     this->punteros->setPunteros();
+    qDebug()<<"EN CONTROLADOR MAQUINAMASA1: "<<&(this->punteros->maquinaMasa1);
+    qDebug()<<"DE PLANIFICADOR A MASA 1: "<<&(this->punteros->planificador->maquinaMasa1);
     this->punteros->paquetes->insertar(16,"Tubo",250);
 
 

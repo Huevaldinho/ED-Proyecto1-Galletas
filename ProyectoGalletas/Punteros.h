@@ -129,6 +129,8 @@ struct Punteros{
         //------------------------SET PUNTEROS------------------------//
         paquetes->setTransportadores(trans);
         planificador->setPunteros(paquetes,almacen,maquinaMasa1,maquinaMasa2,maquinaChocolate, receta);//pts planificador
+        qDebug()<<"DIRECCION De MASA 1"<<&(this->maquinaMasa1);
+        qDebug()<<"DIRECCION De MASA 1 desde el planificador"<<&(this->planificador->maquinaMasa1);
 
         almacen->setCarrito(carrito);//pt carrito almacen
         almacen->setColaPeticiones(colaAlmacen);//pt colaAlmacen

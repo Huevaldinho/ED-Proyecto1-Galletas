@@ -7,7 +7,6 @@ class hilo_planificador: public QThread{
     public:
         hilo_planificador();
         Planificador * planificador;
-        QMutex * mutex;
         bool corriendo;
         bool pausa;
 
