@@ -10,15 +10,10 @@
 
 int main(int argc, char *argv[]){
     QApplication a(argc, argv);
-    //VentanaConfigurar b;
-    //b.show();
-    //VentanaPrincipal w;
-    //w.show();
-
-    Punteros * punteros = new Punteros();
-    Controlador * control = new Controlador(punteros);
-
-    control->iniciarHiloPlanificador();
+    VentanaConfigurar b;
+    b.show();
+    VentanaPrincipal w=new VentanaPrincipal();
+    w.show();
 
 
 

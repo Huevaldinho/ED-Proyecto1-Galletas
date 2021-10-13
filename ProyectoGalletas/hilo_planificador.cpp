@@ -5,11 +5,12 @@ hilo_planificador::hilo_planificador(){
 }
 
 
-void hilo_planificador::__init__(Planificador * plani){
+void hilo_planificador::__init__(Planificador * plani,QLabel*eti){
 
     this->corriendo = false;
     this->pausa = false;
     this->planificador=plani;
+    this->etiqueta=eti;
 
 }
 void hilo_planificador::run(){
@@ -27,10 +28,11 @@ void hilo_planificador::run(){
          this->planificador->maquinaMasa1->cantidadAProcesar=this->planificador->cantidadNecesariaMasa/2;//Lo reparte a las maquinas
          this->planificador->maquinaMasa2->cantidadAProcesar=this->planificador->cantidadNecesariaMasa/2;
          this->planificador->maquinaChocolate->cantidadAProcesar=this->planificador->cantidadNecesariaChocolate;
-         qDebug()<<"hilo masa: "<<(planificador->maquinaMasa1->cantidadAProcesar);
-         qDebug()<<"Direccion de memoria de masa1"<<&(planificador->maquinaMasa1);
-         qDebug()<<"Direccion de memoria de masa2"<<&(planificador->maquinaMasa2);
-         qDebug()<<"Direccion de memoria de masaChocolate"<<&(planificador->maquinaChocolate);
+//         qDebug()<<"hilo masa: "<<planificador->maquinaMasa1->cantidadAProcesar;
+//         qDebug()<<"Direccion de memoria de masa1"<<planificador->maquinaMasa1;
+//         qDebug()<<"Direccion de memoria de masa2"<<planificador->maquinaMasa2;
+//         qDebug()<<"Direccion de memoria de masaChocolate"<<planificador->maquinaChocolate;
+         this->etiqueta->setText(QString::number(this->planificador->cantidadSolicitadaGalletas));
          sleep(1);
     }
 }

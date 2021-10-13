@@ -7,7 +7,8 @@
 class Controlador{
     public:
         Punteros * punteros;
-        Controlador(Punteros * punte);
+        QLabel*etiqueta;
+        Controlador(Punteros * punte,QLabel*);
         void iniciarHiloPlanificador();
 };
 
