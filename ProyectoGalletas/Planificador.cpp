@@ -24,16 +24,6 @@ void Planificador::setPunteros(ListaPaquetes * _listaPaquetes,Almacen * _almacen
 
 }
 double Planificador::calcularCantidadGalletasSolicitadas(){
-    /*
-        Toma la lista si no es vacia y llama al metodo que le da la cantidad de galletas que hay en la lista.
-        (ese metodo revisa todos los nodos multiplica los paquetes por la cantidad de galletas y retorna el total de galletas)
-        Luego calcula la cantidad necesaria de masa y chocolate para crear ese total de galletas
-        retorna la cantidad de galletas por si  alguien mas necesita saber o algo asi jaja xd
-
-        Cada vez que se ingrese un pedido nuevo a la lista debe recalcular la cantidad necesaria de materiales
-
-    */
-    //Pide la cantidad de galletas a la lista
     if (this->listaPaquetes!=NULL){
         this->cantidadSolicitadaGalletas=this->listaPaquetes->getCantidadGalletas();
         this->cantidadNecesariaMasa=cantidadSolicitadaGalletas*this->receta->cantidadMasa;

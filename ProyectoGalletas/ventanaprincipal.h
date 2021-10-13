@@ -1,6 +1,7 @@
 #ifndef VENTANAPRINCIPAL_H
 #define VENTANAPRINCIPAL_H
 
+#include "Estructuras.h"
 #include <QMainWindow>
 #include <QMovie>
 #include <QLabel>

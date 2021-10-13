@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include<QtCore>
+#include <QDebug>
+#include <QLabel>
 using namespace std;
 
 struct MaquinaEmpacadora;
@@ -24,6 +27,8 @@ struct Nodo;
 struct Transportadores;
 struct NodoBandeja;
 struct NodoColaPeticiones;
+class hilo_planificador;
+
 #include "Almacen.h"
 #include "Carrito.h"
 #include "ColaAlmacen.h"
@@ -43,4 +48,5 @@ struct NodoColaPeticiones;
 #include "Supervisor.h"
 #include "Transportador.h"
 #include "Transportadores.h"
+#include "hilo_planificador.h"
 #endif // ESTRUCTURAS_H

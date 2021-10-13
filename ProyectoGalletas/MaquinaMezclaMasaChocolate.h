@@ -10,6 +10,7 @@ struct MaquinaMezclaMasaChocolate{//se usan 2 de masa y 1 de chocolate
         int cantidadProcesada;//tipo, cantidad solicitada, cantidad entregada
         int cantidadEnProceso;
         int tiempoProceso;//segundos
+        double cantidadAProcesar;//lo que tiene que procesar, el planificador es quien le dice
         double minimaCapacidad;
         double maximaCapacidad;
         double capacidadActual;//cambia conforme crea la mazcla
