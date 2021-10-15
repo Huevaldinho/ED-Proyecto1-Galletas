@@ -28,6 +28,7 @@ struct Transportadores;
 struct NodoBandeja;
 struct NodoColaPeticiones;
 class hilo_planificador;
+class hilo_maquinaMasa1;
 
 #include "Almacen.h"
 #include "Carrito.h"
@@ -49,4 +50,5 @@ class hilo_planificador;
 #include "Transportador.h"
 #include "Transportadores.h"
 #include "hilo_planificador.h"
+#include "hilo_maquinamasa1.h"
 #endif // ESTRUCTURAS_H

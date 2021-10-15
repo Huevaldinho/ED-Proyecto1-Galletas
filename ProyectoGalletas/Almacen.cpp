@@ -7,10 +7,9 @@ Almacen::Almacen(){
     this->peticionesProcesadas=0;
     this->peticionesActuales=0;
 }
-Almacen::Almacen(double capacidadTransporteCarritoMasa,
-                 double capacidadTransporteCarritoChocolate,
-                 int duracionCarrito,ColaAlmacen * _colaPeticiones){
+Almacen::Almacen(ColaAlmacen * _colaPeticiones){
     this->colaPeticiones=_colaPeticiones;
+
 
 }
 double Almacen::darCantidades(double _solicitud){

@@ -6,7 +6,7 @@ MaquinaMezclaMasaChocolate::MaquinaMezclaMasaChocolate(){
     this->maximaCapacidad=2000;
     this->tiempoProceso=5;
     this->cantidadProcesada=0;
-    this->cantidadEnProceso=0;
+    this->cantidadEnviadaABanda=0;
     this->capacidadActual=0;
     this->cantidadAProcesar=0;
     this->cola = NULL;
@@ -23,7 +23,7 @@ MaquinaMezclaMasaChocolate::MaquinaMezclaMasaChocolate(int _id,double _minimaCap
     this->maximaCapacidad=_maximaCapacidad;
     this->tiempoProceso=_tiempoProceso;
     this->cantidadProcesada=0;
-    this->cantidadEnProceso=0;
+    this->cantidadEnviadaABanda=10;//lo que procesa cada tiempo
     this->capacidadActual=0;
     this->cantidadAProcesar=0;
     this->cola=_cola;
@@ -31,15 +31,15 @@ MaquinaMezclaMasaChocolate::MaquinaMezclaMasaChocolate(int _id,double _minimaCap
     this->colaPeticiones=_colaPeticiones;
 }
 
-void MaquinaMezclaMasaChocolate::setCapacidades(double _minimaCapacidad,double _maximaCapacidad){
+void MaquinaMezclaMasaChocolate::setCapacidades(double _minimaCapacidad,double _maximaCapacidad, double _capacidadDeProcesamiento){
     this->minimaCapacidad=_minimaCapacidad;
     this->maximaCapacidad=_maximaCapacidad;
+    this->cantidadEnviadaABanda=_capacidadDeProcesamiento;
 }
 double MaquinaMezclaMasaChocolate::pedirMaterial(){//Se pide al almacen directamente
-    double pedir=0;
     if (this->capacidadActual<this->minimaCapacidad)
-        pedir = this->maximaCapacidad-this->capacidadActual;
-    return pedir;
+        return this->maximaCapacidad-this->capacidadActual;
+   return 0;
 }
 void MaquinaMezclaMasaChocolate::setPunteros(ColaBandas * _cola, ColaAlmacen * _colaPeticiones, Carrito * _carrito){
     this->cola=_cola;

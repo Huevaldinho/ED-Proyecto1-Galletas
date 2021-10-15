@@ -3,15 +3,17 @@
 #include "Estructuras.h"
 
 
-class hilo_planificador: public QThread{
+class hilo_planificador: public QThread{//TODOS LOS HILOS HEREDAN DE QThread
     public:
         QLabel*etiqueta;
-        hilo_planificador();
+        QLabel*lbl_masa;
+        QLabel*lbl_choco;
         Planificador * planificador;
         bool corriendo;
         bool pausa;
 
-        void __init__(Planificador *, QLabel*);
+        hilo_planificador();
+        void __init__(Planificador *, QLabel*,QLabel*,QLabel*);
         void run();
         void stop();
         void pause();

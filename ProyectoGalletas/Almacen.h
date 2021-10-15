@@ -11,7 +11,7 @@ struct Almacen{//Falta
         int peticionesProcesadas;
         int peticionesActuales;
         Almacen();
-        Almacen(double,double,int,ColaAlmacen *);
+        Almacen(ColaAlmacen *);
         void setColaPeticiones(ColaAlmacen * _colaPeticiones);
         void setCarrito(Carrito *);
         double darCantidades(double);

@@ -9,9 +9,9 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
     this->punteros->paquetes->insertar(16,"Tubos",250);
 
 
-//    QMovie *movie = new QMovie("D:/OneDrive - Estudiantes ITCR/Downloads/ajax-loader.gif");
+//    QMovie *movie = new QMovie("//GIFPlanificador.gif");
 //    QLabel *processLabel = new QLabel(this);
-//    processLabel->setMovie(movie);
+//    this->ui->lbl_GIFPlanificador->setMovie(movie);
 //    movie->start();
 
 }
@@ -20,10 +20,14 @@ VentanaPrincipal::~VentanaPrincipal(){
     delete ui;
 }
 
-void VentanaPrincipal::on_btnIniciar_clicked()
-{
-    hilo_planificador * hiloPlanificador = new hilo_planificador();
-    hiloPlanificador->__init__(this->punteros->planificador,this->ui->lblCantidadGalletas);
-    hiloPlanificador->start();
+void VentanaPrincipal::on_btnIniciar_clicked(){
+    this->hiloPlanificador = new hilo_planificador();
+    this->hiloMaquinaMasa1 = new hilo_maquinaMasa1();
+
+    this->hiloPlanificador->__init__(this->punteros->planificador,this->ui->lblCantidadGalletas,this->ui->lblMasa,this->ui->lblChoco);
+    this->hiloPlanificador->start();
+
+    this->hiloMaquinaMasa1->__init__(this->punteros->maquinaMasa1,this->ui->lbl_MaquinaMasa1Procesada,this->ui->lbl_MaquinaMasa1EnProceso);
+    this->hiloMaquinaMasa1->start();
 }
 

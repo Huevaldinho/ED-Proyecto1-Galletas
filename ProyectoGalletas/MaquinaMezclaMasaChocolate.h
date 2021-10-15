@@ -7,8 +7,8 @@ struct MaquinaMezclaMasaChocolate{//se usan 2 de masa y 1 de chocolate
         //Como me comunico con el  almacen para encolar?
         int id;
         bool estado;
-        int cantidadProcesada;//tipo, cantidad solicitada, cantidad entregada
-        int cantidadEnProceso;
+        double cantidadProcesada;//tipo, cantidad solicitada, cantidad entregada
+        double cantidadEnviadaABanda;
         int tiempoProceso;//segundos
         double cantidadAProcesar;//lo que tiene que procesar, el planificador es quien le dice
         double minimaCapacidad;
@@ -20,7 +20,7 @@ struct MaquinaMezclaMasaChocolate{//se usan 2 de masa y 1 de chocolate
         MaquinaMezclaMasaChocolate();
         MaquinaMezclaMasaChocolate(int,double,double, int,bool,ColaBandas *,Carrito *,ColaAlmacen*);
         void setPunteros(ColaBandas *,ColaAlmacen *, Carrito *);
-        void setCapacidades(double,double);
+        void setCapacidades(double,double,double);
         //Cada vez que llega por debajo del minimo pedir al almacen lo que falte para completar el maximo(van a una cola del almacen)
         double pedirMaterial();//le pide al carrito que le traiga maximaCapacidad-capacidadActual
         void procesar();

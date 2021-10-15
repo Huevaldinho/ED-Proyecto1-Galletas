@@ -25,3 +25,9 @@ void Carrito::setCapacidadTransporteMezcla(double _capacidadTransporteMezcla){
 void Carrito::setCapacidadTransporteChocolate(double _capacidadTransporteChocolate){
      this->capacidadTransporteChocolate=_capacidadTransporteChocolate;
 }
+void Carrito::setPunteros(ColaAlmacen * _colaAlmacen, MaquinaMezclaMasaChocolate * _maquinaMasa1,
+                          MaquinaMezclaMasaChocolate * _maquinaMasa2, MaquinaMezclaMasaChocolate * _maquinaChocolate){
+    this->cola=_colaAlmacen;
+    this->maquinaMasa1=_maquinaMasa1;
+    this->maquinaMasa2=_maquinaMasa2;
+}

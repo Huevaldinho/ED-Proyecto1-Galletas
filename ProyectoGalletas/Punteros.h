@@ -151,6 +151,8 @@ struct Punteros{
         listaBandejas->insertarAlFinal(nodoBandeja1);
         listaBandejas->insertarAlFinal(nodoBandeja2);
 
+        carrito->setPunteros(colaAlmacen,maquinaMasa1,maquinaMasa2,maquinaChocolate);
+
 
 
         /*

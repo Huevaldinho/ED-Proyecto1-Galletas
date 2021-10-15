@@ -5,34 +5,35 @@ hilo_planificador::hilo_planificador(){
 }
 
 
-void hilo_planificador::__init__(Planificador * plani,QLabel*eti){
+void hilo_planificador::__init__(Planificador * plani,QLabel*eti,QLabel*lbl_cantidadMasa,QLabel*lbl_cantidadChoco){
 
     this->corriendo = false;
     this->pausa = false;
     this->planificador=plani;
     this->etiqueta=eti;
+    this->lbl_masa=lbl_cantidadMasa;
+    this->lbl_choco=lbl_cantidadChoco;
 
 }
 void hilo_planificador::run(){
     //Aqui se programa toda la mica
-    qDebug()<<"entra";
+    qDebug()<<"Entra al run hilo planificador";
 
     this->corriendo=true;
     while (corriendo){
-        qDebug()<<"corriendo";
+        qDebug()<<"Corre hilo planificador";
          while(planificador->listaPaquetes->primerNodo==NULL){
-             qDebug()<<"dormido";
+             qDebug()<<"Duerme hilo planificador";
              sleep(1);
          }
          this->planificador->calcularCantidadGalletasSolicitadas();//Calcula cuantas galletas y masa/chocolate tiene que hacer
          this->planificador->maquinaMasa1->cantidadAProcesar=this->planificador->cantidadNecesariaMasa/2;//Lo reparte a las maquinas
          this->planificador->maquinaMasa2->cantidadAProcesar=this->planificador->cantidadNecesariaMasa/2;
          this->planificador->maquinaChocolate->cantidadAProcesar=this->planificador->cantidadNecesariaChocolate;
-//         qDebug()<<"hilo masa: "<<planificador->maquinaMasa1->cantidadAProcesar;
-//         qDebug()<<"Direccion de memoria de masa1"<<planificador->maquinaMasa1;
-//         qDebug()<<"Direccion de memoria de masa2"<<planificador->maquinaMasa2;
-//         qDebug()<<"Direccion de memoria de masaChocolate"<<planificador->maquinaChocolate;
          this->etiqueta->setText(QString::number(this->planificador->cantidadSolicitadaGalletas));
+         this->lbl_masa->setText(QString::number(this->planificador->cantidadNecesariaMasa));
+         this->lbl_choco->setText(QString::number(this->planificador->cantidadNecesariaChocolate));
+
          sleep(1);
     }
 }

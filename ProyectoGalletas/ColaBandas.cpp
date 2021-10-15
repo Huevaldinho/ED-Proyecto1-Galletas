@@ -13,10 +13,10 @@ void ColaBandas::calcularMaxActual(){
          }
 }
 void ColaBandas::encolar(double cantidad){
-     if (vacia())
+     if (vacia()){
          this->frente = new NodoBandas (cantidad);
-     else
-     {
+         this->actual+=this->frente->dato;
+     }else{
              // referencia al primero para recorrer la lista
              NodoBandas * actual = this->frente;
              // recorre la lista hasta llegar al penultimo nodo
@@ -27,39 +27,25 @@ void ColaBandas::encolar(double cantidad){
              NodoBandas * nuevo = new NodoBandas (cantidad);
              //le quita el enlace al que era ultimo
              actual->siguiente = nuevo;
+             this->actual+=nuevo->dato;
      }
-     this->actual++;
 }
 NodoBandas * ColaBandas::desencolar(void){
       // si no hay elementos, no borra nada, retorna null
       if (vacia()){
          return NULL;
       }else{
-          // un puntero que apunta al nodo que se
-          // "despegara" de la lista y se retorna
           NodoBandas* borrado = this->frente;
-          // pN se pasa al segundo de la lista
-          // porque el primero se eliminara
           this->frente = this->frente->siguiente;
-          // el nodo borrado, se debe despegar
-          // entonces siguiente apunta a null y no
-          // al segundo de la lista que ahora es pN
           borrado->siguiente = NULL;
-          // aca se deberia liberar la memoria si no se
-          // retornara el borrado
-          this->actual--;
+          this->actual-=borrado->dato;
           return borrado;
       }
 }
 void ColaBandas::imprimir(){
     NodoBandas *tmp = frente;
-
-    // mientras tmp no sea nulo, avanza
     while (tmp != NULL){
-          // imprime el dato del nodo en el que esta tmp
           tmp->imprimir();
-          // tmp avanza al siguiente nodo
-          // esto no puede faltar porque se encicla
           tmp = tmp->siguiente;
     }
     cout <<"fin metodo imprimir"<< endl;

@@ -4,6 +4,10 @@
 
 struct Carrito{
     public:
+        MaquinaMezclaMasaChocolate * maquinaMasa1;
+        MaquinaMezclaMasaChocolate * maquinaMasa2;
+        MaquinaMezclaMasaChocolate * maquinaChocolate;
+        ColaAlmacen * cola;
         double capacidadTransporteMezcla;
         double capacidadTransporteChocolate;
         int duracion;
@@ -14,5 +18,6 @@ struct Carrito{
         void setCapacidades(double,double);
         void setCapacidadTransporteMezcla(double);
         void setCapacidadTransporteChocolate(double);
+        void setPunteros(ColaAlmacen *, MaquinaMezclaMasaChocolate *, MaquinaMezclaMasaChocolate *, MaquinaMezclaMasaChocolate *);
 };
 #endif // CARRITO_H

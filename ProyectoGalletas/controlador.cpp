@@ -15,7 +15,7 @@ Controlador::Controlador(Punteros * punte,QLabel*eti){
 
 }
 void Controlador::iniciarHiloPlanificador(){
-    hilo_planificador * hiloPlanificador = new hilo_planificador();
-    hiloPlanificador->__init__(this->punteros->planificador,this->etiqueta);
-    hiloPlanificador->start();
+    //hilo_planificador * hiloPlanificador = new hilo_planificador();
+    //hiloPlanificador->__init__(this->punteros->planificador,this->etiqueta);
+    //hiloPlanificador->start();
 }

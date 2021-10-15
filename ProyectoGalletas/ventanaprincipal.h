@@ -16,6 +16,7 @@ class VentanaPrincipal : public QMainWindow{Q_OBJECT
         VentanaPrincipal(QWidget *parent = nullptr);
         Punteros * punteros;
         hilo_planificador*hiloPlanificador;
+        hilo_maquinaMasa1 *hiloMaquinaMasa1;
         ~VentanaPrincipal();
 
 
