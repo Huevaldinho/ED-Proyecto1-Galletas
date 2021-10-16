@@ -3,10 +3,10 @@
 
 MaquinaMezclaMasaChocolate::MaquinaMezclaMasaChocolate(){
     this->minimaCapacidad=10;
-    this->maximaCapacidad=2000;
+    this->maximaCapacidad=100;
     this->tiempoProceso=5;
     this->cantidadProcesada=0;
-    this->cantidadEnviadaABanda=0;
+    this->cantidadEnviadaABanda=10;
     this->capacidadActual=0;
     this->cantidadAProcesar=0;
     this->cola = NULL;

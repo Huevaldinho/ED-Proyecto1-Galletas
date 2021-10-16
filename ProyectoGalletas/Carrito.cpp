@@ -1,9 +1,9 @@
 #include "Estructuras.h"
 
 Carrito::Carrito(){
-     this->capacidadTransporteMezcla=100;
-     this->capacidadTransporteChocolate=50;
-     this->duracion=2;
+     this->capacidadTransporteMezcla=10;
+     this->capacidadTransporteChocolate=5;
+     this->duracion=1;
      this->estado=false;
 }
 Carrito::Carrito(double _capacidadTransporteMezcla,double _capacidadTransporteChocolate,int _duracion, bool _estado){

@@ -16,28 +16,37 @@ void hilo_maquinaMasa1::run(){
     qDebug()<<"A procesar: "<<this->maquinaMasa1->cantidadAProcesar;
     sleep(2);
     bool yaEncole=false;
-    while(this->maquinaMasa1->cantidadProcesada<this->maquinaMasa1->cantidadAProcesar){
-        qDebug()<<"Corre el hilo masa ";
-        while ((this->maquinaMasa1->cola->actual >= this->maquinaMasa1->cola->maximaCapacidad) || (this->maquinaMasa1->capacidadActual<this->maquinaMasa1->minimaCapacidad)){
-            qDebug()<<"Dormido hilo masa";
-            double pedir= this->maquinaMasa1->pedirMaterial();//max capacidad - capacidad actual -> llego al maximo
-            if(yaEncole==false){//Encola si pedir es diferente de !=0
-                if (pedir!=0){
-                    this->maquinaMasa1->colaPeticiones->encolar(pedir,this->maquinaMasa1->id);//cantidad soli, id maquina
-                    yaEncole=true;
-                    qDebug()<<"Maquina 1 encolo";
+    qDebug()<<"A PEDIR: "<<this->maquinaMasa1->maximaCapacidad-this->maquinaMasa1->capacidadActual;
+    while(true){
+        while(this->maquinaMasa1->cantidadProcesada<this->maquinaMasa1->cantidadAProcesar){
+            qDebug()<<"Corre el hilo masa ";
+            //Se pone en pausa
+            while ((this->maquinaMasa1->cola->actual >= this->maquinaMasa1->cola->maximaCapacidad) || (this->maquinaMasa1->capacidadActual<this->maquinaMasa1->minimaCapacidad)){
+                qDebug()<<"Dormido hilo masa";
+                double pedir= this->maquinaMasa1->pedirMaterial();//max capacidad - capacidad actual -> llego al maximo
+                if(yaEncole==false){//Encola si pedir es diferente de !=0
+                    if (pedir!=0){
+                        this->maquinaMasa1->colaPeticiones->encolar(pedir,this->maquinaMasa1->id);//cantidad soli, id maquina
+                        yaEncole=true;
+                        qDebug()<<"Maquina 1 encolo";
+                    }
                 }
+                sleep(1);
             }
+            //Parte de cola banda
+            yaEncole=false;
+            this->maquinaMasa1->cola->encolar(this->maquinaMasa1->cantidadEnviadaABanda);//enviar a la banda
+            this->maquinaMasa1->cantidadProcesada+=this->maquinaMasa1->cantidadEnviadaABanda;//Suma al total de procesamiento
+            this->maquinaMasa1->capacidadActual-=this->maquinaMasa1->cantidadEnviadaABanda;//Resta lo que proceso al actual
             this->lbl_cantidadActual->setText(QString::number(this->maquinaMasa1->capacidadActual));//GUI
             this->lbl_totalProduccion->setText(QString::number(this->maquinaMasa1->cantidadProcesada));//GUI
-            sleep(1);
+            sleep(this->maquinaMasa1->tiempoProceso);//lo que dura procesando xd
+            qDebug()<<"Actual hilo: "<<this->maquinaMasa1->capacidadActual;
+            qDebug()<<"Procesada hilo: "<<this->maquinaMasa1->cantidadProcesada;
+            qDebug()<<"CantidadEnviadaBanda hilo: "<<this->maquinaMasa1->cantidadEnviadaABanda;
         }
-        yaEncole=false;
-        this->maquinaMasa1->cola->encolar(this->maquinaMasa1->cantidadEnviadaABanda);//enviar a la banda
-        this->maquinaMasa1->cantidadProcesada+=this->maquinaMasa1->cantidadEnviadaABanda;//Suma al total de procesamiento
-        this->maquinaMasa1->capacidadActual-=this->maquinaMasa1->cantidadEnviadaABanda;//Resta lo que proceso al actual
-        sleep(this->maquinaMasa1->tiempoProceso);//lo que dura procesando xd
     }
+
 }
 void hilo_maquinaMasa1::pause(){
     this->pausa=true;

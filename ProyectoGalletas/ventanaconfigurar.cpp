@@ -3,10 +3,8 @@
 
 VentanaConfigurar::VentanaConfigurar(QWidget *parent) :QMainWindow(parent),ui(new Ui::VentanaConfigurar){
     ui->setupUi(this);
-
 }
 
-VentanaConfigurar::~VentanaConfigurar()
-{
+VentanaConfigurar::~VentanaConfigurar(){
     delete ui;
 }

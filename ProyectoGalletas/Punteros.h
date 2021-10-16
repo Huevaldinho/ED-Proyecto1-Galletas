@@ -136,9 +136,11 @@ struct Punteros{
         almacen->setColaPeticiones(colaAlmacen);//pt colaAlmacen
 
         maquinaMasa1->setPunteros(colaMasaEnsambladora,colaAlmacen,carrito);//pts maquinaMasa1
+        maquinaMasa1->id=1;
         maquinaMasa2->setPunteros(colaMasaEnsambladora,colaAlmacen,carrito);//pts maquinaMasa2
+        maquinaMasa2->id=2;
         maquinaChocolate->setPunteros(colaChocolateEnsambladora,colaAlmacen,carrito);//pts maquinaChocolate
-
+        maquinaChocolate->id=3;
         maquinaEnsambladora->setPunteros(colaChocolateEnsambladora,colaMasaEnsambladora,colaEnsambladoraHorno); //pts maquina ensambladora
 
         horno->setPunteros(listaBandejas,colaEnsambladoraHorno,colaSupervisores);//pts horno

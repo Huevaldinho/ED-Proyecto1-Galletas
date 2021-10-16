@@ -14,6 +14,7 @@ release/Supervisores.o
 release/Transportador.o
 release/Transportadores.o
 release/controlador.o
+release/hilo_carrito.o
 release/hilo_maquinamasa1.o
 release/hilo_planificador.o
 release/main.o

@@ -37,6 +37,8 @@ public:
     QLabel *lbl_MaquinaMasa1Procesada;
     QLabel *lbl_TextMaquina1Actual;
     QLabel *lbl_TextMaquina1Procesada;
+    QPushButton *btnPausa;
+    QPushButton *btnDetener;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -105,6 +107,12 @@ public:
         lbl_TextMaquina1Procesada->setObjectName(QString::fromUtf8("lbl_TextMaquina1Procesada"));
         lbl_TextMaquina1Procesada->setGeometry(QRect(160, 140, 71, 21));
         lbl_TextMaquina1Procesada->setFont(font);
+        btnPausa = new QPushButton(centralwidget);
+        btnPausa->setObjectName(QString::fromUtf8("btnPausa"));
+        btnPausa->setGeometry(QRect(410, 530, 171, 71));
+        btnDetener = new QPushButton(centralwidget);
+        btnDetener->setObjectName(QString::fromUtf8("btnDetener"));
+        btnDetener->setGeometry(QRect(600, 530, 221, 71));
         VentanaPrincipal->setCentralWidget(centralwidget);
         menubar = new QMenuBar(VentanaPrincipal);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -138,6 +146,8 @@ public:
         lbl_MaquinaMasa1Procesada->setText(QString());
         lbl_TextMaquina1Actual->setText(QCoreApplication::translate("VentanaPrincipal", "Actual: ", nullptr));
         lbl_TextMaquina1Procesada->setText(QCoreApplication::translate("VentanaPrincipal", "Procesada: ", nullptr));
+        btnPausa->setText(QCoreApplication::translate("VentanaPrincipal", "Pausa", nullptr));
+        btnDetener->setText(QCoreApplication::translate("VentanaPrincipal", "Detener", nullptr));
     } // retranslateUi
 
 };
