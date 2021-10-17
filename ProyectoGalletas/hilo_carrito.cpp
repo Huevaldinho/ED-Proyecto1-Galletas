@@ -18,13 +18,11 @@ void hilo_carrito::run(){
             continue;
 
         }
-
         else if (this->carrito->cola->frente->idMaquina==1){
             qDebug()<<"---Entra if maquina 1----";
             if (this->carrito->cola->frente->cantidadSolicitada>=this->carrito->capacidadTransporteMezcla){
                 this->carrito->maquinaMasa1->capacidadActual+=this->carrito->capacidadTransporteMezcla;
                 this->carrito->cola->frente->cantidadSolicitada-=this->carrito->capacidadTransporteMezcla;
-
             }
             else
                 this->pausa=true;
@@ -37,10 +35,10 @@ void hilo_carrito::run(){
             else
                 this->pausa=true;
         }else{
-            qDebug()<<"---Entra if maquina 3----";
-            if (this->carrito->cola->frente->cantidadSolicitada>=this->carrito->capacidadTransporteMezcla){
-                this->carrito->maquinaChocolate->capacidadActual+=this->carrito->capacidadTransporteMezcla;
-                this->carrito->cola->frente->cantidadSolicitada-=this->carrito->capacidadTransporteMezcla;
+            qDebug()<<"---Entra if maquina 3----";                              //capacidadTransporteMezcla
+            if (this->carrito->cola->frente->cantidadSolicitada>=this->carrito->capacidadTransporteChocolate){
+                this->carrito->maquinaChocolate->capacidadActual+=this->carrito->capacidadTransporteChocolate;
+                this->carrito->cola->frente->cantidadSolicitada-=this->carrito->capacidadTransporteChocolate;
             }
             else
                 this->pausa=true;

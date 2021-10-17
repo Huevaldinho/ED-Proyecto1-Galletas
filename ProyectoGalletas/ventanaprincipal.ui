@@ -151,8 +151,8 @@
    <widget class="QLabel" name="lbl_TextMaquinaMasa1">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>80</y>
+      <x>140</x>
+      <y>10</y>
       <width>141</width>
       <height>21</height>
      </rect>
@@ -171,8 +171,8 @@
    <widget class="QLabel" name="lbl_MaquinaMasa1EnProceso">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>120</y>
+      <x>160</x>
+      <y>50</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -184,8 +184,8 @@
    <widget class="QLabel" name="lbl_MaquinaMasa1Procesada">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>140</y>
+      <x>160</x>
+      <y>70</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -197,8 +197,8 @@
    <widget class="QLabel" name="lbl_TextMaquina1Actual">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>110</y>
+      <x>60</x>
+      <y>40</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -217,8 +217,8 @@
    <widget class="QLabel" name="lbl_TextMaquina1Procesada">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>140</y>
+      <x>60</x>
+      <y>70</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -257,6 +257,174 @@
     </property>
     <property name="text">
      <string>Detener</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_TextMaquinaMasa2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>110</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Maquina Masa 2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_TextMaquina2Actual">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>140</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Actual:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_TextMaquina2Procesada">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>170</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Procesada: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_MaquinaMasa2EnProceso">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>140</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_MaquinaMasa2Procesada">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>170</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_TextMaquinaChoco">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>200</y>
+      <width>151</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Maquina Chocolate</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_TextMaquinaChocoActual">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>250</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Actual:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_TextMaquinaChocoProcesada">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>280</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Procesada:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_MaquinaChocoProcesada">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>280</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_MaquinaChocoEnProceso">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>250</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

@@ -30,4 +30,5 @@ void Carrito::setPunteros(ColaAlmacen * _colaAlmacen, MaquinaMezclaMasaChocolate
     this->cola=_colaAlmacen;
     this->maquinaMasa1=_maquinaMasa1;
     this->maquinaMasa2=_maquinaMasa2;
+    this->maquinaChocolate=_maquinaChocolate;//no estaba asignado
 }

@@ -3,8 +3,8 @@
 ColaBandas::ColaBandas(){
      this->frente = NULL;
     this->actual=0;
-    this->maximaCapacidad=500;
-}
+    this->maximaCapacidad=1000;//por esto es que la ejecucion se cicla en la interfaz grafica, esta cola lo pone en pausa,
+}                               // se soluciona desencolando esta cola
 void ColaBandas::calcularMaxActual(){
          NodoBandas *tmp = this->frente;
          while (tmp != NULL){

@@ -34,7 +34,7 @@ void hilo_planificador::run(){
          this->lbl_masa->setText(QString::number(this->planificador->cantidadNecesariaMasa));
          this->lbl_choco->setText(QString::number(this->planificador->cantidadNecesariaChocolate));
 
-         sleep(1);
+         sleep(3);//1
     }
 }
 void hilo_planificador::stop(){

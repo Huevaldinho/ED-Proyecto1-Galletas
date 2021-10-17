@@ -17,6 +17,8 @@ class VentanaPrincipal : public QMainWindow{Q_OBJECT
         Punteros * punteros;
         hilo_planificador*hiloPlanificador;
         hilo_maquinaMasa1 *hiloMaquinaMasa1;
+        hilo_maquinaMasa1 *hiloMaquinaMasa2;
+        hilo_maquinaMasa1 *hiloMaquinaChoco;
         hilo_carrito * hiloCarrito;
         bool pausa;
         bool corriendo;
@@ -27,11 +29,11 @@ class VentanaPrincipal : public QMainWindow{Q_OBJECT
         private slots:
                 void on_btnIniciar_clicked();
 
-                                                        void on_btnPausa_clicked();
+                void on_btnPausa_clicked();
 
-                                                                                                void on_btnDetener_clicked();
+                void on_btnDetener_clicked();
 
-                                        private:
+        private:
         Ui::VentanaPrincipal *ui;
 
 };
