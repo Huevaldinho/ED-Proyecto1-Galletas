@@ -6,7 +6,7 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
     ui->setupUi(this);
     this->punteros=new Punteros();
     this->punteros->setPunteros();
-    this->punteros->paquetes->insertar(15,"Tubos",5);
+    this->punteros->paquetes->insertar(4,"Paquetito",4);
 
 
 //    QMovie *movie = new QMovie("//GIFPlanificador.gif");
@@ -25,8 +25,8 @@ void VentanaPrincipal::on_btnIniciar_clicked(){
 
     this->hiloPlanificador = new hilo_planificador();
     this->hiloMaquinaMasa1 = new hilo_maquinaMasa1();//cambiar nombre de la clase porque al final se usa la misma pero con
-    this->hiloMaquinaMasa2 = new hilo_maquinaMasa1();//instancias diferentes para los hilos.
-    this->hiloMaquinaChoco = new hilo_maquinaMasa1();
+    this->hiloMaquinaMasa2 = new hilo_maquinaMasa2();//instancias diferentes para los hilos.
+    this->hiloMaquinaChoco = new hilo_maquinaChocolate();
     this->hiloCarrito = new hilo_carrito();
 
     this->hiloPlanificador->__init__(this->punteros->planificador,this->ui->lblCantidadGalletas,this->ui->lblMasa,this->ui->lblChoco);

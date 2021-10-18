@@ -26,7 +26,9 @@ SOURCES += \
     Transportadores.cpp \
     controlador.cpp \
     hilo_carrito.cpp \
+    hilo_maquinaChocolate.cpp \
     hilo_maquinamasa1.cpp \
+    hilo_maquinamasa2.cpp \
     hilo_planificador.cpp \
     main.cpp \
     ventanaconfigurar.cpp \
@@ -57,7 +59,9 @@ HEADERS += \
     Transportadores.h \
     controlador.h \
     hilo_carrito.h \
+    hilo_maquinaChocolate.h \
     hilo_maquinamasa1.h \
+    hilo_maquinamasa2.h \
     hilo_planificador.h \
     ventanaconfigurar.h \
     ventanaprincipal.h
