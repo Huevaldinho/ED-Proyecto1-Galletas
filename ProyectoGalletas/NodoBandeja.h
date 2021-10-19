@@ -1,7 +1,7 @@
 #ifndef NODOBANDEJA_H
 #define NODOBANDEJA_H
 #include "Estructuras.h"
-
+#include <QDebug>
 struct NodoBandeja{
     int horneadas;//cuantas galletas ha horneado
     int actual;//son las galletas en espera, o sea, las que se estan horneando en ese momento
@@ -28,7 +28,7 @@ struct NodoBandeja{
         estado=_estado;
     }
     void imprimir(){
-        cout << " | " << actual << " | -> ";
+        qDebug() << " | " << actual << " | -> ";
     }
 
 };

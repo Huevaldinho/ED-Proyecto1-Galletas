@@ -29,9 +29,20 @@ NodoBandeja * ListaBandejas::borrarAlFinal(){
             this->ultimaBandeja->siguienteBandeja = NULL;
             borrado->anteriorBandeja = NULL;
         }
+        this->cantidadActual--;
         return borrado;
     }
     return borrado;
+}
+int ListaBandejas::contarBandejas(){
+    NodoBandeja * tmp = this->primeraBandeja;
+    int contador=0;
+        while (tmp != NULL){
+            contador++;
+            tmp = tmp->siguienteBandeja;
+        }
+    this->cantidadActual=contador;
+    return this->cantidadActual;
 }
 void ListaBandejas::imprimir(){
     NodoBandeja * tmp = this->primeraBandeja;

@@ -18,9 +18,7 @@ void hilo_planificador::__init__(Planificador * plani,QLabel*eti,QLabel*lbl_cant
 void hilo_planificador::run(){
     //Aqui se programa toda la mica
     qDebug()<<"Entra al run hilo planificador";
-
-    this->corriendo=true;
-    while (corriendo){
+    while (true){
         qDebug()<<"Corre hilo planificador";
          while(planificador->listaPaquetes->primerNodo==NULL){
              qDebug()<<"Duerme hilo planificador";

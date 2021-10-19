@@ -15,6 +15,7 @@ release/Transportador.o
 release/Transportadores.o
 release/controlador.o
 release/hilo_carrito.o
+release/hilo_horno.o
 release/hilo_maquinaensambladora.o
 release/hilo_maquinamasa1.o
 release/hilo_planificador.o

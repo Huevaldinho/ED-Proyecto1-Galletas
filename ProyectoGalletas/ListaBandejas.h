@@ -5,12 +5,13 @@
 struct ListaBandejas{//usar lista simple o doble
     NodoBandeja * primeraBandeja;
     NodoBandeja * ultimaBandeja;
-    int cantidadActual;
+    int cantidadActual;//cantidad de bandejas utilizandas
     int maximoBandejas;
     ListaBandejas();
     bool estaVacia();
     void insertarAlFinal(NodoBandeja *);
     NodoBandeja *  borrarAlFinal();
     void imprimir();
+    int contarBandejas();
 };
 #endif // LISTABANDEJAS_H

@@ -34,26 +34,20 @@ void hilo_maquinaMasa1::run(){
                 this->lbl_cantidadActual->setText(QString::number(this->maquinaMasa1->capacidadActual));//GUI 1
                 this->lbl_totalProduccion->setText(QString::number(this->maquinaMasa1->cantidadProcesada));//GUI 2
                 if (this->maquinaMasa1->cantidadProcesada>this->maquinaMasa1->cantidadAProcesar){//para que no se pase de la cantida maxima
-                    //como la maquina siempre envia 10, se pasa en algunas ocaciones
                     this->maquinaMasa1->capacidadActual+=this->maquinaMasa1->cantidadProcesada-this->maquinaMasa1->cantidadAProcesar;
                     this->maquinaMasa1->cantidadProcesada-=this->maquinaMasa1->cantidadProcesada-this->maquinaMasa1->cantidadAProcesar;
                 }
-                sleep(3);
+                sleep(2);
             }
             //Parte de cola banda
             yaEncole=false;//Cambia bandera para encolar en cola almacen
             this->maquinaMasa1->cola->encolar(this->maquinaMasa1->cantidadEnviadaABanda);//enviar a la banda 10
             this->maquinaMasa1->cantidadProcesada+=this->maquinaMasa1->cantidadEnviadaABanda;//Suma al total de procesamiento
-
             this->maquinaMasa1->capacidadActual-=this->maquinaMasa1->cantidadEnviadaABanda;//Resta 10 a la capacidad actual (los que envia a la cola)
-            this->lbl_BandaTActual->setText(QString::number(this->maquinaMasa1->cola->actual));//Set cantidad actual de banda GUI
             this->lbl_cantidadActual->setText(QString::number(this->maquinaMasa1->capacidadActual));//Set cantidad actual en GUI
+            this->lbl_totalProduccion->setText(QString::number(this->maquinaMasa1->cantidadProcesada));//Set cantidad procesada GUI
+            this->lbl_BandaTActual->setText(QString::number(this->maquinaMasa1->cola->actual));//Set cantidad actual de banda GUI
             sleep(this->maquinaMasa1->tiempoProceso);//lo que dura procesando xd
-            //Esta es la etiqueta que esta saliendo mal. En actual de masa faltan 15 y en actual choco sobran 5
-
-            //Condicion cochina para la ultima iteracion, como mete de 10 en 10, puede que la cantidad se pase y el total producida sea mayor,
-            //en ese caso, lo que se hace es quitar el exceso y ponerlo en actual.
-
             if (this->maquinaMasa1->cantidadProcesada>this->maquinaMasa1->cantidadAProcesar){//para que no se pase de la cantida maxima
                 //como la maquina siempre envia 10, se pasa en algunas ocaciones
 
@@ -69,8 +63,9 @@ void hilo_maquinaMasa1::run(){
                 }else if (this->maquinaMasa1->id==3){
                     this->maquinaMasa1->cola->actual=this->maquinaMasa1->cantidadAProcesar;
                 }
-                this->maquinaMasa1->cola->desencolar();
+                //this->maquinaMasa1->cola->desencolar();//no funciona, hace que falte 1 galleta
             }
+            this->lbl_BandaTActual->setText(QString::number(this->maquinaMasa1->cola->actual));//Set cantidad actual de banda GUI
             this->lbl_totalProduccion->setText(QString::number(this->maquinaMasa1->cantidadProcesada));//Set cantidad procesada GUI
       }
         this->lbl_BandaTActual->setText(QString::number(this->maquinaMasa1->cola->actual));//Set cantidad actual de banda GUI

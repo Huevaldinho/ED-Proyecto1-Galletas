@@ -29,6 +29,7 @@ struct NodoBandeja;
 struct NodoColaPeticiones;
 class hilo_planificador;
 class hilo_maquinaMasa1;
+class hilo_Horno;
 
 #include "Almacen.h"
 #include "Carrito.h"
@@ -53,4 +54,5 @@ class hilo_maquinaMasa1;
 #include "hilo_maquinamasa1.h"
 #include "hilo_carrito.h"
 #include "hilo_maquinaensambladora.h"
+#include "hilo_horno.h"
 #endif // ESTRUCTURAS_H

@@ -7,6 +7,10 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
     this->punteros=new Punteros();
     this->punteros->setPunteros();
     this->punteros->paquetes->insertar(4,"Paquetito",4);
+    //this->punteros->paquetes->insertar(16,"Tubos",10);
+    //this->punteros->paquetes->insertar(10,"Paquetes",5);
+
+
 
 
 //    QMovie *movie = new QMovie("//GIFPlanificador.gif");
