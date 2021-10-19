@@ -10,13 +10,14 @@ struct Planificador{
         MaquinaMezclaMasaChocolate * maquinaMasa1;
         MaquinaMezclaMasaChocolate * maquinaMasa2;
         MaquinaMezclaMasaChocolate * maquinaChocolate;
+        MaquinaEnsambladora * maquinaEnsambladora;
         double cantidadSolicitadaGalletas;
         double cantidadNecesariaMasa;
         double cantidadNecesariaChocolate;
         Receta * receta;//Cantidad de masa y chocolate por galleta
         Planificador();
         void setPunteros(ListaPaquetes *,Almacen *,MaquinaMezclaMasaChocolate *,MaquinaMezclaMasaChocolate *,
-                         MaquinaMezclaMasaChocolate *,Receta *);
+                         MaquinaMezclaMasaChocolate *,Receta *,MaquinaEnsambladora *);
         double calcularCantidadGalletasSolicitadas();//(paquete1*cantidadDeGalletas) + (paquete2*cantidadDeGalletas). se guarda en cantidadSolicitada
         void modificarReceta(double, double);//Cambia la cantidad de masa y chocolate
 };

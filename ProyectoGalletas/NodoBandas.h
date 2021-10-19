@@ -1,6 +1,7 @@
 #ifndef NODOBANDAS_H
 #define NODOBANDAS_H
 #include "Estructuras.h"
+#include <QDebug>
 
 struct NodoBandas {//Guarda la cantidad de masa o galletas
        double dato; //cantidad de galletas
@@ -10,7 +11,7 @@ struct NodoBandas {//Guarda la cantidad de masa o galletas
                 siguiente = NULL; // sig es null
        }
        void imprimir(){
-           cout<<"|"<< dato << "|-> ";
+           qDebug()<<"|"<< dato << "|-> ";
        }
 };
 #endif // NODOBANDAS_H

@@ -30,6 +30,8 @@ void hilo_planificador::run(){
          this->planificador->maquinaMasa1->cantidadAProcesar=this->planificador->cantidadNecesariaMasa/2;//Lo reparte a las maquinas
          this->planificador->maquinaMasa2->cantidadAProcesar=this->planificador->cantidadNecesariaMasa/2;
          this->planificador->maquinaChocolate->cantidadAProcesar=this->planificador->cantidadNecesariaChocolate;
+         this->planificador->maquinaEnsambladora->galletasAProcesar=this->planificador->cantidadSolicitadaGalletas;
+
          this->etiqueta->setText(QString::number(this->planificador->cantidadSolicitadaGalletas));
          this->lbl_masa->setText(QString::number(this->planificador->cantidadNecesariaMasa));
          this->lbl_choco->setText(QString::number(this->planificador->cantidadNecesariaChocolate));

@@ -17,9 +17,10 @@ class VentanaPrincipal : public QMainWindow{Q_OBJECT
         Punteros * punteros;
         hilo_planificador*hiloPlanificador;
         hilo_maquinaMasa1 *hiloMaquinaMasa1;
-        hilo_maquinaMasa2 *hiloMaquinaMasa2;
-        hilo_maquinaChocolate *hiloMaquinaChoco;
+        hilo_maquinaMasa1 *hiloMaquinaMasa2;
+        hilo_maquinaMasa1 *hiloMaquinaChoco;
         hilo_carrito * hiloCarrito;
+        hilo_MaquinaEnsambladora * hiloMaquinaEnsambladora;
         bool pausa;
         bool corriendo;
 

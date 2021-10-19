@@ -8,11 +8,13 @@ class hilo_maquinaMasa1: public QThread{
         MaquinaMezclaMasaChocolate * maquinaMasa1;
         QLabel * lbl_totalProduccion;
         QLabel * lbl_cantidadActual;
+        QLabel * lbl_BandaTActual;
+        QLabel * lbl_BandaTProcesada;
         bool corriendo;
         bool pausa;
 
         hilo_maquinaMasa1();
-        void __init__(MaquinaMezclaMasaChocolate *,QLabel *,QLabel *);
+        void __init__(MaquinaMezclaMasaChocolate *,QLabel *,QLabel *,QLabel *,QLabel *);
         void run();
         void stop();
         void pause();

@@ -3,6 +3,7 @@
 #include "Estructuras.h"
 
 
+
 class hilo_planificador: public QThread{//TODOS LOS HILOS HEREDAN DE QThread
     public:
         QLabel*etiqueta;

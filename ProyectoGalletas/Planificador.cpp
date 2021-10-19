@@ -11,14 +11,17 @@ Planificador::Planificador(){
     this->maquinaMasa1=NULL;
     this->maquinaChocolate=NULL;
     this->maquinaMasa2=NULL;
+    this->maquinaEnsambladora = NULL;
 }
 
 void Planificador::setPunteros(ListaPaquetes * _listaPaquetes,Almacen * _almacen,MaquinaMezclaMasaChocolate *_maquinaMasa1,
-                               MaquinaMezclaMasaChocolate *_maquinaMasa2, MaquinaMezclaMasaChocolate *_maquinaChocolate,Receta * _receta){
+                               MaquinaMezclaMasaChocolate *_maquinaMasa2, MaquinaMezclaMasaChocolate *_maquinaChocolate,Receta * _receta,
+                               MaquinaEnsambladora * ensambladora){
     this->almacen=_almacen;
     this->maquinaMasa1=_maquinaMasa1;
     this->maquinaMasa2=_maquinaMasa2;
     this->maquinaChocolate=_maquinaChocolate;
+    this->maquinaEnsambladora = ensambladora;
     this->listaPaquetes=_listaPaquetes;
     this->receta=_receta;
 

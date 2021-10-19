@@ -51,7 +51,6 @@ class hilo_maquinaMasa1;
 #include "Transportadores.h"
 #include "hilo_planificador.h"
 #include "hilo_maquinamasa1.h"
-#include "hilo_maquinamasa2.h"
-#include "hilo_maquinaChocolate.h"
 #include "hilo_carrito.h"
+#include "hilo_maquinaensambladora.h"
 #endif // ESTRUCTURAS_H
