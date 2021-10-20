@@ -52,3 +52,15 @@ void ListaBandejas::imprimir(){
         }
         cout <<endl;
 }
+void ListaBandejas::totalCapacidad(){
+    NodoBandeja * tmp = this->primeraBandeja;
+    double contadorCapacidad=0;
+    double contadorGalletasActuales=0;
+        while (tmp != NULL){
+            contadorCapacidad+=tmp->capacidadGalletas;
+            contadorGalletasActuales+=tmp->actual;
+            tmp = tmp->siguienteBandeja;
+        }
+    this->totalCapacidadGalletas=contadorCapacidad;
+    this->galletasActuales=contadorGalletasActuales;
+}

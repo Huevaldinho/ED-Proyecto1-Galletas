@@ -13,6 +13,40 @@ void hilo_Horno::__init__(Horno * _horno, QLabel * lblBandaActual, QLabel * lblB
 
 }
 void hilo_Horno::run(){
+    while (true){
+        this->horno->capacidadTotalGalletas();
+        //qDebug()<<"\n\n\nLA CANTIDAD DE BANDEJAS ES DE: "<<this->horno->bandejasFuncionando;
+        while (this->horno->bandejas->totalCapacidadGalletas>this->horno->bandejas->galletasActuales){
+            NodoBandeja*tmp=this->horno->bandejas->primeraBandeja;
+            while (tmp!=NULL){
+                while (tmp->actual<tmp->capacidadGalletas){
+                    double datoFuera =this->horno->colaEntrada->desencolar()->dato;
+                    tmp->actual+=datoFuera;
+                    tmp->horneadas+=datoFuera;
+                    this->lbl_BandaTActual->setText(QString::number(tmp->actual));
+                }
+                if (tmp->actual>tmp->capacidadGalletas){
+                    double excedente = tmp->capacidadGalletas-tmp->actual;
+                    this->horno->colaEntrada->frente->dato+=excedente;
+                    tmp->actual-=excedente;
+                    tmp->horneadas-=excedente;
+                }
+                tmp=tmp->siguienteBandeja;
+            }
+            sleep(this->horno->duracionHorneado);//se hornean
+            NodoBandeja*moment=this->horno->bandejas->primeraBandeja;
+            double totalGalletas=0;
+            while (moment!=NULL){
+                totalGalletas+=moment->horneadas;
+                this->lbl_BandaTMax->setText(QString::number(totalGalletas));
+                this->horno->colaSalida->encolar(moment->actual);
+                moment->actual=0;
+                this->lbl_BandejasActivas->setText(QString::number(totalGalletas));
+                moment=moment->siguienteBandeja;
+            }
+
+        }
+    }
 
 
 }

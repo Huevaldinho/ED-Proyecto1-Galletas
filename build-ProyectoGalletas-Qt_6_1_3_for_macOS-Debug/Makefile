@@ -69,9 +69,9 @@ SOURCES       = ../ProyectoGalletas/Almacen.cpp \
 		../ProyectoGalletas/Transportadores.cpp \
 		../ProyectoGalletas/controlador.cpp \
 		../ProyectoGalletas/hilo_carrito.cpp \
-		../ProyectoGalletas/hilo_maquinaChocolate.cpp \
+		../ProyectoGalletas/hilo_horno.cpp \
+		../ProyectoGalletas/hilo_maquinaensambladora.cpp \
 		../ProyectoGalletas/hilo_maquinamasa1.cpp \
-		../ProyectoGalletas/hilo_maquinamasa2.cpp \
 		../ProyectoGalletas/hilo_planificador.cpp \
 		../ProyectoGalletas/main.cpp \
 		../ProyectoGalletas/ventanaconfigurar.cpp \
@@ -94,9 +94,9 @@ OBJECTS       = Almacen.o \
 		Transportadores.o \
 		controlador.o \
 		hilo_carrito.o \
-		hilo_maquinaChocolate.o \
+		hilo_horno.o \
+		hilo_maquinaensambladora.o \
 		hilo_maquinamasa1.o \
-		hilo_maquinamasa2.o \
 		hilo_planificador.o \
 		main.o \
 		ventanaconfigurar.o \
@@ -261,9 +261,9 @@ DIST          = /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/spec_pr
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/controlador.h \
 		../ProyectoGalletas/hilo_carrito.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
+		../ProyectoGalletas/hilo_horno.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/ventanaconfigurar.h \
 		../ProyectoGalletas/ventanaprincipal.h ../ProyectoGalletas/Almacen.cpp \
@@ -283,9 +283,9 @@ DIST          = /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/spec_pr
 		../ProyectoGalletas/Transportadores.cpp \
 		../ProyectoGalletas/controlador.cpp \
 		../ProyectoGalletas/hilo_carrito.cpp \
-		../ProyectoGalletas/hilo_maquinaChocolate.cpp \
+		../ProyectoGalletas/hilo_horno.cpp \
+		../ProyectoGalletas/hilo_maquinaensambladora.cpp \
 		../ProyectoGalletas/hilo_maquinamasa1.cpp \
-		../ProyectoGalletas/hilo_maquinamasa2.cpp \
 		../ProyectoGalletas/hilo_planificador.cpp \
 		../ProyectoGalletas/main.cpp \
 		../ProyectoGalletas/ventanaconfigurar.cpp \
@@ -608,8 +608,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /Users/sebastianbermudez/Qt/6.1.3/macos/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../../../../Escritorio/TEC/Cursos - Semestre 2/Estructuras de Datos/Semana 9/EjemploMutex/CrearPunteros.h ../ProyectoGalletas/Almacen.h ../ProyectoGalletas/Carrito.h ../ProyectoGalletas/ColaAlmacen.h ../ProyectoGalletas/ColaBandas.h ../ProyectoGalletas/Estructuras.h ../ProyectoGalletas/Horno.h ../ProyectoGalletas/ListaBandejas.h ../ProyectoGalletas/ListaPaquetes.h ../ProyectoGalletas/MaquinaEmpacadora.h ../ProyectoGalletas/MaquinaEnsambladora.h ../ProyectoGalletas/MaquinaMezclaMasaChocolate.h ../ProyectoGalletas/Nodo.h ../ProyectoGalletas/NodoBandas.h ../ProyectoGalletas/NodoBandeja.h ../ProyectoGalletas/NodoColaPeticiones.h ../ProyectoGalletas/Planificador.h ../ProyectoGalletas/Punteros.h ../ProyectoGalletas/Receta.h ../ProyectoGalletas/Supervisor.h ../ProyectoGalletas/Transportador.h ../ProyectoGalletas/Transportadores.h ../ProyectoGalletas/controlador.h ../ProyectoGalletas/hilo_carrito.h ../ProyectoGalletas/hilo_maquinaChocolate.h ../ProyectoGalletas/hilo_maquinamasa1.h ../ProyectoGalletas/hilo_maquinamasa2.h ../ProyectoGalletas/hilo_planificador.h ../ProyectoGalletas/ventanaconfigurar.h ../ProyectoGalletas/ventanaprincipal.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../ProyectoGalletas/Almacen.cpp ../ProyectoGalletas/Carrito.cpp ../ProyectoGalletas/ColaAlmacen.cpp ../ProyectoGalletas/ColaBandas.cpp ../ProyectoGalletas/Horno.cpp ../ProyectoGalletas/ListaBandejas.cpp ../ProyectoGalletas/ListaPaquetes.cpp ../ProyectoGalletas/MaquinaEmpacadora.cpp ../ProyectoGalletas/MaquinaEnsambladora.cpp ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp ../ProyectoGalletas/Planificador.cpp ../ProyectoGalletas/Receta.cpp ../ProyectoGalletas/Supervisores.cpp ../ProyectoGalletas/Transportador.cpp ../ProyectoGalletas/Transportadores.cpp ../ProyectoGalletas/controlador.cpp ../ProyectoGalletas/hilo_carrito.cpp ../ProyectoGalletas/hilo_maquinaChocolate.cpp ../ProyectoGalletas/hilo_maquinamasa1.cpp ../ProyectoGalletas/hilo_maquinamasa2.cpp ../ProyectoGalletas/hilo_planificador.cpp ../ProyectoGalletas/main.cpp ../ProyectoGalletas/ventanaconfigurar.cpp ../ProyectoGalletas/ventanaprincipal.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../../../../Escritorio/TEC/Cursos - Semestre 2/Estructuras de Datos/Semana 9/EjemploMutex/CrearPunteros.h ../ProyectoGalletas/Almacen.h ../ProyectoGalletas/Carrito.h ../ProyectoGalletas/ColaAlmacen.h ../ProyectoGalletas/ColaBandas.h ../ProyectoGalletas/Estructuras.h ../ProyectoGalletas/Horno.h ../ProyectoGalletas/ListaBandejas.h ../ProyectoGalletas/ListaPaquetes.h ../ProyectoGalletas/MaquinaEmpacadora.h ../ProyectoGalletas/MaquinaEnsambladora.h ../ProyectoGalletas/MaquinaMezclaMasaChocolate.h ../ProyectoGalletas/Nodo.h ../ProyectoGalletas/NodoBandas.h ../ProyectoGalletas/NodoBandeja.h ../ProyectoGalletas/NodoColaPeticiones.h ../ProyectoGalletas/Planificador.h ../ProyectoGalletas/Punteros.h ../ProyectoGalletas/Receta.h ../ProyectoGalletas/Supervisor.h ../ProyectoGalletas/Transportador.h ../ProyectoGalletas/Transportadores.h ../ProyectoGalletas/controlador.h ../ProyectoGalletas/hilo_carrito.h ../ProyectoGalletas/hilo_horno.h ../ProyectoGalletas/hilo_maquinaensambladora.h ../ProyectoGalletas/hilo_maquinamasa1.h ../ProyectoGalletas/hilo_planificador.h ../ProyectoGalletas/ventanaconfigurar.h ../ProyectoGalletas/ventanaprincipal.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../ProyectoGalletas/Almacen.cpp ../ProyectoGalletas/Carrito.cpp ../ProyectoGalletas/ColaAlmacen.cpp ../ProyectoGalletas/ColaBandas.cpp ../ProyectoGalletas/Horno.cpp ../ProyectoGalletas/ListaBandejas.cpp ../ProyectoGalletas/ListaPaquetes.cpp ../ProyectoGalletas/MaquinaEmpacadora.cpp ../ProyectoGalletas/MaquinaEnsambladora.cpp ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp ../ProyectoGalletas/Planificador.cpp ../ProyectoGalletas/Receta.cpp ../ProyectoGalletas/Supervisores.cpp ../ProyectoGalletas/Transportador.cpp ../ProyectoGalletas/Transportadores.cpp ../ProyectoGalletas/controlador.cpp ../ProyectoGalletas/hilo_carrito.cpp ../ProyectoGalletas/hilo_horno.cpp ../ProyectoGalletas/hilo_maquinaensambladora.cpp ../ProyectoGalletas/hilo_maquinamasa1.cpp ../ProyectoGalletas/hilo_planificador.cpp ../ProyectoGalletas/main.cpp ../ProyectoGalletas/ventanaconfigurar.cpp ../ProyectoGalletas/ventanaprincipal.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../ProyectoGalletas/ventanaconfigurar.ui ../ProyectoGalletas/ventanaprincipal.ui $(DISTDIR)/
 
 
@@ -873,9 +873,9 @@ moc_ventanaprincipal.cpp: ../ProyectoGalletas/ventanaprincipal.h \
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
 		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers/QMovie \
@@ -1127,9 +1127,9 @@ Almacen.o: ../ProyectoGalletas/Almacen.cpp ../ProyectoGalletas/Estructuras.h \
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Almacen.o ../ProyectoGalletas/Almacen.cpp
 
 Carrito.o: ../ProyectoGalletas/Carrito.cpp ../ProyectoGalletas/Estructuras.h \
@@ -1348,9 +1348,9 @@ Carrito.o: ../ProyectoGalletas/Carrito.cpp ../ProyectoGalletas/Estructuras.h \
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Carrito.o ../ProyectoGalletas/Carrito.cpp
 
 ColaAlmacen.o: ../ProyectoGalletas/ColaAlmacen.cpp ../ProyectoGalletas/Estructuras.h \
@@ -1569,9 +1569,9 @@ ColaAlmacen.o: ../ProyectoGalletas/ColaAlmacen.cpp ../ProyectoGalletas/Estructur
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ColaAlmacen.o ../ProyectoGalletas/ColaAlmacen.cpp
 
 ColaBandas.o: ../ProyectoGalletas/ColaBandas.cpp ../ProyectoGalletas/Estructuras.h \
@@ -1790,9 +1790,9 @@ ColaBandas.o: ../ProyectoGalletas/ColaBandas.cpp ../ProyectoGalletas/Estructuras
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ColaBandas.o ../ProyectoGalletas/ColaBandas.cpp
 
 Horno.o: ../ProyectoGalletas/Horno.cpp ../ProyectoGalletas/Estructuras.h \
@@ -2011,9 +2011,9 @@ Horno.o: ../ProyectoGalletas/Horno.cpp ../ProyectoGalletas/Estructuras.h \
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Horno.o ../ProyectoGalletas/Horno.cpp
 
 ListaBandejas.o: ../ProyectoGalletas/ListaBandejas.cpp ../ProyectoGalletas/Estructuras.h \
@@ -2232,9 +2232,9 @@ ListaBandejas.o: ../ProyectoGalletas/ListaBandejas.cpp ../ProyectoGalletas/Estru
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ListaBandejas.o ../ProyectoGalletas/ListaBandejas.cpp
 
 ListaPaquetes.o: ../ProyectoGalletas/ListaPaquetes.cpp ../ProyectoGalletas/Estructuras.h \
@@ -2453,9 +2453,9 @@ ListaPaquetes.o: ../ProyectoGalletas/ListaPaquetes.cpp ../ProyectoGalletas/Estru
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ListaPaquetes.o ../ProyectoGalletas/ListaPaquetes.cpp
 
 MaquinaEmpacadora.o: ../ProyectoGalletas/MaquinaEmpacadora.cpp ../ProyectoGalletas/Estructuras.h \
@@ -2674,9 +2674,9 @@ MaquinaEmpacadora.o: ../ProyectoGalletas/MaquinaEmpacadora.cpp ../ProyectoGallet
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MaquinaEmpacadora.o ../ProyectoGalletas/MaquinaEmpacadora.cpp
 
 MaquinaEnsambladora.o: ../ProyectoGalletas/MaquinaEnsambladora.cpp ../ProyectoGalletas/Estructuras.h \
@@ -2895,9 +2895,9 @@ MaquinaEnsambladora.o: ../ProyectoGalletas/MaquinaEnsambladora.cpp ../ProyectoGa
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MaquinaEnsambladora.o ../ProyectoGalletas/MaquinaEnsambladora.cpp
 
 MaquinaMezclaMasaChocolate.o: ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp ../ProyectoGalletas/Estructuras.h \
@@ -3116,9 +3116,9 @@ MaquinaMezclaMasaChocolate.o: ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MaquinaMezclaMasaChocolate.o ../ProyectoGalletas/MaquinaMezclaMasaChocolate.cpp
 
 Planificador.o: ../ProyectoGalletas/Planificador.cpp ../ProyectoGalletas/Estructuras.h \
@@ -3337,9 +3337,9 @@ Planificador.o: ../ProyectoGalletas/Planificador.cpp ../ProyectoGalletas/Estruct
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Planificador.o ../ProyectoGalletas/Planificador.cpp
 
 Receta.o: ../ProyectoGalletas/Receta.cpp ../ProyectoGalletas/Estructuras.h \
@@ -3558,9 +3558,9 @@ Receta.o: ../ProyectoGalletas/Receta.cpp ../ProyectoGalletas/Estructuras.h \
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Receta.o ../ProyectoGalletas/Receta.cpp
 
 Supervisores.o: ../ProyectoGalletas/Supervisores.cpp ../ProyectoGalletas/Estructuras.h \
@@ -3779,9 +3779,9 @@ Supervisores.o: ../ProyectoGalletas/Supervisores.cpp ../ProyectoGalletas/Estruct
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Supervisores.o ../ProyectoGalletas/Supervisores.cpp
 
 Transportador.o: ../ProyectoGalletas/Transportador.cpp ../ProyectoGalletas/Estructuras.h \
@@ -4000,9 +4000,9 @@ Transportador.o: ../ProyectoGalletas/Transportador.cpp ../ProyectoGalletas/Estru
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Transportador.o ../ProyectoGalletas/Transportador.cpp
 
 Transportadores.o: ../ProyectoGalletas/Transportadores.cpp ../ProyectoGalletas/Estructuras.h \
@@ -4221,9 +4221,9 @@ Transportadores.o: ../ProyectoGalletas/Transportadores.cpp ../ProyectoGalletas/E
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Transportadores.o ../ProyectoGalletas/Transportadores.cpp
 
 controlador.o: ../ProyectoGalletas/controlador.cpp ../ProyectoGalletas/controlador.h \
@@ -4443,9 +4443,9 @@ controlador.o: ../ProyectoGalletas/controlador.cpp ../ProyectoGalletas/controlad
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
 		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h \
 		../ProyectoGalletas/Punteros.h \
 		../ProyectoGalletas/VentanaModificar.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QDialog \
@@ -4675,11 +4675,11 @@ hilo_carrito.o: ../ProyectoGalletas/hilo_carrito.cpp ../ProyectoGalletas/hilo_ca
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o hilo_carrito.o ../ProyectoGalletas/hilo_carrito.cpp
 
-hilo_maquinaChocolate.o: ../ProyectoGalletas/hilo_maquinaChocolate.cpp ../ProyectoGalletas/hilo_maquinaChocolate.h \
+hilo_horno.o: ../ProyectoGalletas/hilo_horno.cpp ../ProyectoGalletas/hilo_horno.h \
 		../ProyectoGalletas/Estructuras.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/QtCore \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qglobal.h \
@@ -4896,9 +4896,230 @@ hilo_maquinaChocolate.o: ../ProyectoGalletas/hilo_maquinaChocolate.cpp ../Proyec
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_carrito.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o hilo_maquinaChocolate.o ../ProyectoGalletas/hilo_maquinaChocolate.cpp
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o hilo_horno.o ../ProyectoGalletas/hilo_horno.cpp
+
+hilo_maquinaensambladora.o: ../ProyectoGalletas/hilo_maquinaensambladora.cpp ../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/Estructuras.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/QtCore \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qglobal.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qabstractanimation.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qabstracteventdispatcher.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qabstractitemmodel.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qabstractnativeeventfilter.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qabstractproxymodel.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qalgorithms.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qanimationgroup.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qanystringview.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qarraydata.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qarraydataops.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qarraydatapointer.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qassociativeiterable.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qatomic.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbasictimer.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbitarray.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbuffer.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearray.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearrayalgorithms.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearraylist.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearraymatcher.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearrayview.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcache.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcalendar.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcborarray.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcborcommon.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcbormap.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcborstream.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcborstreamreader.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcborstreamwriter.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcborvalue.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qchar.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcollator.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcommandlineoption.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcommandlineparser.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcompare.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcompilerdetection.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qconcatenatetablesproxymodel.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcontainerfwd.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcontainerinfo.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcontiguouscache.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcoreapplication.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcoreevent.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcryptographichash.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qdatastream.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qdatetime.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qdeadlinetimer.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qdir.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qdiriterator.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qeasingcurve.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qelapsedtimer.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qendian.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qeventloop.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qexception.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfactoryinterface.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfile.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfiledevice.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfileinfo.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfileselector.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfilesystemwatcher.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qflags.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfuture.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfutureinterface.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfuturesynchronizer.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfuturewatcher.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qgenericatomic.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qglobalstatic.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qhash.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qhashfunctions.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qidentityproxymodel.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qiodevice.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qiodevicebase.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qitemselectionmodel.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qiterable.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qiterator.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjnienvironment.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjniobject.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjsonarray.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjsondocument.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjsonobject.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjsonvalue.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qlibrary.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qlibraryinfo.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qline.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qlist.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qlocale.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qlockfile.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qloggingcategory.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmap.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmargins.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmath.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmessageauthenticationcode.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmetacontainer.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmetaobject.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmetatype.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmimedata.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmimedatabase.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmimetype.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmutex.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qnamespace.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qnumeric.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qobject.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qobjectcleanuphandler.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qobjectdefs.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qoperatingsystemversion.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpair.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qparallelanimationgroup.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpauseanimation.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qplugin.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpluginloader.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpoint.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpointer.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qprocess.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qprocessordetection.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpromise.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qproperty.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpropertyanimation.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpropertyprivate.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qqueue.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qrandom.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qreadwritelock.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qrect.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qrefcount.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qregularexpression.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qresource.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qresultstore.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qrunnable.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsavefile.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qscopedpointer.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qscopedvaluerollback.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qscopeguard.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsemaphore.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsequentialanimationgroup.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsequentialiterable.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qset.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsettings.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qshareddata.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsharedmemory.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsharedpointer.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsignalmapper.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsimd.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsize.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsocketnotifier.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsortfilterproxymodel.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstack.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstandardpaths.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstorageinfo.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstring.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringalgorithms.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringbuilder.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringconverter.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringlist.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringlistmodel.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringliteral.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringmatcher.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringtokenizer.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringview.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsysinfo.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsystemdetection.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsystemsemaphore.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtaggedpointer.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtemporarydir.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtemporaryfile.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtextboundaryfinder.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtextstream.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qthread.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qthreadpool.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qthreadstorage.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtimeline.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtimer.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtimezone.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtmetamacros.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtranslator.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtransposeproxymodel.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtypeinfo.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qurl.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qurlquery.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qutf8stringview.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/quuid.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qvariant.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qvariantanimation.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qvarlengtharray.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qvector.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qversionnumber.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qversiontagging.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qwaitcondition.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qwineventnotifier.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qxmlstream.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtcoreversion.h \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/QDebug \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlabel.h \
+		../ProyectoGalletas/Almacen.h \
+		../ProyectoGalletas/Carrito.h \
+		../ProyectoGalletas/ColaAlmacen.h \
+		../ProyectoGalletas/ColaBandas.h \
+		../ProyectoGalletas/Horno.h \
+		../ProyectoGalletas/ListaBandejas.h \
+		../ProyectoGalletas/ListaPaquetes.h \
+		../ProyectoGalletas/MaquinaEmpacadora.h \
+		../ProyectoGalletas/MaquinaEnsambladora.h \
+		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
+		../ProyectoGalletas/Nodo.h \
+		../ProyectoGalletas/NodoBandas.h \
+		../ProyectoGalletas/NodoBandeja.h \
+		../ProyectoGalletas/NodoColaPeticiones.h \
+		../ProyectoGalletas/Planificador.h \
+		../ProyectoGalletas/Receta.h \
+		../ProyectoGalletas/Supervisor.h \
+		../ProyectoGalletas/Transportador.h \
+		../ProyectoGalletas/Transportadores.h \
+		../ProyectoGalletas/hilo_planificador.h \
+		../ProyectoGalletas/hilo_maquinamasa1.h \
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_horno.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o hilo_maquinaensambladora.o ../ProyectoGalletas/hilo_maquinaensambladora.cpp
 
 hilo_maquinamasa1.o: ../ProyectoGalletas/hilo_maquinamasa1.cpp ../ProyectoGalletas/hilo_maquinamasa1.h \
 		../ProyectoGalletas/Estructuras.h \
@@ -5116,231 +5337,10 @@ hilo_maquinamasa1.o: ../ProyectoGalletas/hilo_maquinamasa1.cpp ../ProyectoGallet
 		../ProyectoGalletas/Transportador.h \
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o hilo_maquinamasa1.o ../ProyectoGalletas/hilo_maquinamasa1.cpp
-
-hilo_maquinamasa2.o: ../ProyectoGalletas/hilo_maquinamasa2.cpp ../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/Estructuras.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/QtCore \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qglobal.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qabstractanimation.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qabstracteventdispatcher.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qabstractitemmodel.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qabstractnativeeventfilter.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qabstractproxymodel.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qalgorithms.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qanimationgroup.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qanystringview.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qarraydata.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qarraydataops.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qarraydatapointer.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qassociativeiterable.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qatomic.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbasictimer.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbitarray.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbuffer.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearray.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearrayalgorithms.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearraylist.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearraymatcher.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qbytearrayview.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcache.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcalendar.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcborarray.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcborcommon.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcbormap.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcborstream.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcborstreamreader.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcborstreamwriter.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcborvalue.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qchar.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcollator.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcommandlineoption.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcommandlineparser.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcompare.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcompilerdetection.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qconcatenatetablesproxymodel.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcontainerfwd.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcontainerinfo.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcontiguouscache.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcoreapplication.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcoreevent.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qcryptographichash.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qdatastream.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qdatetime.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qdeadlinetimer.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qdebug.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qdir.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qdiriterator.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qeasingcurve.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qelapsedtimer.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qendian.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qeventloop.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qexception.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfactoryinterface.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfile.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfiledevice.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfileinfo.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfileselector.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfilesystemwatcher.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qflags.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfuture.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfutureinterface.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfuturesynchronizer.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qfuturewatcher.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qgenericatomic.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qglobalstatic.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qhash.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qhashfunctions.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qidentityproxymodel.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qiodevice.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qiodevicebase.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qitemselectionmodel.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qiterable.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qiterator.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjnienvironment.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjniobject.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjsonarray.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjsondocument.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjsonobject.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qjsonvalue.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qlibrary.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qlibraryinfo.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qline.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qlist.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qlocale.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qlockfile.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qloggingcategory.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmap.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmargins.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmath.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmessageauthenticationcode.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmetacontainer.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmetaobject.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmetatype.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmimedata.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmimedatabase.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmimetype.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qmutex.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qnamespace.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qnumeric.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qobject.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qobjectcleanuphandler.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qobjectdefs.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qoperatingsystemversion.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpair.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qparallelanimationgroup.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpauseanimation.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qplugin.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpluginloader.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpoint.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpointer.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qprocess.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qprocessordetection.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpromise.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qproperty.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpropertyanimation.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qpropertyprivate.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qqueue.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qrandom.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qreadwritelock.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qrect.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qrefcount.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qregularexpression.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qresource.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qresultstore.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qrunnable.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsavefile.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qscopedpointer.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qscopedvaluerollback.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qscopeguard.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsemaphore.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsequentialanimationgroup.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsequentialiterable.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qset.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsettings.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qshareddata.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsharedmemory.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsharedpointer.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsignalmapper.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsimd.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsize.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsocketnotifier.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsortfilterproxymodel.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstack.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstandardpaths.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstorageinfo.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstring.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringalgorithms.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringbuilder.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringconverter.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringlist.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringlistmodel.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringliteral.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringmatcher.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringtokenizer.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qstringview.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsysinfo.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsystemdetection.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qsystemsemaphore.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtaggedpointer.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtemporarydir.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtemporaryfile.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtextboundaryfinder.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtextstream.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qthread.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qthreadpool.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qthreadstorage.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtimeline.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtimer.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtimezone.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtmetamacros.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtranslator.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtransposeproxymodel.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtypeinfo.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qurl.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qurlquery.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qutf8stringview.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/quuid.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qvariant.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qvariantanimation.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qvarlengtharray.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qvector.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qversionnumber.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qversiontagging.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qwaitcondition.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qwineventnotifier.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qxmlstream.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/qtcoreversion.h \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtCore.framework/Headers/QDebug \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QLabel \
-		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qlabel.h \
-		../ProyectoGalletas/Almacen.h \
-		../ProyectoGalletas/Carrito.h \
-		../ProyectoGalletas/ColaAlmacen.h \
-		../ProyectoGalletas/ColaBandas.h \
-		../ProyectoGalletas/Horno.h \
-		../ProyectoGalletas/ListaBandejas.h \
-		../ProyectoGalletas/ListaPaquetes.h \
-		../ProyectoGalletas/MaquinaEmpacadora.h \
-		../ProyectoGalletas/MaquinaEnsambladora.h \
-		../ProyectoGalletas/MaquinaMezclaMasaChocolate.h \
-		../ProyectoGalletas/Nodo.h \
-		../ProyectoGalletas/NodoBandas.h \
-		../ProyectoGalletas/NodoBandeja.h \
-		../ProyectoGalletas/NodoColaPeticiones.h \
-		../ProyectoGalletas/Planificador.h \
-		../ProyectoGalletas/Receta.h \
-		../ProyectoGalletas/Supervisor.h \
-		../ProyectoGalletas/Transportador.h \
-		../ProyectoGalletas/Transportadores.h \
-		../ProyectoGalletas/hilo_planificador.h \
-		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o hilo_maquinamasa2.o ../ProyectoGalletas/hilo_maquinamasa2.cpp
 
 hilo_planificador.o: ../ProyectoGalletas/hilo_planificador.cpp ../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/Estructuras.h \
@@ -5558,9 +5558,9 @@ hilo_planificador.o: ../ProyectoGalletas/hilo_planificador.cpp ../ProyectoGallet
 		../ProyectoGalletas/Transportador.h \
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
-		../ProyectoGalletas/hilo_carrito.h
+		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o hilo_planificador.o ../ProyectoGalletas/hilo_planificador.cpp
 
 main.o: ../ProyectoGalletas/main.cpp ../ProyectoGalletas/ventanaprincipal.h \
@@ -5781,9 +5781,9 @@ main.o: ../ProyectoGalletas/main.cpp ../ProyectoGalletas/ventanaprincipal.h \
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
 		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers/QMovie \
@@ -6018,9 +6018,9 @@ ventanaprincipal.o: ../ProyectoGalletas/ventanaprincipal.cpp ../ProyectoGalletas
 		../ProyectoGalletas/Transportadores.h \
 		../ProyectoGalletas/hilo_planificador.h \
 		../ProyectoGalletas/hilo_maquinamasa1.h \
-		../ProyectoGalletas/hilo_maquinamasa2.h \
-		../ProyectoGalletas/hilo_maquinaChocolate.h \
 		../ProyectoGalletas/hilo_carrito.h \
+		../ProyectoGalletas/hilo_maquinaensambladora.h \
+		../ProyectoGalletas/hilo_horno.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		/Users/sebastianbermudez/Qt/6.1.3/macos/lib/QtGui.framework/Headers/QMovie \

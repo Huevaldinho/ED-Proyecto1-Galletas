@@ -3,8 +3,9 @@
 #include "Estructuras.h"
 #include <QDebug>
 struct NodoBandeja{
-    int horneadas;//cuantas galletas ha horneado
-    int actual;//son las galletas en espera, o sea, las que se estan horneando en ese momento
+    double horneadas;//cuantas galletas ha horneado
+    double actual;//son las galletas en espera, o sea, las que se estan horneando en ese momento
+    int capacidadGalletas;
     bool estado;
     NodoBandeja * siguienteBandeja;
     NodoBandeja * anteriorBandeja;
@@ -13,12 +14,13 @@ struct NodoBandeja{
     NodoBandeja(){
         horneadas = 0;
         actual = 0;
+        capacidadGalletas=8;
         estado=true;
         siguienteBandeja = NULL;
         anteriorBandeja=NULL;
     }
 
-    NodoBandeja(int galletas){
+    NodoBandeja(double galletas){
         estado=true;
         actual += galletas;
         horneadas += galletas;

@@ -1,7 +1,7 @@
 #include "Estructuras.h"
 
 Horno::Horno(){
-    this->bandejasFuncionando=0;
+    this->bandejasFuncionando=this->bandejas->contarBandejas();
     this->maximoBandejas=6;
     this->colaEntrada=NULL;
     this->colaSalida=NULL;
@@ -13,4 +13,6 @@ void Horno::setPunteros(ListaBandejas * _bandejas, ColaBandas * colaIN, ColaBand
     this->colaSalida=ColaOUT;
 
 }
-void Horno::HornearGalletas(){}
+void Horno::capacidadTotalGalletas(){
+    this->bandejas->totalCapacidad();
+}

@@ -205,7 +205,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>8</pointsize>
+      <pointsize>13</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -597,9 +597,9 @@
    <widget class="QLabel" name="lbl_MaquinaEnsambladora">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>60</y>
-      <width>181</width>
+      <x>550</x>
+      <y>100</y>
+      <width>121</width>
       <height>16</height>
      </rect>
     </property>
@@ -617,8 +617,8 @@
    <widget class="QLabel" name="lbl_TextEnsambladoraProducida">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>90</y>
+      <x>540</x>
+      <y>130</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -636,8 +636,8 @@
    <widget class="QLabel" name="lbl_EnsambladoraProducida">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>90</y>
+      <x>630</x>
+      <y>130</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -649,8 +649,8 @@
    <widget class="QLabel" name="lbl_TextBandaTransportadora">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>70</y>
+      <x>710</x>
+      <y>110</y>
       <width>161</width>
       <height>16</height>
      </rect>
@@ -668,8 +668,8 @@
    <widget class="QLabel" name="lbl_TextBandaTEnsambladoraActual">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>90</y>
+      <x>710</x>
+      <y>130</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -687,8 +687,8 @@
    <widget class="QLabel" name="lbl_TextBandaTEnsambladoraMax">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>110</y>
+      <x>710</x>
+      <y>150</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -706,8 +706,8 @@
    <widget class="QLabel" name="lbl_BandaTEnsambladoraActual">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>90</y>
+      <x>770</x>
+      <y>130</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -719,9 +719,143 @@
    <widget class="QLabel" name="lbl_BandaTEnsambladoraMax">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>110</y>
+      <x>770</x>
+      <y>150</y>
       <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_Horno">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>170</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Horno</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_TextActualHorno">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>190</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Actual:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_TexthorneadasHorno">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>210</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Horneadas:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_actualHorno">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>190</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_horneadasHorno">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>210</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_Supervisores">
+    <property name="geometry">
+     <rect>
+      <x>1000</x>
+      <y>130</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Supervisores</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_TextActualSupervisores">
+    <property name="geometry">
+     <rect>
+      <x>1000</x>
+      <y>150</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Actual:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_actualSupervisores">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>150</y>
+      <width>60</width>
       <height>16</height>
      </rect>
     </property>
@@ -736,7 +870,7 @@
      <x>0</x>
      <y>0</y>
      <width>1187</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
