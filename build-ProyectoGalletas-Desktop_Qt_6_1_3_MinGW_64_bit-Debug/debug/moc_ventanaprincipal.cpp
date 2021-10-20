@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../ProyectoGalletas/ventanaprincipal.h"
+#include "../../../../../../Escritorio/ProyectoGalletas/ventanaprincipal.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
