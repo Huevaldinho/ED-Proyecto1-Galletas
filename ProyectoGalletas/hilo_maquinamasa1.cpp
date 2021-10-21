@@ -13,14 +13,21 @@ void hilo_maquinaMasa1::__init__(MaquinaMezclaMasaChocolate * maquina,QLabel * l
     this->lbl_BandaTProcesada=lbl_ColaMax;
 }
 void hilo_maquinaMasa1::run(){
+    this->corriendo=true;
     qDebug()<<"Entra hilo "<<this->maquinaMasa1->id;
     qDebug()<<"Procesada "<<this->maquinaMasa1->id<<": "<<this->maquinaMasa1->cantidadProcesada;
     qDebug()<<"A procesar por "<<this->maquinaMasa1->id<<": "<<this->maquinaMasa1->cantidadAProcesar;
     sleep(2);
     bool yaEncole=false;
     qDebug()<<"A PEDIR MAQUINA "<<this->maquinaMasa1->id<<": "<<this->maquinaMasa1->maximaCapacidad-this->maquinaMasa1->capacidadActual;
-    while(true){
+    while(this->corriendo){
         while(this->maquinaMasa1->cantidadProcesada<this->maquinaMasa1->cantidadAProcesar){
+            while (this->pausa){
+                qDebug()<<"Pausa manual de maquina: "<<this->maquinaMasa1->id;
+                if (this->corriendo==false)
+                    break;
+                sleep(3);
+            }
             //Se pone en pausa
             this->lbl_BandaTProcesada->setText(QString::number(this->maquinaMasa1->cola->maximaCapacidad));//Set cantidad actual de banda GUI
             while ((this->maquinaMasa1->cola->actual >= this->maquinaMasa1->cola->maximaCapacidad) || (this->maquinaMasa1->capacidadActual<this->maquinaMasa1->minimaCapacidad)){
@@ -67,12 +74,16 @@ void hilo_maquinaMasa1::run(){
             }
             this->lbl_BandaTActual->setText(QString::number(this->maquinaMasa1->cola->actual));//Set cantidad actual de banda GUI
             this->lbl_totalProduccion->setText(QString::number(this->maquinaMasa1->cantidadProcesada));//Set cantidad procesada GUI
+            if (this->corriendo==false){
+                break;
+            }
       }
         this->lbl_BandaTActual->setText(QString::number(this->maquinaMasa1->cola->actual));//Set cantidad actual de banda GUI
         sleep(5);
         qDebug()<<"FUERA HILO MAQUINAS MASA CHOCO, ID: "<<this->maquinaMasa1->id;
         this->maquinaMasa1->cola->imprimir();
     }
+    qDebug()<<"DETENER HILO MAQUINAL: "<<this->maquinaMasa1->id;
 }
 void hilo_maquinaMasa1::pause(){
     this->pausa=true;

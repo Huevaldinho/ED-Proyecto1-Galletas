@@ -18,11 +18,14 @@ void hilo_planificador::__init__(Planificador * plani,QLabel*eti,QLabel*lbl_cant
 void hilo_planificador::run(){
     //Aqui se programa toda la mica
     qDebug()<<"Entra al run hilo planificador";
-    while (true){
+    this->corriendo=true;
+    while (this->corriendo){
         qDebug()<<"Corre hilo planificador";
          while(planificador->listaPaquetes->primerNodo==NULL){
              qDebug()<<"Duerme hilo planificador";
              sleep(1);
+             if (this->corriendo==false)
+                 break;
          }
          this->planificador->calcularCantidadGalletasSolicitadas();//Calcula cuantas galletas y masa/chocolate tiene que hacer
          this->planificador->maquinaMasa1->cantidadAProcesar=this->planificador->cantidadNecesariaMasa/2;//Lo reparte a las maquinas
@@ -35,7 +38,17 @@ void hilo_planificador::run(){
          this->lbl_choco->setText(QString::number(this->planificador->cantidadNecesariaChocolate));
 
          sleep(3);//1
+         if (this->corriendo==false){
+             break;
+         }
+         while (pausa){
+             qDebug()<<"Pausa manual de planificador";
+             if (this->corriendo==false)
+                 break;
+             sleep(3);
+         }
     }
+    qDebug()<<"DETENER HILO PLANIFICADOR";
 }
 void hilo_planificador::stop(){
     this->corriendo = false;

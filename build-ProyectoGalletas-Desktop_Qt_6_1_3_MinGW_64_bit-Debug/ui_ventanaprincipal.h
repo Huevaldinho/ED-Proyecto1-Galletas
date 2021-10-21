@@ -11,10 +11,12 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -75,6 +77,19 @@ public:
     QLabel *lbl_Supervisores;
     QLabel *lbl_TextActualSupervisores;
     QLabel *lbl_actualSupervisores;
+    QGroupBox *grupoEstadoMaquina1;
+    QRadioButton *radioButtonEncenderMaquina1;
+    QRadioButton *radioButtonApagarMaquina1;
+    QPushButton *btnCambiarEstadoMaquina1;
+    QGroupBox *grupoEstadoMaquina2;
+    QRadioButton *radioButtonEncenderMaquina2;
+    QRadioButton *radioButtonApagarMaquina2;
+    QPushButton *btnCambiarEstadoMaquina2;
+    QGroupBox *grupoEstadoMaquina3;
+    QRadioButton *radioButtonEncenderMaquina3;
+    QRadioButton *radioButtonApagarMaquina3;
+    QPushButton *btnCambiarEstadoMaquina3;
+    QPushButton *btnReanudar;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -124,24 +139,21 @@ public:
         lbl_TextPlani->setFont(font2);
         lbl_TextMaquinaMasa1 = new QLabel(centralwidget);
         lbl_TextMaquinaMasa1->setObjectName(QString::fromUtf8("lbl_TextMaquinaMasa1"));
-        lbl_TextMaquinaMasa1->setGeometry(QRect(140, 10, 141, 21));
+        lbl_TextMaquinaMasa1->setGeometry(QRect(110, 0, 141, 21));
         QFont font3;
         font3.setPointSize(9);
         font3.setBold(true);
         lbl_TextMaquinaMasa1->setFont(font3);
         lbl_MaquinaMasa1EnProceso = new QLabel(centralwidget);
         lbl_MaquinaMasa1EnProceso->setObjectName(QString::fromUtf8("lbl_MaquinaMasa1EnProceso"));
-        lbl_MaquinaMasa1EnProceso->setGeometry(QRect(160, 50, 55, 16));
+        lbl_MaquinaMasa1EnProceso->setGeometry(QRect(140, 50, 55, 16));
         lbl_MaquinaMasa1Procesada = new QLabel(centralwidget);
         lbl_MaquinaMasa1Procesada->setObjectName(QString::fromUtf8("lbl_MaquinaMasa1Procesada"));
-        lbl_MaquinaMasa1Procesada->setGeometry(QRect(160, 70, 55, 16));
+        lbl_MaquinaMasa1Procesada->setGeometry(QRect(140, 70, 55, 16));
         lbl_TextMaquina1Actual = new QLabel(centralwidget);
         lbl_TextMaquina1Actual->setObjectName(QString::fromUtf8("lbl_TextMaquina1Actual"));
         lbl_TextMaquina1Actual->setGeometry(QRect(60, 40, 91, 21));
-        QFont font4;
-        font4.setPointSize(13);
-        font4.setBold(true);
-        lbl_TextMaquina1Actual->setFont(font4);
+        lbl_TextMaquina1Actual->setFont(font1);
         lbl_TextMaquina1Procesada = new QLabel(centralwidget);
         lbl_TextMaquina1Procesada->setObjectName(QString::fromUtf8("lbl_TextMaquina1Procesada"));
         lbl_TextMaquina1Procesada->setGeometry(QRect(60, 70, 71, 21));
@@ -151,43 +163,43 @@ public:
         btnPausa->setGeometry(QRect(410, 530, 171, 71));
         btnDetener = new QPushButton(centralwidget);
         btnDetener->setObjectName(QString::fromUtf8("btnDetener"));
-        btnDetener->setGeometry(QRect(600, 530, 221, 71));
+        btnDetener->setGeometry(QRect(780, 530, 221, 71));
         lbl_TextMaquinaMasa2 = new QLabel(centralwidget);
         lbl_TextMaquinaMasa2->setObjectName(QString::fromUtf8("lbl_TextMaquinaMasa2"));
-        lbl_TextMaquinaMasa2->setGeometry(QRect(140, 110, 121, 21));
+        lbl_TextMaquinaMasa2->setGeometry(QRect(130, 120, 121, 21));
         lbl_TextMaquinaMasa2->setFont(font3);
         lbl_TextMaquina2Actual = new QLabel(centralwidget);
         lbl_TextMaquina2Actual->setObjectName(QString::fromUtf8("lbl_TextMaquina2Actual"));
-        lbl_TextMaquina2Actual->setGeometry(QRect(60, 140, 55, 16));
+        lbl_TextMaquina2Actual->setGeometry(QRect(50, 150, 55, 16));
         lbl_TextMaquina2Actual->setFont(font);
         lbl_TextMaquina2Procesada = new QLabel(centralwidget);
         lbl_TextMaquina2Procesada->setObjectName(QString::fromUtf8("lbl_TextMaquina2Procesada"));
-        lbl_TextMaquina2Procesada->setGeometry(QRect(60, 170, 71, 16));
+        lbl_TextMaquina2Procesada->setGeometry(QRect(50, 180, 71, 16));
         lbl_TextMaquina2Procesada->setFont(font);
         lbl_MaquinaMasa2EnProceso = new QLabel(centralwidget);
         lbl_MaquinaMasa2EnProceso->setObjectName(QString::fromUtf8("lbl_MaquinaMasa2EnProceso"));
-        lbl_MaquinaMasa2EnProceso->setGeometry(QRect(160, 140, 55, 16));
+        lbl_MaquinaMasa2EnProceso->setGeometry(QRect(130, 150, 55, 16));
         lbl_MaquinaMasa2Procesada = new QLabel(centralwidget);
         lbl_MaquinaMasa2Procesada->setObjectName(QString::fromUtf8("lbl_MaquinaMasa2Procesada"));
-        lbl_MaquinaMasa2Procesada->setGeometry(QRect(160, 170, 55, 16));
+        lbl_MaquinaMasa2Procesada->setGeometry(QRect(130, 180, 55, 16));
         lbl_TextMaquinaChoco = new QLabel(centralwidget);
         lbl_TextMaquinaChoco->setObjectName(QString::fromUtf8("lbl_TextMaquinaChoco"));
-        lbl_TextMaquinaChoco->setGeometry(QRect(140, 200, 151, 16));
+        lbl_TextMaquinaChoco->setGeometry(QRect(130, 240, 151, 16));
         lbl_TextMaquinaChoco->setFont(font3);
         lbl_TextMaquinaChocoActual = new QLabel(centralwidget);
         lbl_TextMaquinaChocoActual->setObjectName(QString::fromUtf8("lbl_TextMaquinaChocoActual"));
-        lbl_TextMaquinaChocoActual->setGeometry(QRect(60, 250, 55, 16));
+        lbl_TextMaquinaChocoActual->setGeometry(QRect(60, 280, 55, 16));
         lbl_TextMaquinaChocoActual->setFont(font);
         lbl_TextMaquinaChocoProcesada = new QLabel(centralwidget);
         lbl_TextMaquinaChocoProcesada->setObjectName(QString::fromUtf8("lbl_TextMaquinaChocoProcesada"));
-        lbl_TextMaquinaChocoProcesada->setGeometry(QRect(60, 280, 71, 16));
+        lbl_TextMaquinaChocoProcesada->setGeometry(QRect(60, 310, 71, 16));
         lbl_TextMaquinaChocoProcesada->setFont(font);
         lbl_MaquinaChocoProcesada = new QLabel(centralwidget);
         lbl_MaquinaChocoProcesada->setObjectName(QString::fromUtf8("lbl_MaquinaChocoProcesada"));
-        lbl_MaquinaChocoProcesada->setGeometry(QRect(160, 280, 55, 16));
+        lbl_MaquinaChocoProcesada->setGeometry(QRect(140, 310, 55, 16));
         lbl_MaquinaChocoEnProceso = new QLabel(centralwidget);
         lbl_MaquinaChocoEnProceso->setObjectName(QString::fromUtf8("lbl_MaquinaChocoEnProceso"));
-        lbl_MaquinaChocoEnProceso->setGeometry(QRect(160, 250, 55, 16));
+        lbl_MaquinaChocoEnProceso->setGeometry(QRect(140, 280, 55, 16));
         lbl_TextBandaTMasaActual = new QLabel(centralwidget);
         lbl_TextBandaTMasaActual->setObjectName(QString::fromUtf8("lbl_TextBandaTMasaActual"));
         lbl_TextBandaTMasaActual->setGeometry(QRect(360, 70, 55, 16));
@@ -226,7 +238,7 @@ public:
         lbl_TextBandaChoco->setFont(font);
         lbl_MaquinaEnsambladora = new QLabel(centralwidget);
         lbl_MaquinaEnsambladora->setObjectName(QString::fromUtf8("lbl_MaquinaEnsambladora"));
-        lbl_MaquinaEnsambladora->setGeometry(QRect(530, 100, 171, 16));
+        lbl_MaquinaEnsambladora->setGeometry(QRect(550, 100, 121, 16));
         lbl_MaquinaEnsambladora->setFont(font3);
         lbl_TextEnsambladoraProducida = new QLabel(centralwidget);
         lbl_TextEnsambladoraProducida->setObjectName(QString::fromUtf8("lbl_TextEnsambladoraProducida"));
@@ -282,6 +294,45 @@ public:
         lbl_actualSupervisores = new QLabel(centralwidget);
         lbl_actualSupervisores->setObjectName(QString::fromUtf8("lbl_actualSupervisores"));
         lbl_actualSupervisores->setGeometry(QRect(1050, 150, 60, 16));
+        grupoEstadoMaquina1 = new QGroupBox(centralwidget);
+        grupoEstadoMaquina1->setObjectName(QString::fromUtf8("grupoEstadoMaquina1"));
+        grupoEstadoMaquina1->setGeometry(QRect(180, 20, 111, 91));
+        radioButtonEncenderMaquina1 = new QRadioButton(grupoEstadoMaquina1);
+        radioButtonEncenderMaquina1->setObjectName(QString::fromUtf8("radioButtonEncenderMaquina1"));
+        radioButtonEncenderMaquina1->setGeometry(QRect(10, 20, 97, 22));
+        radioButtonApagarMaquina1 = new QRadioButton(grupoEstadoMaquina1);
+        radioButtonApagarMaquina1->setObjectName(QString::fromUtf8("radioButtonApagarMaquina1"));
+        radioButtonApagarMaquina1->setGeometry(QRect(10, 40, 97, 22));
+        btnCambiarEstadoMaquina1 = new QPushButton(grupoEstadoMaquina1);
+        btnCambiarEstadoMaquina1->setObjectName(QString::fromUtf8("btnCambiarEstadoMaquina1"));
+        btnCambiarEstadoMaquina1->setGeometry(QRect(20, 60, 80, 25));
+        grupoEstadoMaquina2 = new QGroupBox(centralwidget);
+        grupoEstadoMaquina2->setObjectName(QString::fromUtf8("grupoEstadoMaquina2"));
+        grupoEstadoMaquina2->setGeometry(QRect(180, 140, 111, 91));
+        radioButtonEncenderMaquina2 = new QRadioButton(grupoEstadoMaquina2);
+        radioButtonEncenderMaquina2->setObjectName(QString::fromUtf8("radioButtonEncenderMaquina2"));
+        radioButtonEncenderMaquina2->setGeometry(QRect(10, 20, 97, 22));
+        radioButtonApagarMaquina2 = new QRadioButton(grupoEstadoMaquina2);
+        radioButtonApagarMaquina2->setObjectName(QString::fromUtf8("radioButtonApagarMaquina2"));
+        radioButtonApagarMaquina2->setGeometry(QRect(10, 40, 97, 22));
+        btnCambiarEstadoMaquina2 = new QPushButton(grupoEstadoMaquina2);
+        btnCambiarEstadoMaquina2->setObjectName(QString::fromUtf8("btnCambiarEstadoMaquina2"));
+        btnCambiarEstadoMaquina2->setGeometry(QRect(20, 60, 80, 25));
+        grupoEstadoMaquina3 = new QGroupBox(centralwidget);
+        grupoEstadoMaquina3->setObjectName(QString::fromUtf8("grupoEstadoMaquina3"));
+        grupoEstadoMaquina3->setGeometry(QRect(180, 260, 121, 91));
+        radioButtonEncenderMaquina3 = new QRadioButton(grupoEstadoMaquina3);
+        radioButtonEncenderMaquina3->setObjectName(QString::fromUtf8("radioButtonEncenderMaquina3"));
+        radioButtonEncenderMaquina3->setGeometry(QRect(10, 20, 97, 22));
+        radioButtonApagarMaquina3 = new QRadioButton(grupoEstadoMaquina3);
+        radioButtonApagarMaquina3->setObjectName(QString::fromUtf8("radioButtonApagarMaquina3"));
+        radioButtonApagarMaquina3->setGeometry(QRect(10, 40, 97, 22));
+        btnCambiarEstadoMaquina3 = new QPushButton(grupoEstadoMaquina3);
+        btnCambiarEstadoMaquina3->setObjectName(QString::fromUtf8("btnCambiarEstadoMaquina3"));
+        btnCambiarEstadoMaquina3->setGeometry(QRect(20, 60, 80, 25));
+        btnReanudar = new QPushButton(centralwidget);
+        btnReanudar->setObjectName(QString::fromUtf8("btnReanudar"));
+        btnReanudar->setGeometry(QRect(590, 530, 171, 71));
         VentanaPrincipal->setCentralWidget(centralwidget);
         menubar = new QMenuBar(VentanaPrincipal);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -353,6 +404,19 @@ public:
         lbl_Supervisores->setText(QCoreApplication::translate("VentanaPrincipal", "Supervisores", nullptr));
         lbl_TextActualSupervisores->setText(QCoreApplication::translate("VentanaPrincipal", "Actual:", nullptr));
         lbl_actualSupervisores->setText(QCoreApplication::translate("VentanaPrincipal", "0", nullptr));
+        grupoEstadoMaquina1->setTitle(QCoreApplication::translate("VentanaPrincipal", "Estado", nullptr));
+        radioButtonEncenderMaquina1->setText(QCoreApplication::translate("VentanaPrincipal", "Encender", nullptr));
+        radioButtonApagarMaquina1->setText(QCoreApplication::translate("VentanaPrincipal", "Apagar", nullptr));
+        btnCambiarEstadoMaquina1->setText(QCoreApplication::translate("VentanaPrincipal", "Aceptar", nullptr));
+        grupoEstadoMaquina2->setTitle(QCoreApplication::translate("VentanaPrincipal", "Estado", nullptr));
+        radioButtonEncenderMaquina2->setText(QCoreApplication::translate("VentanaPrincipal", "Encender", nullptr));
+        radioButtonApagarMaquina2->setText(QCoreApplication::translate("VentanaPrincipal", "Apagar", nullptr));
+        btnCambiarEstadoMaquina2->setText(QCoreApplication::translate("VentanaPrincipal", "Aceptar", nullptr));
+        grupoEstadoMaquina3->setTitle(QCoreApplication::translate("VentanaPrincipal", "Estado", nullptr));
+        radioButtonEncenderMaquina3->setText(QCoreApplication::translate("VentanaPrincipal", "Encender", nullptr));
+        radioButtonApagarMaquina3->setText(QCoreApplication::translate("VentanaPrincipal", "Apagar", nullptr));
+        btnCambiarEstadoMaquina3->setText(QCoreApplication::translate("VentanaPrincipal", "Aceptar", nullptr));
+        btnReanudar->setText(QCoreApplication::translate("VentanaPrincipal", "Reanudar", nullptr));
     } // retranslateUi
 
 };

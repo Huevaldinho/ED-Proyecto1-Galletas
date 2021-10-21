@@ -9,8 +9,10 @@ void hilo_carrito::__init__(Carrito * _carrito){
     this->carrito=_carrito;
 }
 void hilo_carrito::run(){
+    this->corriendo=true;
     sleep(6);//this->carrito->cola->frente!=NULL
-    while (true){//se sale porque borramos el frente y por eso la maquina no avanza
+    //estaba como while true
+    while (this->corriendo){//se sale porque borramos el frente y por eso la maquina no avanza
         if(this->carrito->cola->frente==NULL){
             sleep(2);
             continue;
@@ -45,6 +47,7 @@ void hilo_carrito::run(){
         }
         sleep(this->carrito->duracion);
     }
+    qDebug()<<"DETENER HILO CARRITO";
 }
 void hilo_carrito::stop(){
     this->corriendo=false;

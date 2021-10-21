@@ -35,7 +35,15 @@ class VentanaPrincipal : public QMainWindow{Q_OBJECT
 
                 void on_btnDetener_clicked();
 
-        private:
+                                                        void on_btnCambiarEstadoMaquina1_clicked();
+
+                                                                                                void on_btnCambiarEstadoMaquina2_clicked();
+
+                                                                                                                                        void on_btnCambiarEstadoMaquina3_clicked();
+
+                                                                                                                                                                                void on_btnReanudar_clicked();
+
+                                        private:
         Ui::VentanaPrincipal *ui;
 
 };

@@ -13,7 +13,8 @@ void hilo_Horno::__init__(Horno * _horno, QLabel * lblBandaActual, QLabel * lblB
 
 }
 void hilo_Horno::run(){
-    while (true){
+    this->corriendo=true;
+    while (this->corriendo){//estaba como while true
         this->horno->capacidadTotalGalletas();
         //qDebug()<<"\n\n\nLA CANTIDAD DE BANDEJAS ES DE: "<<this->horno->bandejasFuncionando;
         while (this->horno->bandejas->totalCapacidadGalletas>this->horno->bandejas->galletasActuales){
@@ -43,11 +44,13 @@ void hilo_Horno::run(){
                 moment->actual=0;
                 this->lbl_BandejasActivas->setText(QString::number(totalGalletas));
                 moment=moment->siguienteBandeja;
+            }//Este if no estaba es para probar
+            if (this->corriendo==false){
+                break;
             }
-
         }
     }
-
+    qDebug()<<"DETENER HILO HORNO";
 
 }
 void hilo_Horno::pause(){
