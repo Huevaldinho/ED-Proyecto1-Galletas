@@ -22,6 +22,7 @@ void hilo_MaquinaEnsambladora::run(){
             //Desencolar y aumentar galletas
             while (pausa){
                 qDebug()<<"Pausa manual ensambladora";
+                this->lbl_BandaTActual->setText(QString::number(this->maquinaEnsambladora->colaSalida->actual));
                 if (this->corriendo==false)
                     break;
                 sleep(3);
@@ -40,6 +41,7 @@ void hilo_MaquinaEnsambladora::run(){
                 this->maquinaEnsambladora->colaEntradaMasa->desencolar();
                 this->maquinaEnsambladora->colaEntradaChocolate->desencolar();
                 this->maquinaEnsambladora->galletasHechas++;
+                this->lbl_BandaTActual->setText(QString::number(this->maquinaEnsambladora->colaSalida->actual));
                 if (this->maquinaEnsambladora->galletasAProcesar==this->maquinaEnsambladora->galletasHechas)
                     break;
             }
@@ -61,8 +63,7 @@ void hilo_MaquinaEnsambladora::run(){
                 break;
             }
         }
-        qDebug()<<"Termina ciclo hilo ensambladora";
-        this->maquinaEnsambladora->colaSalida->imprimir();//16 galletas ak15+1
+        this->lbl_BandaTActual->setText(QString::number(this->maquinaEnsambladora->colaSalida->actual));
         sleep(5);
     }
 

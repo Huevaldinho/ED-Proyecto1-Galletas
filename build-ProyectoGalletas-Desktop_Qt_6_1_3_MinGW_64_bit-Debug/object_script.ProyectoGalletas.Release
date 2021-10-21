@@ -19,6 +19,7 @@ release/hilo_horno.o
 release/hilo_maquinaensambladora.o
 release/hilo_maquinamasa1.o
 release/hilo_planificador.o
+release/hilo_supervisores.o
 release/main.o
 release/ventanaconfigurar.o
 release/ventanaprincipal.o

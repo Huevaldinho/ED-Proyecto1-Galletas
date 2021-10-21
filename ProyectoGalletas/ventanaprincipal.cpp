@@ -1,7 +1,5 @@
 #include "ventanaprincipal.h"
 #include "ui_ventanaprincipal.h"
-
-
 VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new Ui::VentanaPrincipal){
     ui->setupUi(this);
     this->punteros=new Punteros();
@@ -14,10 +12,14 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
     this->hiloMaquinaEnsambladora=NULL;
     this->hiloCarrito =NULL;
     this->hiloHorno=NULL;
+    this->hiloSupervisores=NULL;
 
     this->punteros->paquetes->insertar(4,"Paquetito",4);
-    this->punteros->paquetes->insertar(16,"Tubos",10);
-    this->punteros->paquetes->insertar(10,"Paquetes",5);
+    this->punteros->supervisor1->probabilidadDesecho=80;
+    this->punteros->supervisor2->probabilidadDesecho=95;
+
+    //this->punteros->paquetes->insertar(16,"Tubos",3);
+    //this->punteros->paquetes->insertar(10,"Paquetes",5);
 
 
 
@@ -28,7 +30,6 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
 //    movie->start();
 
 }
-
 VentanaPrincipal::~VentanaPrincipal(){
     delete ui;
 }
@@ -47,8 +48,8 @@ void VentanaPrincipal::on_btnIniciar_clicked(){
         this->hiloMaquinaChoco = new hilo_maquinaMasa1();
         this->hiloCarrito = new hilo_carrito();
         this->hiloMaquinaEnsambladora=new hilo_MaquinaEnsambladora();
-        //this->hiloHorno=new hilo_Horno();
-
+        this->hiloHorno=new hilo_Horno();
+        this->hiloSupervisores=new hilo_Supervisores();
 
         this->hiloPlanificador->__init__(this->punteros->planificador,this->ui->lblCantidadGalletas,this->ui->lblMasa,this->ui->lblChoco);
         this->hiloMaquinaMasa1->__init__(this->punteros->maquinaMasa1,this->ui->lbl_MaquinaMasa1Procesada,this->ui->lbl_MaquinaMasa1EnProceso,this->ui->lbl_BandaTMasaActual,this->ui->lbl_BantaTMasaMax);
@@ -56,7 +57,9 @@ void VentanaPrincipal::on_btnIniciar_clicked(){
         this->hiloMaquinaChoco->__init__(this->punteros->maquinaChocolate,this->ui->lbl_MaquinaChocoProcesada,this->ui->lbl_MaquinaChocoEnProceso,this->ui->lbl_BandaTChocoActual,this->ui->lbl_BandaTChocoMax);
         this->hiloCarrito->__init__(this->punteros->carrito);
         this->hiloMaquinaEnsambladora->__init__(this->punteros->maquinaEnsambladora,this->ui->lbl_EnsambladoraProducida,this->ui->lbl_BandaTEnsambladoraActual,this->ui->lbl_BandaTEnsambladoraMax);
-        //this->hiloHorno->__init__(this->punteros->horno,this->ui->lbl_actualHorno,this->ui->lbl_horneadasHorno,this->ui->lbl_actualSupervisores);//orden label actualGalletas, horneadasGalletas, colaSiguienteActual
+        this->hiloHorno->__init__(this->punteros->horno,this->ui->lbl_actualHorno,this->ui->lbl_horneadasHorno,this->ui->lbl_actualSupervisores);//orden label actualGalletas, horneadasGalletas, colaSiguienteActual
+        this->hiloSupervisores->__init__(this->punteros->supervisor1,this->punteros->supervisor2,this->ui->lbl_SupervisoresAceptadas,this->ui->lbl_SupervisoresRechazadas);//lblAceptadas,QLabel* lblRechazadas
+
 
         this->hiloPlanificador->start();
         this->hiloMaquinaMasa1->start();
@@ -64,8 +67,8 @@ void VentanaPrincipal::on_btnIniciar_clicked(){
         this->hiloMaquinaChoco->start();
         this->hiloCarrito->start();
         this->hiloMaquinaEnsambladora->start();
-        //this->hiloHorno->start();
-
+        this->hiloHorno->start();
+        this->hiloSupervisores->start();
     }
 }
 //Cambiar estado de maquinas manualmente
@@ -80,9 +83,7 @@ void VentanaPrincipal::on_btnCambiarEstadoMaquina1_clicked(){
             qDebug()<<"Encender MAQUINA 1";
             this->hiloMaquinaMasa1->pausa=false;
         }
-
     }
-
 }
 
 //Maquina masa 2
@@ -96,9 +97,7 @@ void VentanaPrincipal::on_btnCambiarEstadoMaquina2_clicked(){
             qDebug()<<"Encender MAQUINA 2";
             this->hiloMaquinaMasa2->pausa=false;
         }
-
     }
-
 }
 
 //Maquina chocolate
@@ -113,7 +112,6 @@ void VentanaPrincipal::on_btnCambiarEstadoMaquina3_clicked(){
             this->hiloMaquinaChoco->pausa=false;
         }
     }
-
 }
 //Pausa toda la ejecucion
 void VentanaPrincipal::on_btnPausa_clicked(){//FALTAN PAUSAS DE OTROS HILOS
@@ -131,8 +129,6 @@ void VentanaPrincipal::on_btnPausa_clicked(){//FALTAN PAUSAS DE OTROS HILOS
         this->hiloPlanificador->pausa=true;//Planificador
         this->hiloMaquinaEnsambladora->pausa=true;
     }
-
-
 }
 //Reanudar toda la ejecucion
 void VentanaPrincipal::on_btnReanudar_clicked(){//FALTAN PAUSAS DE OTROS HILOS
@@ -147,10 +143,7 @@ void VentanaPrincipal::on_btnReanudar_clicked(){//FALTAN PAUSAS DE OTROS HILOS
         this->ui->radioButtonEncenderMaquina1->setChecked(true);
         this->ui->radioButtonEncenderMaquina2->setChecked(true);
         this->ui->radioButtonEncenderMaquina3->setChecked(true);
-
     }
-
-
 }
 //NO ESTA FUNCIONANDO BIEN
 void VentanaPrincipal::on_btnDetener_clicked(){
@@ -171,28 +164,27 @@ void VentanaPrincipal::on_btnDetener_clicked(){
     this->hiloCarrito=NULL;
     this->hiloPlanificador=NULL;
     this->hiloMaquinaEnsambladora=NULL;
-    this->ui->lblCantidadGalletas=0;
-    this->ui->lblChoco=0;
-    this->ui->lblMasa=0;
-    this->ui->lbl_BandaTChocoActual=0;
-    this->ui->lbl_BandaTChocoMax=0;
-    this->ui->lbl_BandaTEnsambladoraActual=0;
-    this->ui->lbl_BandaTEnsambladoraMax=0;
-    this->ui->lbl_BandaTMasaActual=0;
-    this->ui->lbl_BantaTMasaMax=0;
-    this->ui->lbl_EnsambladoraProducida=0;
-    this->ui->lbl_Horno=0;
-    this->ui->lbl_MaquinaChocoEnProceso=0;
-    this->ui->lbl_MaquinaChocoProcesada=0;
-    this->ui->lbl_MaquinaEnsambladora=0;
-    this->ui->lbl_MaquinaMasa1EnProceso=0;
-    this->ui->lbl_MaquinaMasa1Procesada=0;
-    this->ui->lbl_MaquinaMasa2EnProceso=0;
-    this->ui->lbl_MaquinaMasa2Procesada=0;
-    this->ui->lbl_Supervisores=0;
-    this->ui->lbl_actualHorno=0;
-    this->ui->lbl_horneadasHorno=0;
-    this->ui->lbl_actualSupervisores=0;
-
+    this->ui->lblCantidadGalletas->setText(QString::number(0));
+    this->ui->lblChoco->setText(QString::number(0));
+    this->ui->lblMasa->setText(QString::number(0));
+    this->ui->lbl_BandaTChocoActual->setText(QString::number(0));
+    this->ui->lbl_BandaTChocoMax->setText(QString::number(0));
+    this->ui->lbl_BandaTEnsambladoraActual->setText(QString::number(0));
+    this->ui->lbl_BandaTEnsambladoraMax->setText(QString::number(0));;
+    this->ui->lbl_BandaTMasaActual->setText(QString::number(0));;
+    this->ui->lbl_BantaTMasaMax->setText(QString::number(0));;
+    this->ui->lbl_EnsambladoraProducida->setText(QString::number(0));;
+    this->ui->lbl_Horno->setText(QString::number(0));
+    this->ui->lbl_MaquinaChocoEnProceso->setText(QString::number(0));;
+    this->ui->lbl_MaquinaChocoProcesada->setText(QString::number(0));;
+    this->ui->lbl_MaquinaEnsambladora->setText(QString::number(0));;
+    this->ui->lbl_MaquinaMasa1EnProceso->setText(QString::number(0));;
+    this->ui->lbl_MaquinaMasa1Procesada->setText(QString::number(0));;
+    this->ui->lbl_MaquinaMasa2EnProceso->setText(QString::number(0));;
+    this->ui->lbl_MaquinaMasa2Procesada->setText(QString::number(0));;
+    this->ui->lbl_Supervisores->setText(QString::number(0));;
+    this->ui->lbl_actualHorno->setText(QString::number(0));;
+    this->ui->lbl_horneadasHorno->setText(QString::number(0));;
+    this->ui->lbl_actualSupervisores->setText(QString::number(0));;
 }
 

@@ -6,17 +6,17 @@ struct Supervisor{
     //esta es como cualquier otra cola de banda, solo que los "supervisores" quitan galletas que llegan y manda otras
     // se crea la banda por aparte y los supervisores pueden mandar a desencolar a la banda con su probabilidad
     public:
-        ColaBandas * colaSupervisores;
+        ColaBandas * colaSupervisores;//cola proveniente del horno
+        ColaBandas * colaEmpacadora;
         double probabilidadDesecho;
-        int galletasAceptadas;
-        int galletasRechazadas;
+        double galletasAceptadas;
+        double galletasRechazadas;
         ListaPaquetes*listaPaquetes; //esto es solo para actualizar la lista cuando termine de evaluar //como en el planificador
 
         Supervisor();
-        void setPunteros(ColaBandas*,ListaPaquetes*);
+        void setPunteros(ColaBandas*,ListaPaquetes*,ColaBandas *);
         void setProbabilidad(double);
-        void quitarGalletas(); //realmente es solo desencolar desde la cola.
-        ListaPaquetes*actualizarListaPaquetes();
+        void quitarGalletas(NodoBandas *);
 
 };
 #endif // SUPERVISOR_H

@@ -30,6 +30,7 @@ SOURCES += \
     hilo_maquinaensambladora.cpp \
     hilo_maquinamasa1.cpp \
     hilo_planificador.cpp \
+    hilo_supervisores.cpp \
     main.cpp \
     ventanaconfigurar.cpp \
     ventanaprincipal.cpp
@@ -63,6 +64,7 @@ HEADERS += \
     hilo_maquinaensambladora.h \
     hilo_maquinamasa1.h \
     hilo_planificador.h \
+    hilo_supervisores.h \
     ventanaconfigurar.h \
     ventanaprincipal.h
 

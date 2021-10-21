@@ -9,18 +9,16 @@ struct MaquinaEmpacadora{    //COMO VAMOS A PASAR LOS DATOS DE LA COLA DE SUPERV
     public:
         int cantidadDePaquetes;
         int tiempoEmpaque;
-        Nodo * paqueteActual;
         int cantidadActual;
         bool estado;
         int galletasAceptadas; //tiene que recibir la cantidad de galletas aceptadas por el supervisor
-
+        ColaBandas * cola;//recibe los datos actualizados de supervisor
+        ListaPaquetes * paquetes;
         MaquinaEmpacadora();
-        void setGalletasAceptadas(Supervisor*supervisorA, Supervisor*supervisorB);
+        void setPunteros(ColaBandas * , ListaPaquetes * );
         void probabilidadDeEmpaque(); //esta se usa en empacar
         void enviarAlTransportador(string tipoPaquete,int cantidadPaquetes);
         void empacar();
-
-        //Dos supervisores
 
 };
 #endif // MAQUINAEMPACADORA_H

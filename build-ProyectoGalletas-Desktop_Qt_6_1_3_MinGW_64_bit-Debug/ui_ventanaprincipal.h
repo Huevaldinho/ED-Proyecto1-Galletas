@@ -90,6 +90,10 @@ public:
     QRadioButton *radioButtonApagarMaquina3;
     QPushButton *btnCambiarEstadoMaquina3;
     QPushButton *btnReanudar;
+    QLabel *lbl_TextSupervisoresAceptadas;
+    QLabel *lbl_TextSupervisoresRechazadas;
+    QLabel *lbl_SupervisoresAceptadas;
+    QLabel *lbl_SupervisoresRechazadas;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -285,15 +289,15 @@ public:
         lbl_horneadasHorno->setGeometry(QRect(940, 210, 31, 16));
         lbl_Supervisores = new QLabel(centralwidget);
         lbl_Supervisores->setObjectName(QString::fromUtf8("lbl_Supervisores"));
-        lbl_Supervisores->setGeometry(QRect(1000, 130, 91, 21));
+        lbl_Supervisores->setGeometry(QRect(990, 170, 91, 21));
         lbl_Supervisores->setFont(font);
         lbl_TextActualSupervisores = new QLabel(centralwidget);
         lbl_TextActualSupervisores->setObjectName(QString::fromUtf8("lbl_TextActualSupervisores"));
-        lbl_TextActualSupervisores->setGeometry(QRect(1000, 150, 60, 16));
+        lbl_TextActualSupervisores->setGeometry(QRect(990, 190, 60, 16));
         lbl_TextActualSupervisores->setFont(font);
         lbl_actualSupervisores = new QLabel(centralwidget);
         lbl_actualSupervisores->setObjectName(QString::fromUtf8("lbl_actualSupervisores"));
-        lbl_actualSupervisores->setGeometry(QRect(1050, 150, 60, 16));
+        lbl_actualSupervisores->setGeometry(QRect(1040, 190, 60, 16));
         grupoEstadoMaquina1 = new QGroupBox(centralwidget);
         grupoEstadoMaquina1->setObjectName(QString::fromUtf8("grupoEstadoMaquina1"));
         grupoEstadoMaquina1->setGeometry(QRect(180, 20, 111, 91));
@@ -333,6 +337,20 @@ public:
         btnReanudar = new QPushButton(centralwidget);
         btnReanudar->setObjectName(QString::fromUtf8("btnReanudar"));
         btnReanudar->setGeometry(QRect(590, 530, 171, 71));
+        lbl_TextSupervisoresAceptadas = new QLabel(centralwidget);
+        lbl_TextSupervisoresAceptadas->setObjectName(QString::fromUtf8("lbl_TextSupervisoresAceptadas"));
+        lbl_TextSupervisoresAceptadas->setGeometry(QRect(990, 210, 81, 16));
+        lbl_TextSupervisoresAceptadas->setFont(font);
+        lbl_TextSupervisoresRechazadas = new QLabel(centralwidget);
+        lbl_TextSupervisoresRechazadas->setObjectName(QString::fromUtf8("lbl_TextSupervisoresRechazadas"));
+        lbl_TextSupervisoresRechazadas->setGeometry(QRect(990, 230, 91, 16));
+        lbl_TextSupervisoresRechazadas->setFont(font);
+        lbl_SupervisoresAceptadas = new QLabel(centralwidget);
+        lbl_SupervisoresAceptadas->setObjectName(QString::fromUtf8("lbl_SupervisoresAceptadas"));
+        lbl_SupervisoresAceptadas->setGeometry(QRect(1080, 210, 55, 16));
+        lbl_SupervisoresRechazadas = new QLabel(centralwidget);
+        lbl_SupervisoresRechazadas->setObjectName(QString::fromUtf8("lbl_SupervisoresRechazadas"));
+        lbl_SupervisoresRechazadas->setGeometry(QRect(1080, 230, 55, 16));
         VentanaPrincipal->setCentralWidget(centralwidget);
         menubar = new QMenuBar(VentanaPrincipal);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -417,6 +435,10 @@ public:
         radioButtonApagarMaquina3->setText(QCoreApplication::translate("VentanaPrincipal", "Apagar", nullptr));
         btnCambiarEstadoMaquina3->setText(QCoreApplication::translate("VentanaPrincipal", "Aceptar", nullptr));
         btnReanudar->setText(QCoreApplication::translate("VentanaPrincipal", "Reanudar", nullptr));
+        lbl_TextSupervisoresAceptadas->setText(QCoreApplication::translate("VentanaPrincipal", "Aceptadas:", nullptr));
+        lbl_TextSupervisoresRechazadas->setText(QCoreApplication::translate("VentanaPrincipal", "Rechazadas:", nullptr));
+        lbl_SupervisoresAceptadas->setText(QCoreApplication::translate("VentanaPrincipal", "0", nullptr));
+        lbl_SupervisoresRechazadas->setText(QCoreApplication::translate("VentanaPrincipal", "0", nullptr));
     } // retranslateUi
 
 };

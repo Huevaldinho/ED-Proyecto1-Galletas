@@ -4,11 +4,13 @@ MaquinaEmpacadora::MaquinaEmpacadora(){
     this->cantidadActual=0;
     this->cantidadDePaquetes=0;
     this->galletasAceptadas=0;
-    this->paqueteActual=NULL;
     this->tiempoEmpaque=2;
     this->estado=false;
-}
+    this->cola= NULL;//cola que recibe nodos de supervisores
 
-void MaquinaEmpacadora::setGalletasAceptadas(Supervisor*supervisorA,Supervisor*supervisorB){
-    this->galletasAceptadas=supervisorA->galletasAceptadas+supervisorB->galletasAceptadas;
+}
+void MaquinaEmpacadora::setPunteros(ColaBandas * colaBanda, ListaPaquetes * listaPaquetes){
+    this->cola = colaBanda;
+    this->paquetes=listaPaquetes;
+
 }

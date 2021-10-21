@@ -19,6 +19,7 @@ debug/hilo_horno.o
 debug/hilo_maquinaensambladora.o
 debug/hilo_maquinamasa1.o
 debug/hilo_planificador.o
+debug/hilo_supervisores.o
 debug/main.o
 debug/ventanaconfigurar.o
 debug/ventanaprincipal.o

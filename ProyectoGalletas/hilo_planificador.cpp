@@ -20,9 +20,7 @@ void hilo_planificador::run(){
     qDebug()<<"Entra al run hilo planificador";
     this->corriendo=true;
     while (this->corriendo){
-        qDebug()<<"Corre hilo planificador";
          while(planificador->listaPaquetes->primerNodo==NULL){
-             qDebug()<<"Duerme hilo planificador";
              sleep(1);
              if (this->corriendo==false)
                  break;

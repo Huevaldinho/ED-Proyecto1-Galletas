@@ -54,6 +54,7 @@ struct Punteros{
 
     //supervisores (banda nueva)
     ColaBandas * colaSupervisores;
+    ColaBandas * colaEmpacadora;
     Supervisor * supervisor1;
     Supervisor * supervisor2;
 
@@ -124,6 +125,7 @@ struct Punteros{
 
         //transporte
         trans=new Transportadores();
+        colaEmpacadora=new ColaBandas();
     }
     void setPunteros(){
         //------------------------SET PUNTEROS------------------------//
@@ -146,10 +148,10 @@ struct Punteros{
 
         horno->setPunteros(listaBandejas,colaEnsambladoraHorno,colaSupervisores);//pts horno
 
-        supervisor1->setPunteros(colaSupervisores,paquetes);//pts supervisores
-        supervisor2->setPunteros(colaSupervisores,paquetes);//pts supervisores
+        supervisor1->setPunteros(colaSupervisores,paquetes,colaEmpacadora);//pts supervisores
+        supervisor2->setPunteros(colaSupervisores,paquetes,colaEmpacadora);//pts supervisores
 
-        maquinaEmpacadora->setGalletasAceptadas(supervisor1,supervisor2);
+        maquinaEmpacadora->setPunteros(colaEmpacadora,paquetes);
 
         listaBandejas->insertarAlFinal(nodoBandeja1);
         listaBandejas->insertarAlFinal(nodoBandeja2);

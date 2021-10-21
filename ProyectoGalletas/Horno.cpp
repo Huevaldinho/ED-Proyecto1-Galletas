@@ -1,7 +1,7 @@
 #include "Estructuras.h"
 
 Horno::Horno(){
-    this->bandejasFuncionando=this->bandejas->contarBandejas();
+    this->bandejasFuncionando=2;
     this->maximoBandejas=6;
     this->colaEntrada=NULL;
     this->colaSalida=NULL;

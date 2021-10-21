@@ -80,8 +80,6 @@ void hilo_maquinaMasa1::run(){
       }
         this->lbl_BandaTActual->setText(QString::number(this->maquinaMasa1->cola->actual));//Set cantidad actual de banda GUI
         sleep(5);
-        qDebug()<<"FUERA HILO MAQUINAS MASA CHOCO, ID: "<<this->maquinaMasa1->id;
-        this->maquinaMasa1->cola->imprimir();
     }
     qDebug()<<"DETENER HILO MAQUINAL: "<<this->maquinaMasa1->id;
 }
