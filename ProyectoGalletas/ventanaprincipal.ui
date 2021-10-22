@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1187</width>
-    <height>653</height>
+    <width>1179</width>
+    <height>702</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QLabel" name="lblCantidadGalletas">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>410</y>
+      <x>110</x>
+      <y>510</y>
       <width>121</width>
       <height>21</height>
      </rect>
@@ -30,9 +30,9 @@
    <widget class="QPushButton" name="btnIniciar">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>530</y>
-      <width>251</width>
+      <x>260</x>
+      <y>580</y>
+      <width>161</width>
       <height>71</height>
      </rect>
     </property>
@@ -46,8 +46,8 @@
    <widget class="QLabel" name="lblChoco">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>490</y>
+      <x>110</x>
+      <y>610</y>
       <width>111</width>
       <height>21</height>
      </rect>
@@ -59,8 +59,8 @@
    <widget class="QLabel" name="lblMasa">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>450</y>
+      <x>110</x>
+      <y>560</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -72,10 +72,10 @@
    <widget class="QLabel" name="lbl_TextGalletasPlani">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>390</y>
-      <width>161</width>
-      <height>51</height>
+      <x>50</x>
+      <y>500</y>
+      <width>51</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -91,10 +91,10 @@
    <widget class="QLabel" name="lbl_TextMasaPlani">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>430</y>
-      <width>121</width>
-      <height>51</height>
+      <x>50</x>
+      <y>550</y>
+      <width>51</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -110,15 +110,15 @@
    <widget class="QLabel" name="lbl_TextChocoPlani">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>490</y>
-      <width>131</width>
-      <height>16</height>
+      <x>50</x>
+      <y>600</y>
+      <width>51</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>8</pointsize>
+      <pointsize>13</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -130,10 +130,10 @@
    <widget class="QLabel" name="lbl_TextPlani">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>350</y>
-      <width>181</width>
-      <height>31</height>
+      <x>10</x>
+      <y>380</y>
+      <width>151</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="font">
@@ -152,9 +152,9 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>0</y>
-      <width>141</width>
-      <height>21</height>
+      <y>10</y>
+      <width>151</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="font">
@@ -171,8 +171,8 @@
    <widget class="QLabel" name="lbl_MaquinaMasa1EnProceso">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>50</y>
+      <x>180</x>
+      <y>100</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -184,8 +184,8 @@
    <widget class="QLabel" name="lbl_MaquinaMasa1Procesada">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>70</y>
+      <x>360</x>
+      <y>100</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -197,15 +197,15 @@
    <widget class="QLabel" name="lbl_TextMaquina1Actual">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>40</y>
-      <width>91</width>
+      <x>120</x>
+      <y>100</y>
+      <width>51</width>
       <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>8</pointsize>
+      <pointsize>13</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -217,8 +217,8 @@
    <widget class="QLabel" name="lbl_TextMaquina1Procesada">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>70</y>
+      <x>270</x>
+      <y>100</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -236,9 +236,9 @@
    <widget class="QPushButton" name="btnPausa">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>530</y>
-      <width>171</width>
+      <x>430</x>
+      <y>580</y>
+      <width>161</width>
       <height>71</height>
      </rect>
     </property>
@@ -249,9 +249,9 @@
    <widget class="QPushButton" name="btnDetener">
     <property name="geometry">
      <rect>
-      <x>780</x>
-      <y>530</y>
-      <width>221</width>
+      <x>770</x>
+      <y>580</y>
+      <width>161</width>
       <height>71</height>
      </rect>
     </property>
@@ -262,10 +262,10 @@
    <widget class="QLabel" name="lbl_TextMaquinaMasa2">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>120</y>
-      <width>121</width>
-      <height>21</height>
+      <x>110</x>
+      <y>130</y>
+      <width>151</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="font">
@@ -282,8 +282,8 @@
    <widget class="QLabel" name="lbl_TextMaquina2Actual">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>150</y>
+      <x>120</x>
+      <y>220</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -301,8 +301,8 @@
    <widget class="QLabel" name="lbl_TextMaquina2Procesada">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>180</y>
+      <x>270</x>
+      <y>220</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -320,8 +320,8 @@
    <widget class="QLabel" name="lbl_MaquinaMasa2EnProceso">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>150</y>
+      <x>180</x>
+      <y>220</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -333,8 +333,8 @@
    <widget class="QLabel" name="lbl_MaquinaMasa2Procesada">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>180</y>
+      <x>360</x>
+      <y>220</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -346,10 +346,10 @@
    <widget class="QLabel" name="lbl_TextMaquinaChoco">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>240</y>
+      <x>110</x>
+      <y>250</y>
       <width>151</width>
-      <height>16</height>
+      <height>91</height>
      </rect>
     </property>
     <property name="font">
@@ -366,8 +366,8 @@
    <widget class="QLabel" name="lbl_TextMaquinaChocoActual">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>280</y>
+      <x>120</x>
+      <y>340</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -385,8 +385,8 @@
    <widget class="QLabel" name="lbl_TextMaquinaChocoProcesada">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>310</y>
+      <x>270</x>
+      <y>340</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -404,8 +404,8 @@
    <widget class="QLabel" name="lbl_MaquinaChocoProcesada">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>310</y>
+      <x>360</x>
+      <y>340</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -417,8 +417,8 @@
    <widget class="QLabel" name="lbl_MaquinaChocoEnProceso">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>280</y>
+      <x>180</x>
+      <y>340</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -430,8 +430,8 @@
    <widget class="QLabel" name="lbl_TextBandaTMasaActual">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>70</y>
+      <x>400</x>
+      <y>160</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -449,8 +449,8 @@
    <widget class="QLabel" name="lbl_TextBandaChocoProcesada">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>240</y>
+      <x>540</x>
+      <y>330</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -468,8 +468,8 @@
    <widget class="QLabel" name="lbl_BantaTMasaMax">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>90</y>
+      <x>570</x>
+      <y>160</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -482,7 +482,7 @@
     <property name="geometry">
      <rect>
       <x>450</x>
-      <y>220</y>
+      <y>330</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -494,10 +494,10 @@
    <widget class="QLabel" name="lbl_TextBandaMasa">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>40</y>
-      <width>191</width>
-      <height>16</height>
+      <x>400</x>
+      <y>110</y>
+      <width>201</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -514,8 +514,8 @@
    <widget class="QLabel" name="lbl_BandaTChocoMax">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>240</y>
+      <x>580</x>
+      <y>330</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -527,8 +527,8 @@
    <widget class="QLabel" name="lbl_BandaTMasaActual">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>70</y>
+      <x>450</x>
+      <y>160</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -540,8 +540,8 @@
    <widget class="QLabel" name="lbl_TextBandaTMasaProcesada">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>90</y>
+      <x>530</x>
+      <y>160</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -559,8 +559,8 @@
    <widget class="QLabel" name="lbl_TextBandaTChocoActual">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>220</y>
+      <x>400</x>
+      <y>330</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -578,10 +578,10 @@
    <widget class="QLabel" name="lbl_TextBandaChoco">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>190</y>
-      <width>231</width>
-      <height>16</height>
+      <x>400</x>
+      <y>280</y>
+      <width>191</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -597,10 +597,10 @@
    <widget class="QLabel" name="lbl_MaquinaEnsambladora">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>100</y>
-      <width>121</width>
-      <height>16</height>
+      <x>600</x>
+      <y>150</y>
+      <width>171</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="font">
@@ -617,8 +617,8 @@
    <widget class="QLabel" name="lbl_TextEnsambladoraProducida">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>130</y>
+      <x>670</x>
+      <y>300</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -636,8 +636,8 @@
    <widget class="QLabel" name="lbl_EnsambladoraProducida">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>130</y>
+      <x>750</x>
+      <y>300</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -649,10 +649,10 @@
    <widget class="QLabel" name="lbl_TextBandaTransportadora">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>110</y>
-      <width>161</width>
-      <height>16</height>
+      <x>770</x>
+      <y>220</y>
+      <width>121</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -668,8 +668,8 @@
    <widget class="QLabel" name="lbl_TextBandaTEnsambladoraActual">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>130</y>
+      <x>770</x>
+      <y>260</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -687,8 +687,8 @@
    <widget class="QLabel" name="lbl_TextBandaTEnsambladoraMax">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>150</y>
+      <x>840</x>
+      <y>260</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -706,9 +706,9 @@
    <widget class="QLabel" name="lbl_BandaTEnsambladoraActual">
     <property name="geometry">
      <rect>
-      <x>770</x>
-      <y>130</y>
-      <width>55</width>
+      <x>820</x>
+      <y>260</y>
+      <width>31</width>
       <height>16</height>
      </rect>
     </property>
@@ -719,8 +719,8 @@
    <widget class="QLabel" name="lbl_BandaTEnsambladoraMax">
     <property name="geometry">
      <rect>
-      <x>770</x>
-      <y>150</y>
+      <x>870</x>
+      <y>260</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -732,10 +732,10 @@
    <widget class="QLabel" name="lbl_Horno">
     <property name="geometry">
      <rect>
-      <x>870</x>
-      <y>170</y>
-      <width>71</width>
-      <height>21</height>
+      <x>890</x>
+      <y>150</y>
+      <width>171</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="font">
@@ -751,8 +751,8 @@
    <widget class="QLabel" name="lbl_TextActualHorno">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>190</y>
+      <x>890</x>
+      <y>290</y>
       <width>51</width>
       <height>16</height>
      </rect>
@@ -770,8 +770,8 @@
    <widget class="QLabel" name="lbl_TexthorneadasHorno">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>210</y>
+      <x>960</x>
+      <y>290</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -789,8 +789,8 @@
    <widget class="QLabel" name="lbl_actualHorno">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>190</y>
+      <x>940</x>
+      <y>290</y>
       <width>60</width>
       <height>16</height>
      </rect>
@@ -802,8 +802,8 @@
    <widget class="QLabel" name="lbl_horneadasHorno">
     <property name="geometry">
      <rect>
-      <x>940</x>
-      <y>210</y>
+      <x>1040</x>
+      <y>290</y>
       <width>31</width>
       <height>16</height>
      </rect>
@@ -815,10 +815,10 @@
    <widget class="QLabel" name="lbl_Supervisores">
     <property name="geometry">
      <rect>
-      <x>990</x>
-      <y>170</y>
-      <width>91</width>
-      <height>21</height>
+      <x>1060</x>
+      <y>180</y>
+      <width>101</width>
+      <height>171</height>
      </rect>
     </property>
     <property name="font">
@@ -834,8 +834,8 @@
    <widget class="QLabel" name="lbl_TextActualSupervisores">
     <property name="geometry">
      <rect>
-      <x>990</x>
-      <y>190</y>
+      <x>1060</x>
+      <y>360</y>
       <width>60</width>
       <height>16</height>
      </rect>
@@ -853,8 +853,8 @@
    <widget class="QLabel" name="lbl_actualSupervisores">
     <property name="geometry">
      <rect>
-      <x>1040</x>
-      <y>190</y>
+      <x>1110</x>
+      <y>360</y>
       <width>60</width>
       <height>16</height>
      </rect>
@@ -866,8 +866,8 @@
    <widget class="QGroupBox" name="grupoEstadoMaquina1">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>20</y>
+      <x>270</x>
+      <y>10</y>
       <width>111</width>
       <height>91</height>
      </rect>
@@ -918,8 +918,8 @@
    <widget class="QGroupBox" name="grupoEstadoMaquina2">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>140</y>
+      <x>270</x>
+      <y>130</y>
       <width>111</width>
       <height>91</height>
      </rect>
@@ -970,8 +970,8 @@
    <widget class="QGroupBox" name="grupoEstadoMaquina3">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>260</y>
+      <x>270</x>
+      <y>250</y>
       <width>121</width>
       <height>91</height>
      </rect>
@@ -1022,9 +1022,9 @@
    <widget class="QPushButton" name="btnReanudar">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>530</y>
-      <width>171</width>
+      <x>600</x>
+      <y>580</y>
+      <width>161</width>
       <height>71</height>
      </rect>
     </property>
@@ -1035,8 +1035,8 @@
    <widget class="QLabel" name="lbl_TextSupervisoresAceptadas">
     <property name="geometry">
      <rect>
-      <x>990</x>
-      <y>210</y>
+      <x>1060</x>
+      <y>380</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -1054,8 +1054,8 @@
    <widget class="QLabel" name="lbl_TextSupervisoresRechazadas">
     <property name="geometry">
      <rect>
-      <x>990</x>
-      <y>230</y>
+      <x>1060</x>
+      <y>400</y>
       <width>91</width>
       <height>16</height>
      </rect>
@@ -1073,8 +1073,8 @@
    <widget class="QLabel" name="lbl_SupervisoresAceptadas">
     <property name="geometry">
      <rect>
-      <x>1080</x>
-      <y>210</y>
+      <x>1150</x>
+      <y>380</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -1086,8 +1086,8 @@
    <widget class="QLabel" name="lbl_SupervisoresRechazadas">
     <property name="geometry">
      <rect>
-      <x>1080</x>
-      <y>230</y>
+      <x>1150</x>
+      <y>400</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -1096,14 +1096,53 @@
      <string>0</string>
     </property>
    </widget>
+   <widget class="QLabel" name="lbl_Carrito">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>81</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblSup1">
+    <property name="geometry">
+     <rect>
+      <x>1060</x>
+      <y>100</y>
+      <width>60</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblSup2">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>100</y>
+      <width>60</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1187</width>
-     <height>25</height>
+     <width>1179</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>

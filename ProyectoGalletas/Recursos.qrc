@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/Recursos">
+        <file>img/cookie.png</file>
+        <file>img/carrito.gif</file>
+        <file>img/chocolate.png</file>
+        <file>img/conveyorBelt.gif</file>
+        <file>img/dough.png</file>
+        <file>img/empacadora.png</file>
+        <file>img/ensambladora.png</file>
+        <file>img/horno.png</file>
+        <file>img/mezcladora.png</file>
+        <file>img/mezcladoraChocolate.png</file>
+        <file>img/planifier.png</file>
+        <file>img/supervisor.png</file>
+        <file>img/banda.png</file>
+        <file>img/conveeyorBeltSupervisores.png</file>
+        <file>img/carro.png</file>
+    </qresource>
+</RCC>

@@ -2,6 +2,7 @@
 #include "ui_ventanaprincipal.h"
 VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new Ui::VentanaPrincipal){
     ui->setupUi(this);
+
     this->punteros=new Punteros();
     this->punteros->setPunteros();
 
@@ -15,8 +16,95 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
     this->hiloSupervisores=NULL;
 
     this->punteros->paquetes->insertar(4,"Paquetito",4);
+    this->punteros->maquinaChocolate->cantidadEnviadaABanda=5;
     this->punteros->supervisor1->probabilidadDesecho=80;
     this->punteros->supervisor2->probabilidadDesecho=95;
+
+    QPixmap pix (":/Recursos/img/cookie.png");
+    int w = this->ui->lbl_TextGalletasPlani->width();
+    int h = this->ui->lbl_TextGalletasPlani->height();
+    this->ui->lbl_TextGalletasPlani->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+
+    QPixmap pix1 (":/Recursos/img/dough.png");
+    int w1 = this->ui->lbl_TextMasaPlani->width();
+    int h1 = this->ui->lbl_TextMasaPlani->height();
+    this->ui->lbl_TextMasaPlani->setPixmap(pix1.scaled(w1,h1,Qt::KeepAspectRatio));
+
+    QPixmap pix2 (":/Recursos/img/chocolate.png");
+    int w2 = this->ui->lbl_TextChocoPlani->width();
+    int h2 = this->ui->lbl_TextChocoPlani->height();
+    this->ui->lbl_TextChocoPlani->setPixmap(pix2.scaled(w2,h2,Qt::KeepAspectRatio));
+
+    QPixmap pix3 (":/Recursos/img/planifier.png");
+    int w3 = this->ui->lbl_TextPlani->width();
+    int h3 = this->ui->lbl_TextPlani->height();
+    this->ui->lbl_TextPlani->setPixmap(pix3.scaled(w3,h3,Qt::KeepAspectRatio));
+
+    QPixmap pix4 (":/Recursos/img/carro.png");
+    int w4 = this->ui->lbl_Carrito->width();
+    int h4 = this->ui->lbl_Carrito->height();
+    this->ui->lbl_Carrito->setPixmap(pix4.scaled(w4,h4,Qt::KeepAspectRatio));
+
+    QPixmap pix5a (":/Recursos/img/mezcladora.png");
+    int w5a = this->ui->lbl_TextMaquinaMasa1->width();
+    int h5a = this->ui->lbl_TextMaquinaMasa1->height();
+    this->ui->lbl_TextMaquinaMasa1->setPixmap(pix5a.scaled(w5a,h5a,Qt::KeepAspectRatio));
+
+    QPixmap pix5b (":/Recursos/img/mezcladora.png");
+    int w5b = this->ui->lbl_TextMaquinaMasa2->width();
+    int h5b = this->ui->lbl_TextMaquinaMasa2->height();
+    this->ui->lbl_TextMaquinaMasa2->setPixmap(pix5b.scaled(w5b,h5b,Qt::KeepAspectRatio));
+
+    QPixmap pix6 (":/Recursos/img/mezcladoraChocolate.png");
+    int w6 = this->ui->lbl_TextMaquinaChoco->width();
+    int h6 = this->ui->lbl_TextMaquinaChoco->height();
+    this->ui->lbl_TextMaquinaChoco->setPixmap(pix6.scaled(w6,h6,Qt::KeepAspectRatio));
+
+    QPixmap pix7 (":/Recursos/img/banda.png");
+    int w7 = this->ui->lbl_TextBandaMasa->width();
+    int h7 = this->ui->lbl_TextBandaMasa->height();
+    this->ui->lbl_TextBandaMasa->setPixmap(pix7.scaled(w7,h7,Qt::KeepAspectRatio));
+
+    QPixmap pix7b (":/Recursos/img/banda.png");
+    int w7b = this->ui->lbl_TextBandaChoco->width();
+    int h7b = this->ui->lbl_TextBandaChoco->height();
+    this->ui->lbl_TextBandaChoco->setPixmap(pix7b.scaled(w7b,h7b,Qt::KeepAspectRatio));
+
+
+    QPixmap pix8 (":/Recursos/img/ensambladora.png");
+    int w8 = this->ui->lbl_MaquinaEnsambladora->width();
+    int h8 = this->ui->lbl_MaquinaEnsambladora->height();
+    this->ui->lbl_MaquinaEnsambladora->setPixmap(pix8.scaled(w8,h8,Qt::KeepAspectRatio));
+
+    QPixmap pixbandaEnsHorno (":/Recursos/img/banda.png");
+    int wEH = this->ui->lbl_TextBandaTransportadora->width();
+    int hEH = this->ui->lbl_TextBandaTransportadora->height();
+    this->ui->lbl_TextBandaTransportadora->setPixmap(pixbandaEnsHorno.scaled(wEH,hEH,Qt::KeepAspectRatio));
+
+    QPixmap pix9 (":/Recursos/img/horno.png");
+    int w9 = this->ui->lbl_Horno->width();
+    int h9 = this->ui->lbl_Horno->height();
+    this->ui->lbl_Horno->setPixmap(pix9.scaled(w9,h9,Qt::KeepAspectRatio));
+
+    QPixmap pix10 (":/Recursos/img/banda.png");
+    int w10 = this->ui->lbl_Supervisores->width();
+    int h10 = this->ui->lbl_Supervisores->height();
+    this->ui->lbl_Supervisores->setPixmap(pix10.scaled(w10,h10,Qt::KeepAspectRatio));
+
+    QPixmap pixS1 (":/Recursos/img/supervisor.png");
+    int wS1 = this->ui->lblSup1->width();
+    int hS1 = this->ui->lblSup1->height();
+    this->ui->lblSup1->setPixmap(pixS1.scaled(wS1,hS1,Qt::KeepAspectRatio));
+    QPixmap pixS2 (":/Recursos/img/supervisor.png");
+    int wS2 = this->ui->lblSup2->width();
+    int hS2 = this->ui->lblSup2->height();
+    this->ui->lblSup2->setPixmap(pixS2.scaled(wS2,hS2,Qt::KeepAspectRatio));
+
+//    QPixmap pix111 (":/Recursos/img/empacadora.png");
+//    int w3 = this->ui->lbl_TextPlani->width();
+//    int h3 = this->ui->lbl_TextPlani->height();
+//    this->ui->lbl_TextPlani->setPixmap(pix3.scaled(w3,h3,Qt::KeepAspectRatio));
+
 
     //this->punteros->paquetes->insertar(16,"Tubos",3);
     //this->punteros->paquetes->insertar(10,"Paquetes",5);
