@@ -18,10 +18,9 @@ void Supervisor::setProbabilidad(double _probabilidad){
     this->probabilidadDesecho=_probabilidad;
 }
 void Supervisor::quitarGalletas(NodoBandas * nodo){
-    random_device dev;
-    mt19937 rng(dev());
-    uniform_int_distribution<mt19937::result_type> probabilidad(1,99); // distribution in range [1, 99]
-    if (probabilidad(rng)<this->probabilidadDesecho){//Si random esta entre 1 y 99
+    srand(time(0));
+    int probabilidad = 1 + rand() % 100; 	// Genera un valor entre 1 y 100
+    if (probabilidad<this->probabilidadDesecho){//Si random esta entre 1 y 99
         //Tiene que desechar
         nodo->dato--;
         this->colaSupervisores->actual--;

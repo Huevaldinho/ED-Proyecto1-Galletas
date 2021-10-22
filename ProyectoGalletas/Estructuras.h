@@ -3,10 +3,16 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <cstdlib>
+#include <ctime>
+#include <random>//para supervisores
 #include<QtCore>
 #include <QDebug>
 #include <QLabel>
-#include <random>//para supervisores
+
+
+
+
 using namespace std;
 
 struct MaquinaEmpacadora;
@@ -32,7 +38,7 @@ class hilo_planificador;
 class hilo_maquinaMasa1;
 class hilo_Horno;
 class hilo_Supervisores;
-
+class hilo_Empacadora;
 
 #include "Almacen.h"
 #include "Carrito.h"
@@ -59,4 +65,5 @@ class hilo_Supervisores;
 #include "hilo_maquinaensambladora.h"
 #include "hilo_horno.h"
 #include "hilo_supervisores.h"
+#include "hilo_empacadora.h"
 #endif // ESTRUCTURAS_H

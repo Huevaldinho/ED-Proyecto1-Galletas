@@ -15,5 +15,6 @@ struct ColaBandas {//Cola de masa o galletas
        bool vacia (void);
        bool puedeEncolar();
        void calcularMaxActual();
+       double contarGalletas();
 };
 #endif // COLABANDAS_H

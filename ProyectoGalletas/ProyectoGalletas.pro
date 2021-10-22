@@ -26,6 +26,7 @@ SOURCES += \
     Transportadores.cpp \
     controlador.cpp \
     hilo_carrito.cpp \
+    hilo_empacadora.cpp \
     hilo_horno.cpp \
     hilo_maquinaensambladora.cpp \
     hilo_maquinamasa1.cpp \
@@ -60,6 +61,7 @@ HEADERS += \
     Transportadores.h \
     controlador.h \
     hilo_carrito.h \
+    hilo_empacadora.h \
     hilo_horno.h \
     hilo_maquinaensambladora.h \
     hilo_maquinamasa1.h \

@@ -65,4 +65,13 @@ bool ColaBandas::puedeEncolar(){
     else
         return false;
 }
+double ColaBandas::contarGalletas(){
+    NodoBandas * tmp=this->frente;
+    double galletas=0;
+    while(tmp!=NULL){
+        galletas+=tmp->dato;
+        tmp=tmp->siguiente;
+    }
+    return galletas;
+}
 

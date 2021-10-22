@@ -23,6 +23,7 @@ class VentanaPrincipal : public QMainWindow{Q_OBJECT
         hilo_MaquinaEnsambladora * hiloMaquinaEnsambladora;
         hilo_Horno*hiloHorno;
         hilo_Supervisores * hiloSupervisores;
+        hilo_Empacadora * hiloEmpacadora;
         bool pausa;
         bool corriendo;
 

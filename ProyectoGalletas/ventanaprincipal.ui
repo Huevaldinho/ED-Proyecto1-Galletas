@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1179</width>
+    <width>1294</width>
     <height>702</height>
    </rect>
   </property>
@@ -1035,9 +1035,9 @@
    <widget class="QLabel" name="lbl_TextSupervisoresAceptadas">
     <property name="geometry">
      <rect>
-      <x>1060</x>
+      <x>1020</x>
       <y>380</y>
-      <width>81</width>
+      <width>121</width>
       <height>16</height>
      </rect>
     </property>
@@ -1048,15 +1048,15 @@
      </font>
     </property>
     <property name="text">
-     <string>Aceptadas:</string>
+     <string>Aceptadas Sup 1:</string>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_TextSupervisoresRechazadas">
     <property name="geometry">
      <rect>
-      <x>1060</x>
+      <x>1020</x>
       <y>400</y>
-      <width>91</width>
+      <width>131</width>
       <height>16</height>
      </rect>
     </property>
@@ -1067,7 +1067,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Rechazadas:</string>
+     <string>Rechazadas Sup 1:</string>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_SupervisoresAceptadas">
@@ -1135,14 +1135,78 @@
      <string>TextLabel</string>
     </property>
    </widget>
+   <widget class="QLabel" name="lbl_TextAceptadasSup2">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>420</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Aceptadas Sup 2:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_TextRechazadasSup2">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>440</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Rechazadas Sup 2:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_AceptadasSup2">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>420</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_RechazadasSup2">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>440</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1179</width>
-     <height>21</height>
+     <width>1294</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>

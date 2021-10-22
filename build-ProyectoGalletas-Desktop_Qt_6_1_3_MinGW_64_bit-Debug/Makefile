@@ -200,7 +200,8 @@ Makefile: ../ProyectoGalletas/ProyectoGalletas.pro C:/Qt/6.1.3/mingw81_64/mkspec
 		C:/Qt/6.1.3/mingw81_64/lib/Qt6Gui.prl \
 		C:/Qt/6.1.3/mingw81_64/lib/Qt6Core.prl \
 		C:/Qt/6.1.3/mingw81_64/lib/Qt6EntryPoint.prl \
-		C:/Qt/6.1.3/mingw81_64/mkspecs/features/build_pass.prf
+		C:/Qt/6.1.3/mingw81_64/mkspecs/features/build_pass.prf \
+		../ProyectoGalletas/Recursos.qrc
 	$(QMAKE) -o Makefile ..\ProyectoGalletas\ProyectoGalletas.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 C:/Qt/6.1.3/mingw81_64/mkspecs/features/spec_pre.prf:
 C:/Qt/6.1.3/mingw81_64/mkspecs/features/device_config.prf:
@@ -333,6 +334,7 @@ C:/Qt/6.1.3/mingw81_64/lib/Qt6Gui.prl:
 C:/Qt/6.1.3/mingw81_64/lib/Qt6Core.prl:
 C:/Qt/6.1.3/mingw81_64/lib/Qt6EntryPoint.prl:
 C:/Qt/6.1.3/mingw81_64/mkspecs/features/build_pass.prf:
+../ProyectoGalletas/Recursos.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\ProyectoGalletas\ProyectoGalletas.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 

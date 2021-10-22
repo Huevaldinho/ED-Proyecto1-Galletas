@@ -4,13 +4,14 @@
 
 ListaPaquetes::ListaPaquetes(){
     this->primerNodo = NULL;
+    this->largo=0;
 }
 bool ListaPaquetes::estaVacia(){
     return this->primerNodo==NULL;
 }
-void ListaPaquetes::insertar(int cantidadGalletasPorPaquete,string _nombre,int _cantidadPaquetes){
+void ListaPaquetes::insertar(int cantidadGalletasPorPaquete,string _nombre,int _cantidadPaquetes,int procesoPaquetes,int duracionPaquetes,int probabilidad){
     if (this->primerNodo == NULL){
-        this->primerNodo = new Nodo(cantidadGalletasPorPaquete, _nombre,_cantidadPaquetes);
+        this->primerNodo = new Nodo(cantidadGalletasPorPaquete, _nombre,_cantidadPaquetes,procesoPaquetes,duracionPaquetes,probabilidad);
         this->primerNodo->siguiente= primerNodo;
         this->primerNodo->anterior = primerNodo;
         this->listaTransportadores->insertarTransportador(_nombre,100,0,5);
@@ -18,7 +19,7 @@ void ListaPaquetes::insertar(int cantidadGalletasPorPaquete,string _nombre,int _
         Nodo * buscado=buscar(cantidadGalletasPorPaquete,_nombre);
         if (buscado!=NULL){
             buscado->cantidadPaquetes=buscado->cantidadPaquetes+_cantidadPaquetes;
-        }else{Nodo * nuevo = new Nodo (cantidadGalletasPorPaquete, _nombre,_cantidadPaquetes);
+        }else{Nodo * nuevo = new Nodo (cantidadGalletasPorPaquete, _nombre,_cantidadPaquetes,procesoPaquetes,duracionPaquetes,probabilidad);
             nuevo->siguiente = primerNodo;
             nuevo->anterior = primerNodo->anterior;
             this->primerNodo->anterior->siguiente = nuevo;
@@ -26,6 +27,7 @@ void ListaPaquetes::insertar(int cantidadGalletasPorPaquete,string _nombre,int _
             this->listaTransportadores->insertarTransportador(_nombre,100,0,5);
         }
     }
+    this->largo++;
 
 }
 Nodo * ListaPaquetes::buscar(int _dato,string _nombre){
@@ -57,6 +59,7 @@ Nodo * ListaPaquetes::eliminar(int _dato,string _nombre){
             eliminado->siguiente = eliminado->anterior = NULL;
         }
     }
+    this->largo--;
     return eliminado;
 }
 void ListaPaquetes::imprimir(){
@@ -87,4 +90,26 @@ Transportadores * ListaPaquetes::getTransportadores(){
 }
 void ListaPaquetes::setTransportadores(Transportadores * trans){
     this->listaTransportadores=trans;
+}
+void ListaPaquetes::setProbabilidades(){
+    Nodo * tmp = this->primerNodo;
+    int i=0;
+    int proba=0;
+    int probaAnterior=90;
+    while (i<this->largo){
+        srand(time(0));
+        int probaGenerada=1 + rand() % probaAnterior;
+        if ((i+1)==this->largo){
+            tmp->probabilidad=100-proba;
+
+        }
+        else{
+            tmp->probabilidad=probaGenerada;
+            proba+=probaGenerada;
+            probaAnterior=probaGenerada;
+        }
+        qDebug()<<"Proba de "<<i<<": "<<tmp->probabilidad;
+        tmp=tmp->siguiente;
+        i++;
+    }
 }

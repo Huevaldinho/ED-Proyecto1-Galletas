@@ -14,8 +14,14 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
     this->hiloCarrito =NULL;
     this->hiloHorno=NULL;
     this->hiloSupervisores=NULL;
-
-    this->punteros->paquetes->insertar(4,"Paquetito",4);
+    this->hiloEmpacadora=NULL;
+    this->punteros->paquetes->insertar(4,"Paquetito",4,2,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
+    this->punteros->paquetes->insertar(4,"Paquetito",4,2,1,0);
+    this->punteros->paquetes->insertar(4,"Paquetito",4,2,1,0);
+    this->punteros->paquetes->insertar(4,"Paquetito",4,2,1,0);
+    this->punteros->paquetes->setProbabilidades();
+    qDebug()<<"LARGO: "<<this->punteros->paquetes->largo;
+    qDebug()<<"PROBABILIDAD: "<<this->punteros->paquetes->primerNodo->probabilidad;
     this->punteros->maquinaChocolate->cantidadEnviadaABanda=5;
     this->punteros->supervisor1->probabilidadDesecho=80;
     this->punteros->supervisor2->probabilidadDesecho=95;
@@ -138,6 +144,7 @@ void VentanaPrincipal::on_btnIniciar_clicked(){
         this->hiloMaquinaEnsambladora=new hilo_MaquinaEnsambladora();
         this->hiloHorno=new hilo_Horno();
         this->hiloSupervisores=new hilo_Supervisores();
+        this->hiloEmpacadora=new hilo_Empacadora;
 
         this->hiloPlanificador->__init__(this->punteros->planificador,this->ui->lblCantidadGalletas,this->ui->lblMasa,this->ui->lblChoco);
         this->hiloMaquinaMasa1->__init__(this->punteros->maquinaMasa1,this->ui->lbl_MaquinaMasa1Procesada,this->ui->lbl_MaquinaMasa1EnProceso,this->ui->lbl_BandaTMasaActual,this->ui->lbl_BantaTMasaMax);
@@ -146,8 +153,8 @@ void VentanaPrincipal::on_btnIniciar_clicked(){
         this->hiloCarrito->__init__(this->punteros->carrito);
         this->hiloMaquinaEnsambladora->__init__(this->punteros->maquinaEnsambladora,this->ui->lbl_EnsambladoraProducida,this->ui->lbl_BandaTEnsambladoraActual,this->ui->lbl_BandaTEnsambladoraMax);
         this->hiloHorno->__init__(this->punteros->horno,this->ui->lbl_actualHorno,this->ui->lbl_horneadasHorno,this->ui->lbl_actualSupervisores);//orden label actualGalletas, horneadasGalletas, colaSiguienteActual
-        this->hiloSupervisores->__init__(this->punteros->supervisor1,this->punteros->supervisor2,this->ui->lbl_SupervisoresAceptadas,this->ui->lbl_SupervisoresRechazadas);//lblAceptadas,QLabel* lblRechazadas
-
+        this->hiloSupervisores->__init__(this->punteros->supervisor1,this->punteros->supervisor2,this->ui->lbl_SupervisoresAceptadas,this->ui->lbl_SupervisoresRechazadas,this->ui->lbl_AceptadasSup2,this->ui->lbl_RechazadasSup2);//lblAceptadas,QLabel* lblRechazadas
+        this->hiloEmpacadora->__init__(this->punteros->maquinaEmpacadora);
 
         this->hiloPlanificador->start();
         this->hiloMaquinaMasa1->start();
@@ -157,6 +164,7 @@ void VentanaPrincipal::on_btnIniciar_clicked(){
         this->hiloMaquinaEnsambladora->start();
         this->hiloHorno->start();
         this->hiloSupervisores->start();
+        this->hiloEmpacadora->start();
     }
 }
 //Cambiar estado de maquinas manualmente

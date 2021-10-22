@@ -8,6 +8,7 @@ MaquinaEmpacadora::MaquinaEmpacadora(){
     this->estado=false;
     this->cola= NULL;//cola que recibe nodos de supervisores
 
+
 }
 void MaquinaEmpacadora::setPunteros(ColaBandas * colaBanda, ListaPaquetes * listaPaquetes){
     this->cola = colaBanda;

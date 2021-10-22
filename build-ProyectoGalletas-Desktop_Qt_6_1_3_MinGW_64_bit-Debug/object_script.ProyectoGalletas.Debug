@@ -15,6 +15,7 @@ debug/Transportador.o
 debug/Transportadores.o
 debug/controlador.o
 debug/hilo_carrito.o
+debug/hilo_empacadora.o
 debug/hilo_horno.o
 debug/hilo_maquinaensambladora.o
 debug/hilo_maquinamasa1.o
@@ -23,5 +24,6 @@ debug/hilo_supervisores.o
 debug/main.o
 debug/ventanaconfigurar.o
 debug/ventanaprincipal.o
+debug/qrc_Recursos.o
 debug/moc_ventanaconfigurar.o
 debug/moc_ventanaprincipal.o

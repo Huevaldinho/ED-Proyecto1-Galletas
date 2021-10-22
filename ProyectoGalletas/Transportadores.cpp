@@ -18,3 +18,12 @@ void Transportadores::insertarTransportador(string _tipoPaquete,int _maximo, int
         this->pn->anterior = nuevo;
     }
 }
+Transportador * Transportadores::transporteParaEnviar(string _nombre){
+    Transportador * tmp= this->pn;
+    while (tmp!=NULL){
+        if (tmp->tipoPaquete.compare(_nombre)==0)
+            return tmp;
+        tmp=tmp->siguiente;
+    }
+    return tmp;
+}

@@ -8,7 +8,7 @@
 Controlador::Controlador(Punteros * punte,QLabel*eti){
     this->punteros = punte;
     this->punteros->setPunteros();
-    this->punteros->paquetes->insertar(16,"Tubo",250);
+    //this->punteros->paquetes->insertar(16,"Tubo",250);
     this->etiqueta=eti;
 
 

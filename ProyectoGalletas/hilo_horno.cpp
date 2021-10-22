@@ -24,6 +24,7 @@ void hilo_Horno::run(){
                 while (tmp->actual<tmp->capacidadGalletas){
                     while (this->horno->colaEntrada->frente==NULL){
                         qDebug()<<"Pausa horno porque frente cola es NULL";
+                        this->lbl_BandaTActual->setText(QString::number(tmpActual));
                         sleep(3);
                     }
                     double datoFuera =this->horno->colaEntrada->desencolar()->dato;
@@ -44,11 +45,13 @@ void hilo_Horno::run(){
                     this->horno->colaEntrada->encolar(excedente);
                     tmp->actual-=excedente;
                     tmp->horneadas-=excedente;
+
                 }
                 tmpActual=tmp->actual;
+                this->lbl_BandaTActual->setText(QString::number(tmpActual));
                 tmp=tmp->siguienteBandeja;
             }//actualGalletas, horneadasGalletas, colaSiguienteActual
-            sleep(1);//se hornean//this->horno->duracionHorneado
+            sleep(this->horno->duracionHorneado);//se hornean//this->horno->duracionHorneado
             NodoBandeja*moment=this->horno->bandejas->primeraBandeja;
             double totalGalletas=0;
             qDebug()<<"ANTES DE MOMENT";
@@ -60,12 +63,14 @@ void hilo_Horno::run(){
                 this->lbl_BandejasActivas->setText(QString::number(this->horno->colaSalida->actual));//supervisores
                 tmpActual=moment->actual;
                 moment=moment->siguienteBandeja;
+                this->lbl_BandaTActual->setText(QString::number(tmpActual));//nuevo
             }//Este if no estaba es para probar
             this->lbl_BandaTActual->setText(QString::number(tmpActual));
             if (this->corriendo==false){
                 break;
             }  
         }
+        this->lbl_BandejasActivas->setText(QString::number(this->horno->colaSalida->actual));//supervisores
     }
     qDebug()<<"DETENER HILO HORNO";
 

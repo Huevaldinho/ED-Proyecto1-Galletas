@@ -2,8 +2,6 @@
 #define PUNTEROS_H
 
 #include "Estructuras.h"
-
-
 struct Punteros{
     //planificador
     Planificador * planificador;
