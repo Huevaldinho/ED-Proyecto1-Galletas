@@ -5,7 +5,7 @@ Transportadores::Transportadores(){
     this->pn=NULL;
     this->un=NULL;
 }
-void Transportadores::insertarTransportador(string _tipoPaquete,int _maximo, int _tiempoTransporte,int _actuales){
+void Transportadores::insertarTransportador(QString _tipoPaquete,int _maximo, int _tiempoTransporte,int _actuales){
     if (this->pn == NULL){
         this->pn = new Transportador(_maximo,_tiempoTransporte,_actuales,_tipoPaquete);
         this->pn->siguiente= pn;
@@ -18,7 +18,7 @@ void Transportadores::insertarTransportador(string _tipoPaquete,int _maximo, int
         this->pn->anterior = nuevo;
     }
 }
-Transportador * Transportadores::transporteParaEnviar(string _nombre){
+Transportador * Transportadores::transporteParaEnviar(QString _nombre){
     Transportador * tmp= this->pn;
     while (tmp!=NULL){
         if (tmp->tipoPaquete.compare(_nombre)==0)

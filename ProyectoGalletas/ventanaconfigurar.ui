@@ -10,8 +10,15 @@
     <height>816</height>
    </rect>
   </property>
+  <property name="cursor">
+   <cursorShape>SizeAllCursor</cursorShape>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Ventana de Configuración</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+background-color: rgb(84, 43, 20)</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="insertarPaquete">
@@ -26,6 +33,9 @@
     <property name="font">
      <font>
       <pointsize>15</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>true</underline>
      </font>
     </property>
     <property name="layoutDirection">
@@ -55,7 +65,7 @@
       <rect>
        <x>10</x>
        <y>40</y>
-       <width>161</width>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
@@ -68,7 +78,7 @@
       <rect>
        <x>10</x>
        <y>90</y>
-       <width>161</width>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
@@ -94,7 +104,7 @@
       <rect>
        <x>10</x>
        <y>140</y>
-       <width>161</width>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
@@ -141,6 +151,9 @@
     <property name="font">
      <font>
       <pointsize>15</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>true</underline>
      </font>
     </property>
     <property name="title">
@@ -154,7 +167,7 @@
       <rect>
        <x>70</x>
        <y>30</y>
-       <width>261</width>
+       <width>191</width>
        <height>31</height>
       </rect>
      </property>
@@ -180,7 +193,7 @@
       <rect>
        <x>50</x>
        <y>110</y>
-       <width>261</width>
+       <width>211</width>
        <height>31</height>
       </rect>
      </property>
@@ -240,7 +253,7 @@
       <rect>
        <x>80</x>
        <y>30</y>
-       <width>261</width>
+       <width>171</width>
        <height>31</height>
       </rect>
      </property>
@@ -266,7 +279,7 @@
       <rect>
        <x>40</x>
        <y>110</y>
-       <width>291</width>
+       <width>241</width>
        <height>31</height>
       </rect>
      </property>
@@ -305,7 +318,7 @@
       <rect>
        <x>60</x>
        <y>190</y>
-       <width>291</width>
+       <width>221</width>
        <height>31</height>
       </rect>
      </property>
@@ -352,7 +365,7 @@
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>161</width>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
@@ -376,14 +389,14 @@
     <widget class="QLabel" name="label_10">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>210</x>
        <y>30</y>
-       <width>211</width>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Cantidad producida por tiempo:</string>
+      <string>Producción por tiempo:</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_maq1Ins">
@@ -402,14 +415,14 @@
     <widget class="QLabel" name="label_11">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>20</x>
        <y>120</y>
-       <width>291</width>
+       <width>121</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Cantidad mínima:</string>
+      <string> Cantidad mínima:</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="txt_maq1CntMin">
@@ -454,14 +467,14 @@
     <widget class="QLabel" name="label_12">
      <property name="geometry">
       <rect>
-       <x>230</x>
+       <x>220</x>
        <y>120</y>
-       <width>131</width>
+       <width>121</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Cantidad  máxima:</string>
+      <string>  Cantidad máxima:</string>
      </property>
     </widget>
    </widget>
@@ -490,7 +503,7 @@
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>161</width>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
@@ -514,14 +527,14 @@
     <widget class="QLabel" name="label_14">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>210</x>
        <y>30</y>
-       <width>211</width>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Cantidad producida por tiempo:</string>
+      <string>Producción por tiempo:</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_maq2Ins">
@@ -535,19 +548,6 @@
      </property>
      <property name="text">
       <string>Insertar</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_15">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>120</y>
-       <width>291</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Cantidad mínima:</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="txt_maq2CntMin">
@@ -599,7 +599,20 @@
       </rect>
      </property>
      <property name="text">
-      <string>Cantidad  máxima:</string>
+      <string>  Cantidad máxima:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_23">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>  Cantidad mínima:</string>
      </property>
     </widget>
    </widget>
@@ -628,7 +641,7 @@
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>161</width>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
@@ -652,14 +665,14 @@
     <widget class="QLabel" name="label_18">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>210</x>
        <y>30</y>
-       <width>211</width>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Cantidad producida por tiempo:</string>
+      <string>Producción por tiempo:</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_maqChIns">
@@ -678,14 +691,14 @@
     <widget class="QLabel" name="label_19">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>20</x>
        <y>120</y>
-       <width>291</width>
+       <width>121</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Cantidad mínima:</string>
+      <string>  Cantidad mínima:</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="txt_maqChCntMin">
@@ -732,12 +745,12 @@
       <rect>
        <x>220</x>
        <y>120</y>
-       <width>131</width>
+       <width>121</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Cantidad  máxima:</string>
+      <string> Cantidad máxima:</string>
      </property>
     </widget>
    </widget>
@@ -766,7 +779,7 @@
       <rect>
        <x>50</x>
        <y>30</y>
-       <width>61</width>
+       <width>51</width>
        <height>31</height>
       </rect>
      </property>
@@ -826,7 +839,7 @@
       <rect>
        <x>50</x>
        <y>30</y>
-       <width>61</width>
+       <width>51</width>
        <height>31</height>
       </rect>
      </property>
@@ -886,7 +899,7 @@
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>161</width>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
@@ -894,7 +907,7 @@
       <string>Tiempo de producción:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="txt_maqEmpTmpProd">
+    <widget class="QLineEdit" name="txt_maqEmsTmpProd">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -910,17 +923,17 @@
     <widget class="QLabel" name="label_25">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>200</x>
        <y>30</y>
-       <width>211</width>
+       <width>141</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Cantidad producida por tiempo:</string>
+      <string>Producción por tiempo:</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_maqEmpIns">
+    <widget class="QPushButton" name="btn_maqEmsIns">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -933,7 +946,7 @@
       <string>Insertar</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="txt_maqEmpCntProdXTiemp">
+    <widget class="QLineEdit" name="txt_maqEmsCntProdXTiemp">
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -972,7 +985,7 @@
       <rect>
        <x>50</x>
        <y>30</y>
-       <width>61</width>
+       <width>51</width>
        <height>31</height>
       </rect>
      </property>
@@ -980,7 +993,7 @@
       <string>Máximo:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="txt_BTEmpHorMax">
+    <widget class="QLineEdit" name="txt_BTEmsHorMax">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -993,12 +1006,12 @@
       <string>0</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_BTEmpHorIns">
+    <widget class="QPushButton" name="btn_BTEmsHorIns">
      <property name="geometry">
       <rect>
        <x>209</x>
        <y>70</y>
-       <width>91</width>
+       <width>101</width>
        <height>31</height>
       </rect>
      </property>
@@ -1031,16 +1044,16 @@
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>20</y>
-       <width>161</width>
-       <height>31</height>
+       <y>30</y>
+       <width>131</width>
+       <height>16</height>
       </rect>
      </property>
      <property name="text">
       <string>Tiempo de horneado: </string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_27">
+    <widget class="QLineEdit" name="txt_HorTmpHorneado">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -1053,7 +1066,7 @@
       <string>0</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_12">
+    <widget class="QPushButton" name="btn_HorIns">
      <property name="geometry">
       <rect>
        <x>240</x>
@@ -1087,7 +1100,7 @@
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
-     <widget class="QLineEdit" name="lineEdit_28">
+     <widget class="QLineEdit" name="txt_bnd1Cap">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1100,7 +1113,7 @@
        <string> Capacidad</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton">
+     <widget class="QRadioButton" name="rBtn_bnd1On">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -1113,7 +1126,7 @@
        <string>ON</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_13">
+     <widget class="QPushButton" name="btn_bnd1Ins">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1148,7 +1161,7 @@
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
-     <widget class="QLineEdit" name="lineEdit_29">
+     <widget class="QLineEdit" name="txt_bnd2Cap">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1161,7 +1174,7 @@
        <string> Capacidad</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton_2">
+     <widget class="QRadioButton" name="rBtn_bnd2On">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -1174,7 +1187,7 @@
        <string>ON</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_14">
+     <widget class="QPushButton" name="btn_bnd2Ins">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1209,7 +1222,7 @@
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
-     <widget class="QLineEdit" name="lineEdit_30">
+     <widget class="QLineEdit" name="txt_bnd3Cap">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1222,7 +1235,7 @@
        <string> Capacidad</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton_3">
+     <widget class="QRadioButton" name="rBtn_bnd3On">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -1235,7 +1248,7 @@
        <string>ON</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_15">
+     <widget class="QPushButton" name="btn_bnd3Ins">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1248,12 +1261,12 @@
        <string>√</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton_4">
+     <widget class="QRadioButton" name="rBtn_bnd3Off">
       <property name="geometry">
        <rect>
         <x>100</x>
         <y>50</y>
-        <width>99</width>
+        <width>51</width>
         <height>22</height>
        </rect>
       </property>
@@ -1283,7 +1296,7 @@
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
-     <widget class="QLineEdit" name="lineEdit_31">
+     <widget class="QLineEdit" name="txt_bnd4Cap">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1296,7 +1309,7 @@
        <string> Capacidad</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton_5">
+     <widget class="QRadioButton" name="rBtn_bnd4On">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -1309,7 +1322,7 @@
        <string>ON</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_16">
+     <widget class="QPushButton" name="btn_bnd4Ins">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1322,7 +1335,7 @@
        <string>√</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton_6">
+     <widget class="QRadioButton" name="rBtn_bnd4Off">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -1357,7 +1370,7 @@
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
-     <widget class="QLineEdit" name="lineEdit_33">
+     <widget class="QLineEdit" name="txt_bnd5Cap">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1370,7 +1383,7 @@
        <string> Capacidad</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton_9">
+     <widget class="QRadioButton" name="rBtn_bnd5On">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -1383,7 +1396,7 @@
        <string>ON</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_18">
+     <widget class="QPushButton" name="btn_bnd5Ins">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1396,12 +1409,12 @@
        <string>√</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton_10">
+     <widget class="QRadioButton" name="rBtn_bnd5Off">
       <property name="geometry">
        <rect>
         <x>100</x>
         <y>50</y>
-        <width>99</width>
+        <width>51</width>
         <height>22</height>
        </rect>
       </property>
@@ -1431,7 +1444,7 @@
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
-     <widget class="QLineEdit" name="lineEdit_34">
+     <widget class="QLineEdit" name="txt_bnd6Cap">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1444,7 +1457,7 @@
        <string> Capacidad</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton_11">
+     <widget class="QRadioButton" name="rBtn_bnd6On">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -1457,7 +1470,7 @@
        <string>ON</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_19">
+     <widget class="QPushButton" name="btn_bnd6Ins">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1470,12 +1483,12 @@
        <string>√</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton_12">
+     <widget class="QRadioButton" name="rBtn_bnd6Off">
       <property name="geometry">
        <rect>
         <x>100</x>
         <y>50</y>
-        <width>99</width>
+        <width>51</width>
         <height>22</height>
        </rect>
       </property>
@@ -1510,7 +1523,7 @@
       <rect>
        <x>50</x>
        <y>30</y>
-       <width>61</width>
+       <width>51</width>
        <height>31</height>
       </rect>
      </property>
@@ -1518,7 +1531,7 @@
       <string>Máximo:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_35">
+    <widget class="QLineEdit" name="txt_BTHorSupMax">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1531,12 +1544,12 @@
       <string>0</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_20">
+    <widget class="QPushButton" name="btn_BTHorSupIns">
      <property name="geometry">
       <rect>
        <x>209</x>
        <y>70</y>
-       <width>91</width>
+       <width>101</width>
        <height>31</height>
       </rect>
      </property>
@@ -1578,7 +1591,7 @@
       <string>Supervisor 1</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_36">
+    <widget class="QLineEdit" name="txt_Sup1Prob">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1591,7 +1604,7 @@
       <string>0</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_21">
+    <widget class="QPushButton" name="btn_SupIns">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -1604,7 +1617,7 @@
       <string>Insertar</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_37">
+    <widget class="QLineEdit" name="txt_Sup2Prob">
      <property name="geometry">
       <rect>
        <x>270</x>
@@ -1635,9 +1648,9 @@
     <property name="geometry">
      <rect>
       <x>1140</x>
-      <y>500</y>
+      <y>490</y>
       <width>371</width>
-      <height>111</height>
+      <height>131</height>
      </rect>
     </property>
     <property name="font">
@@ -1651,25 +1664,12 @@
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
-    <widget class="QLabel" name="label_37">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>20</y>
-       <width>131</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Tiempo:</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_25">
+    <widget class="QPushButton" name="btn_maqEmpIns">
      <property name="geometry">
       <rect>
        <x>150</x>
-       <y>50</y>
-       <width>71</width>
+       <y>90</y>
+       <width>81</width>
        <height>31</height>
       </rect>
      </property>
@@ -1677,7 +1677,7 @@
       <string>Insertar</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_45">
+    <widget class="QLineEdit" name="txt_maqEmpCap">
      <property name="geometry">
       <rect>
        <x>270</x>
@@ -1690,20 +1690,7 @@
       <string>0</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_38">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>20</y>
-       <width>161</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Capacidad:</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_46">
+    <widget class="QLineEdit" name="txt_maqEmpTmp">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1716,14 +1703,40 @@
       <string>0</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_40">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Tiempo:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="txt_transCap_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>30</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Máximo:</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_23">
     <property name="geometry">
      <rect>
       <x>1140</x>
-      <y>660</y>
+      <y>650</y>
       <width>371</width>
-      <height>111</height>
+      <height>131</height>
      </rect>
     </property>
     <property name="font">
@@ -1741,65 +1754,65 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>20</y>
-       <width>131</width>
-       <height>41</height>
+       <y>40</y>
+       <width>51</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="text">
       <string>Tiempo:</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_26">
+    <widget class="QLineEdit" name="txt_transCap_2">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>70</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="txt_transCap">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>40</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Máximo:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txt_transTmp">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_transIns">
      <property name="geometry">
       <rect>
        <x>150</x>
-       <y>80</y>
-       <width>71</width>
+       <y>90</y>
+       <width>81</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
       <string>Insertar</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_47">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>60</y>
-       <width>81</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>0</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_40">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>20</y>
-       <width>161</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Capacidad:</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_48">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>60</y>
-       <width>81</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>0</string>
      </property>
     </widget>
    </widget>

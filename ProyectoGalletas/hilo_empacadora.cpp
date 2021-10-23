@@ -26,7 +26,7 @@ void hilo_Empacadora::run(){
         do{
             galletas=this->empacadora->cola->contarGalletas();//Cuenta galletas que tiene la empacadora
             srand(time(0));
-            int probaGenerada=0 +rand()%((proba+1)-0);;
+            int probaGenerada=0 +rand()%((proba+1)-0);
             qDebug()<<"Probabilidad generada: "<<probaGenerada;
             paquetesEnviados=tmp->procesoPaquetesEnsambladora;//Cantidad de paquetes procesados
             if(probaGenerada<tmp->probabilidad){
@@ -40,12 +40,11 @@ void hilo_Empacadora::run(){
                 qDebug()<<"actuales: "<<this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales;
                 qDebug()<<"Tmp cantidad: "<<tmp->cantidadPaquetes;
                 if (this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales>=tmp->cantidadPaquetes){
-                    tmp=tmp->siguiente;
                     paquetesEnviados=0;
-                    std::string str = this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->tipoPaquete;
-                    QString qstr = QString::fromStdString(str);
+                    QString qstr = this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->tipoPaquete;
                     qDebug()<<qstr<<" ya tiene todos los paquetes: "<<(this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales);
                     sleep(2);
+                    tmp=tmp->siguiente;
                     continue;
                 }
                 this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales+=paquetesEnviados;

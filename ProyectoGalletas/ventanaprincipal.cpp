@@ -3,9 +3,6 @@
 VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new Ui::VentanaPrincipal){
     ui->setupUi(this);
 
-    this->punteros=new Punteros();
-    this->punteros->setPunteros();
-
     this->hiloPlanificador = NULL;
     this->hiloMaquinaMasa1 = NULL;//cambiar nombre de la clase porque al final se usa la misma pero con
     this->hiloMaquinaMasa2 = NULL;
@@ -15,17 +12,20 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
     this->hiloHorno=NULL;
     this->hiloSupervisores=NULL;
     this->hiloEmpacadora=NULL;
-    this->punteros->paquetes->insertar(4,"Paquetito",4,5,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
-    this->punteros->paquetes->insertar(16,"Tubos",1,1,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
-    //this->punteros->paquetes->insertar(16,"Paquetes",2,2,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
-    //this->punteros->paquetes->insertar(16,"Tubos",3);
-    //this->punteros->paquetes->insertar(10,"Paquetes",5);
+    this->punteros=NULL;
+//    this->punteros->paquetes->insertar(4,"Paquetito",4,5,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
+//    this->punteros->paquetes->insertar(16,"Tubos",1,1,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
+//    //this->punteros->paquetes->insertar(16,"Paquetes",2,2,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
+//    //this->punteros->paquetes->insertar(16,"Tubos",3);
+//    //this->punteros->paquetes->insertar(10,"Paquetes",5);
 
 
-    this->punteros->paquetes->setProbabilidades();
-    this->punteros->maquinaChocolate->cantidadEnviadaABanda=5;
-    this->punteros->supervisor1->probabilidadDesecho=80;
-    this->punteros->supervisor2->probabilidadDesecho=95;
+//    this->punteros->paquetes->setProbabilidades();
+//    this->punteros->paquetes->imprimir();
+
+//    this->punteros->maquinaChocolate->cantidadEnviadaABanda=5;
+//    this->punteros->supervisor1->probabilidadDesecho=80;
+//    this->punteros->supervisor2->probabilidadDesecho=95;
 
     QPixmap pix (":/Recursos/img/cookie.png");
     int w = this->ui->lbl_TextGalletasPlani->width();
@@ -121,7 +121,6 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
     int w13 = this->ui->lbl_imgAlmacenFinal->width();
     int h13 = this->ui->lbl_imgAlmacenFinal->height();
     this->ui->lbl_imgAlmacenFinal->setPixmap(pix13.scaled(w13,h13,Qt::KeepAspectRatio));
-
 
 //    QMovie *movie = new QMovie("//GIFPlanificador.gif");
 //    QLabel *processLabel = new QLabel(this);
@@ -288,4 +287,3 @@ void VentanaPrincipal::on_btnDetener_clicked(){
     this->ui->lbl_horneadasHorno->setText(QString::number(0));;
     this->ui->lbl_actualSupervisores->setText(QString::number(0));;
 }
-

@@ -9,7 +9,7 @@ ListaPaquetes::ListaPaquetes(){
 bool ListaPaquetes::estaVacia(){
     return this->primerNodo==NULL;
 }
-void ListaPaquetes::insertar(int cantidadGalletasPorPaquete,string _nombre,int _cantidadPaquetes,int procesoPaquetes,int duracionPaquetes,int probabilidad){
+void ListaPaquetes::insertar(int cantidadGalletasPorPaquete,QString _nombre,int _cantidadPaquetes,int procesoPaquetes,int duracionPaquetes,int probabilidad){
     if (this->primerNodo == NULL){
         this->primerNodo = new Nodo(cantidadGalletasPorPaquete, _nombre,_cantidadPaquetes,procesoPaquetes,duracionPaquetes,probabilidad);
         this->primerNodo->siguiente= primerNodo;
@@ -30,12 +30,13 @@ void ListaPaquetes::insertar(int cantidadGalletasPorPaquete,string _nombre,int _
     this->largo++;
 
 }
-Nodo * ListaPaquetes::buscar(int _dato,string _nombre){
+Nodo * ListaPaquetes::buscar(int _dato,QString _nombre){
     if (this->primerNodo != NULL){
 
         Nodo * tmp = this->primerNodo;
         do{
-            if ((tmp->cantidadGalletas == _dato) &(tmp->nombre.compare(_nombre)==0))
+            int n = tmp->cantidadGalletas;
+            if (n == _dato /*&(tmp->nombre==_nombre)*/)
                 return tmp;
             tmp = tmp->siguiente;
         }while(tmp!=this->primerNodo);
@@ -43,7 +44,7 @@ Nodo * ListaPaquetes::buscar(int _dato,string _nombre){
     }
     return NULL;
 }
-Nodo * ListaPaquetes::eliminar(int _dato,string _nombre){
+Nodo * ListaPaquetes::eliminar(int _dato,QString _nombre){
     Nodo * eliminado = buscar(_dato, _nombre);
 
     if (eliminado != NULL){ // sí lo encontró
@@ -63,7 +64,7 @@ Nodo * ListaPaquetes::eliminar(int _dato,string _nombre){
     return eliminado;
 }
 void ListaPaquetes::imprimir(){
-    cout <<"Inicia imprimir metodo"<< endl;//si quito esto el programa crashea, wtf
+    qDebug() <<"Inicia imprimir metodo";//si quito esto el programa crashea, wtf
     if (this->primerNodo != NULL){
         Nodo * tmp = this->primerNodo;
         do{
@@ -71,7 +72,7 @@ void ListaPaquetes::imprimir(){
             tmp = tmp->siguiente;
         }while(tmp!=this->primerNodo);
     }
-    cout <<"Fin metodo"<< endl;//si quito esto el programa crashea, wtf
+     qDebug()<<"Fin metodo";//si quito esto el programa crashea, wtf
 }
 double ListaPaquetes::getCantidadGalletas(){
     double galletas=0;

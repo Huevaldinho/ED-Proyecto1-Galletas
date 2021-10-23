@@ -9,11 +9,11 @@ struct Nodo{//Nodo de la lista doblemente enlazada //Nodo equivale a paquete
         int duracionProceso;
         int procesoPaquetesEnsambladora;
         int probabilidad;
-        string nombre;
+        QString nombre;
         Nodo * siguiente;
         Nodo * anterior;
 
-        Nodo(int d,string _nombre,int _cantidadPaquetes, int _procesoPaquete,int duracionPaquete,int _probabilidad){
+        Nodo(int d,QString _nombre,int _cantidadPaquetes, int _procesoPaquete,int duracionPaquete,int _probabilidad){
             cantidadPaquetes= _cantidadPaquetes;
             cantidadGalletas = d;
             nombre=_nombre;
@@ -32,8 +32,11 @@ struct Nodo{//Nodo de la lista doblemente enlazada //Nodo equivale a paquete
             siguiente = anterior = NULL;
         }
         void imprimir (){
-
-            cout << "<-|" << nombre << "|-> ";
+            qDebug() << "------------------";
+            qDebug() << "<-|" << nombre << "|-> ";
+            qDebug() << "<-|" << cantidadGalletas << "|-> ";
+            qDebug() << "<-|" << cantidadPaquetes << "|-> ";
+            qDebug() << "------------------";
         }
 };
 #endif // NODO_H

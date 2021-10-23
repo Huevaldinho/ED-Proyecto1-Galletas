@@ -7,7 +7,7 @@ struct Transportadores{
     Transportador * un;
     int largo;
     Transportadores();
-    void insertarTransportador(string,int, int,int);
-    Transportador * transporteParaEnviar(string);
+    void insertarTransportador(QString,int, int,int);
+    Transportador * transporteParaEnviar(QString);
 };
 #endif // TRANSPORTADORES_H

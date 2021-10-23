@@ -7,12 +7,12 @@ struct Transportador{
     int actuales;
     int tiempoTransporte;
     int totalEnviados;
-    string tipoPaquete;
+    QString tipoPaquete;
     Transportador * siguiente;
     Transportador * anterior;
 
     Transportador();
-    Transportador(int,int,int,string);
+    Transportador(int,int,int,QString);
     void setEmpacadora(MaquinaEmpacadora*);
     void setActual(int actual);
 };
