@@ -20,7 +20,6 @@ class VentanaConfigurar : public QMainWindow{Q_OBJECT
 
 
                                          private slots:
-                                                 void on_pushButton_clicked();
 
                                          private:
         Ui::VentanaConfigurar *ui;
