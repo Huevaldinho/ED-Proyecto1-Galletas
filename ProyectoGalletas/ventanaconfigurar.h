@@ -2,6 +2,11 @@
 #define VENTANACONFIGURAR_H
 
 #include <QMainWindow>
+#include "Punteros.h"
+#include <QMainWindow>
+#include <QMovie>
+#include <QLabel>
+#include <QDebug>
 
 namespace Ui {
     class VentanaConfigurar;
@@ -10,10 +15,14 @@ namespace Ui {
 class VentanaConfigurar : public QMainWindow{Q_OBJECT
     public:
         explicit VentanaConfigurar(QWidget *parent = nullptr);
+        Punteros*punteros;
         ~VentanaConfigurar();
 
 
-    private:
+                                         private slots:
+                                                 void on_pushButton_clicked();
+
+                                         private:
         Ui::VentanaConfigurar *ui;
 };
 

@@ -274,7 +274,7 @@
       <string>Capacidad de transporte de chocolate:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_7">
+    <widget class="QLineEdit" name="txt_CarTransChoco">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -287,7 +287,7 @@
       <string>0</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="btn_CarIns">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -313,7 +313,7 @@
       <string>Capacidad de transporte de masa:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_8">
+    <widget class="QLineEdit" name="txt_CarTransMasa">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -360,7 +360,7 @@
       <string>Tiempo de producción:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_9">
+    <widget class="QLineEdit" name="txt_maq1TmpProd">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -386,7 +386,7 @@
       <string>Cantidad producida por tiempo:</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="btn_maq1Ins">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -412,7 +412,7 @@
       <string>Cantidad mínima:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_11">
+    <widget class="QLineEdit" name="txt_maq1CntMin">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -425,7 +425,7 @@
       <string>0</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_12">
+    <widget class="QLineEdit" name="txt_maq1CntProdTiempo">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -438,7 +438,7 @@
       <string>0</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_13">
+    <widget class="QLineEdit" name="txt_maq1CntMax">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -498,7 +498,7 @@
       <string>Tiempo de producción:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_10">
+    <widget class="QLineEdit" name="txt_maq2TmpProd">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -524,7 +524,7 @@
       <string>Cantidad producida por tiempo:</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="btn_maq2Ins">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -550,7 +550,7 @@
       <string>Cantidad mínima:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_14">
+    <widget class="QLineEdit" name="txt_maq2CntMin">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -563,7 +563,7 @@
       <string>0</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_15">
+    <widget class="QLineEdit" name="txt_maq2CntProdTiempo">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -576,7 +576,7 @@
       <string>0</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_16">
+    <widget class="QLineEdit" name="txt_maq2CntMax">
      <property name="geometry">
       <rect>
        <x>220</x>

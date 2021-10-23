@@ -6,5 +6,6 @@ VentanaConfigurar::VentanaConfigurar(QWidget *parent) :QMainWindow(parent),ui(ne
 }
 
 VentanaConfigurar::~VentanaConfigurar(){
+    this->punteros=NULL;
     delete ui;
 }
