@@ -6,6 +6,7 @@ struct Transportador{
     int maximo;
     int actuales;
     int tiempoTransporte;
+    int totalEnviados;
     string tipoPaquete;
     Transportador * siguiente;
     Transportador * anterior;

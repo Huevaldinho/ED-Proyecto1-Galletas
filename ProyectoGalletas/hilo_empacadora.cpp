@@ -10,7 +10,8 @@ void hilo_Empacadora::__init__(MaquinaEmpacadora * _empacadora){
 }
 void hilo_Empacadora::run(){
     double galletas=0;
-    double enviarGalletas=0;
+    double paquetesEnviados=0;
+    double excedente = 0;
     this->corriendo=true;
     qDebug()<<"Corre hilo empacadora";
     this->empacadora->paquetes->setProbabilidades();
@@ -25,28 +26,55 @@ void hilo_Empacadora::run(){
         do{
             galletas=this->empacadora->cola->contarGalletas();//Cuenta galletas que tiene la empacadora
             srand(time(0));
-            int probaGenerada=1 + rand() % 100;
+            int probaGenerada=0 +rand()%((proba+1)-0);;
             qDebug()<<"Probabilidad generada: "<<probaGenerada;
+            paquetesEnviados=tmp->procesoPaquetesEnsambladora;//Cantidad de paquetes procesados
             if(probaGenerada<tmp->probabilidad){
-                enviarGalletas=tmp->procesoPaquetesEnsambladora*tmp->cantidadGalletas;//Cantidad de paquetes procesados
-                while (enviarGalletas>galletas){
+                while (paquetesEnviados>galletas){
                     qDebug()<<"Dormido porque no tiene suficientes galletas";
                     qDebug()<<"Galletas actuales: "<<galletas;
-                    qDebug()<<"Solicitadas: "<<enviarGalletas;
+                    qDebug()<<"Solicitadas: "<<paquetesEnviados;
+                    galletas=this->empacadora->cola->contarGalletas();//Cuenta galletas que tiene la empacadora
                     sleep(2);
                 }
-                this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales+=enviarGalletas;
-                galletas-=tmp->procesoPaquetesEnsambladora*tmp->cantidadGalletas;
-                //Tiene la posibilidad de cual mandar
-                qDebug()<<"tmp->probabilidad: "<<tmp->probabilidad;
-                qDebug()<<"Transporte actual: "<<this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales;
-                sleep(this->empacadora->tiempoEmpaque);
+                qDebug()<<"actuales: "<<this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales;
+                qDebug()<<"Tmp cantidad: "<<tmp->cantidadPaquetes;
+                if (this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales>=tmp->cantidadPaquetes){
+                    tmp=tmp->siguiente;
+                    paquetesEnviados=0;
+                    std::string str = this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->tipoPaquete;
+                    QString qstr = QString::fromStdString(str);
+                    qDebug()<<qstr<<" ya tiene todos los paquetes: "<<(this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales);
+                    sleep(2);
+                    continue;
+                }
+                this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales+=paquetesEnviados;
+                this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->totalEnviados+=paquetesEnviados;
+                //Si se paso de paquetes quita el exceso
+                if (this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->totalEnviados>tmp->cantidadPaquetes){
+                    excedente=this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->totalEnviados-tmp->cantidadPaquetes;
+                    this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales-=(excedente);
+                    galletas+=(excedente*tmp->cantidadGalletas);
+                    galletas=this->empacadora->cola->contarGalletas();//Cuenta galletas que tiene la empacadora
+                }else{
+                    galletas-=tmp->procesoPaquetesEnsambladora*tmp->cantidadGalletas;
+                    //Tiene la posibilidad de cual mandar
+                    qDebug()<<"tmp->probabilidad: "<<tmp->probabilidad;
+                    qDebug()<<"Transporte:"<<this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales;
+                    qDebug()<<"Total enviados : "<<this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->totalEnviados;
+                    sleep(this->empacadora->tiempoEmpaque);
+
+                }
+
+
+
 
             }else{
                 qDebug()<<"ELSE DE PROBABILIDAD HILO EMPACADORA";
                 proba-=tmp->probabilidad;
                 sleep(2);
             }
+            paquetesEnviados=0;
             tmp=tmp->siguiente;
         }while(tmp!=NULL);
 

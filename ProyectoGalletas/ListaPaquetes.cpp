@@ -14,7 +14,7 @@ void ListaPaquetes::insertar(int cantidadGalletasPorPaquete,string _nombre,int _
         this->primerNodo = new Nodo(cantidadGalletasPorPaquete, _nombre,_cantidadPaquetes,procesoPaquetes,duracionPaquetes,probabilidad);
         this->primerNodo->siguiente= primerNodo;
         this->primerNodo->anterior = primerNodo;
-        this->listaTransportadores->insertarTransportador(_nombre,100,0,5);
+        this->listaTransportadores->insertarTransportador(_nombre,100,0,0);
     }else{
         Nodo * buscado=buscar(cantidadGalletasPorPaquete,_nombre);
         if (buscado!=NULL){
@@ -24,7 +24,7 @@ void ListaPaquetes::insertar(int cantidadGalletasPorPaquete,string _nombre,int _
             nuevo->anterior = primerNodo->anterior;
             this->primerNodo->anterior->siguiente = nuevo;
             this->primerNodo->anterior = nuevo;
-            this->listaTransportadores->insertarTransportador(_nombre,100,0,5);
+            this->listaTransportadores->insertarTransportador(_nombre,100,0,0);
         }
     }
     this->largo++;
@@ -99,6 +99,8 @@ void ListaPaquetes::setProbabilidades(){
     while (i<this->largo){
         srand(time(0));
         int probaGenerada=1 + rand() % probaAnterior;
+        if (probaGenerada<0)
+            probaGenerada*=(-1);
         if ((i+1)==this->largo){
             tmp->probabilidad=100-proba;
 
@@ -108,6 +110,8 @@ void ListaPaquetes::setProbabilidades(){
             proba+=probaGenerada;
             probaAnterior=probaGenerada;
         }
+        if (tmp->probabilidad<0)
+            tmp->probabilidad*=(-1);
         qDebug()<<"Proba de "<<i<<": "<<tmp->probabilidad;
         tmp=tmp->siguiente;
         i++;

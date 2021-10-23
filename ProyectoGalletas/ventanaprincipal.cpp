@@ -15,13 +15,11 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
     this->hiloHorno=NULL;
     this->hiloSupervisores=NULL;
     this->hiloEmpacadora=NULL;
-    this->punteros->paquetes->insertar(4,"Paquetito",4,2,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
-    this->punteros->paquetes->insertar(4,"Paquetito",4,2,1,0);
-    this->punteros->paquetes->insertar(4,"Paquetito",4,2,1,0);
-    this->punteros->paquetes->insertar(4,"Paquetito",4,2,1,0);
+    this->punteros->paquetes->insertar(4,"Paquetito",4,5,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
+    this->punteros->paquetes->insertar(16,"Tubos",1,1,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
+    //this->punteros->paquetes->insertar(16,"Paquetes",2,2,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
+
     this->punteros->paquetes->setProbabilidades();
-    qDebug()<<"LARGO: "<<this->punteros->paquetes->largo;
-    qDebug()<<"PROBABILIDAD: "<<this->punteros->paquetes->primerNodo->probabilidad;
     this->punteros->maquinaChocolate->cantidadEnviadaABanda=5;
     this->punteros->supervisor1->probabilidadDesecho=80;
     this->punteros->supervisor2->probabilidadDesecho=95;
