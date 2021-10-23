@@ -13,8 +13,8 @@ int main(int argc, char *argv[]){
     QApplication a(argc, argv);
     VentanaConfigurar b;
     b.show();
-    VentanaPrincipal w=new VentanaPrincipal();
-    w.show();
+    //VentanaPrincipal w=new VentanaPrincipal();
+    //w.show();
 
 
 

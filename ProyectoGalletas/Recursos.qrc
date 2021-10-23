@@ -15,5 +15,7 @@
         <file>img/banda.png</file>
         <file>img/conveeyorBeltSupervisores.png</file>
         <file>img/carro.png</file>
+        <file>img/almacen1.png</file>
+        <file>img/storage.png</file>
     </qresource>
 </RCC>

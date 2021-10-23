@@ -18,6 +18,9 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
     this->punteros->paquetes->insertar(4,"Paquetito",4,5,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
     this->punteros->paquetes->insertar(16,"Tubos",1,1,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
     //this->punteros->paquetes->insertar(16,"Paquetes",2,2,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
+    //this->punteros->paquetes->insertar(16,"Tubos",3);
+    //this->punteros->paquetes->insertar(10,"Paquetes",5);
+
 
     this->punteros->paquetes->setProbabilidades();
     this->punteros->maquinaChocolate->cantidadEnviadaABanda=5;
@@ -74,7 +77,6 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
     int h7b = this->ui->lbl_TextBandaChoco->height();
     this->ui->lbl_TextBandaChoco->setPixmap(pix7b.scaled(w7b,h7b,Qt::KeepAspectRatio));
 
-
     QPixmap pix8 (":/Recursos/img/ensambladora.png");
     int w8 = this->ui->lbl_MaquinaEnsambladora->width();
     int h8 = this->ui->lbl_MaquinaEnsambladora->height();
@@ -99,21 +101,26 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
     int wS1 = this->ui->lblSup1->width();
     int hS1 = this->ui->lblSup1->height();
     this->ui->lblSup1->setPixmap(pixS1.scaled(wS1,hS1,Qt::KeepAspectRatio));
+
     QPixmap pixS2 (":/Recursos/img/supervisor.png");
     int wS2 = this->ui->lblSup2->width();
     int hS2 = this->ui->lblSup2->height();
     this->ui->lblSup2->setPixmap(pixS2.scaled(wS2,hS2,Qt::KeepAspectRatio));
 
-//    QPixmap pix111 (":/Recursos/img/empacadora.png");
-//    int w3 = this->ui->lbl_TextPlani->width();
-//    int h3 = this->ui->lbl_TextPlani->height();
-//    this->ui->lbl_TextPlani->setPixmap(pix3.scaled(w3,h3,Qt::KeepAspectRatio));
+    QPixmap pix11 (":/Recursos/img/empacadora.png");
+    int w11 = this->ui->lbl_imgEmpacadora->width();
+    int h11 = this->ui->lbl_imgEmpacadora->height();
+    this->ui->lbl_imgEmpacadora->setPixmap(pix11.scaled(w11,h11,Qt::KeepAspectRatio));
 
+    QPixmap pix12 (":/Recursos/img/almacen1.png");
+    int w12 = this->ui->lbl_imgAlmacen1->width();
+    int h12 = this->ui->lbl_imgAlmacen1->height();
+    this->ui->lbl_imgAlmacen1->setPixmap(pix12.scaled(w12,h12,Qt::KeepAspectRatio));
 
-    //this->punteros->paquetes->insertar(16,"Tubos",3);
-    //this->punteros->paquetes->insertar(10,"Paquetes",5);
-
-
+    QPixmap pix13 (":/Recursos/img/storage.png");
+    int w13 = this->ui->lbl_imgAlmacenFinal->width();
+    int h13 = this->ui->lbl_imgAlmacenFinal->height();
+    this->ui->lbl_imgAlmacenFinal->setPixmap(pix13.scaled(w13,h13,Qt::KeepAspectRatio));
 
 
 //    QMovie *movie = new QMovie("//GIFPlanificador.gif");
