@@ -2,10 +2,11 @@
 #define HILO_MAQUINAMASA1_H
 #include "Estructuras.h"
 #include <QLabel>
-
+#include <QTableWidget>
 class hilo_maquinaMasa1: public QThread{
     public:
         MaquinaMezclaMasaChocolate * maquinaMasa1;
+        QTableWidget * tabla;
         QLabel * lbl_totalProduccion;
         QLabel * lbl_cantidadActual;
         QLabel * lbl_BandaTActual;

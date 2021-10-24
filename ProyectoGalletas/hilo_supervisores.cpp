@@ -32,7 +32,8 @@ void hilo_Supervisores::run(){
            //desencola colaSupervisores
            qDebug()<<"Encola en banda empacadora: "<<this->supervisor1->colaEmpacadora->frente->dato;
         }
-        qDebug()<<"Labels";
+        this->lbl_Actual->setText(QString::number(this->supervisor1->colaSupervisores->actual));
+        this->lbl_Max->setText(QString::number(this->supervisor1->colaSupervisores->maximaCapacidad));
         this->lbl_aprobo->setText(QString::number(this->supervisor1->galletasAceptadas));//Sup 1 aprobadas
         this->lbl_rechazo->setText(QString::number(this->supervisor1->galletasRechazadas));//rechazadas sup1
         this->lbl_aproboSup2->setText(QString::number(this->supervisor2->galletasAceptadas));

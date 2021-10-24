@@ -15,6 +15,9 @@ void hilo_Empacadora::run(){
     this->corriendo=true;
     qDebug()<<"Corre hilo empacadora";
     this->empacadora->paquetes->setProbabilidades();
+
+
+
     while (this->corriendo){
         while(this->pausa || this->empacadora->cola->frente==NULL){
             qDebug()<<"Pausa hilo empacadora por frente null o this->pausa==true";
@@ -37,13 +40,19 @@ void hilo_Empacadora::run(){
                     galletas=this->empacadora->cola->contarGalletas();//Cuenta galletas que tiene la empacadora
                     sleep(2);
                 }
-                qDebug()<<"actuales: "<<this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales;
-                qDebug()<<"Tmp cantidad: "<<tmp->cantidadPaquetes;
                 if (this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales>=tmp->cantidadPaquetes){
                     paquetesEnviados=0;
                     QString qstr = this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->tipoPaquete;
                     qDebug()<<qstr<<" ya tiene todos los paquetes: "<<(this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales);
                     sleep(2);
+                    //mandar a llamar al almacen y modificar actual de ese tipo de transporte
+                    //tipo, actual,max
+                    this->tabla->insertRow(this->tabla->rowCount());
+                    this->tabla->setItem(this->tabla->rowCount()-1,0,new QTableWidgetItem(QString(tmp->nombre)));
+                    this->tabla->setItem(this->tabla->rowCount()-1,1,new QTableWidgetItem(QString::number(this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales)));
+                    this->tabla->setItem(this->tabla->rowCount()-1,2,new QTableWidgetItem(QString::number(this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->totalEnviados)));
+                    this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales=0;
+
                     tmp=tmp->siguiente;
                     continue;
                 }
@@ -64,12 +73,7 @@ void hilo_Empacadora::run(){
                     sleep(this->empacadora->tiempoEmpaque);
 
                 }
-
-
-
-
             }else{
-                qDebug()<<"ELSE DE PROBABILIDAD HILO EMPACADORA";
                 proba-=tmp->probabilidad;
                 sleep(2);
             }

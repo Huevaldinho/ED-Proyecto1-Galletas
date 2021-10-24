@@ -3,12 +3,14 @@
 
 #include "Estructuras.h"
 #include <QLabel>
+#include <QTableWidget>
 class hilo_Horno: public QThread{
     public:
         Horno * horno;
         QLabel * lbl_BandaTActual;
         QLabel * lbl_BandaTMax;
         QLabel * lbl_BandejasActivas;
+        QTableWidget * tabla;
         bool corriendo;
         bool pausa;
 

@@ -139,6 +139,8 @@ void VentanaPrincipal::on_btnIniciar_clicked(){
         this->ui->radioButtonEncenderMaquina1->setChecked(true);
         this->ui->radioButtonEncenderMaquina2->setChecked(true);
         this->ui->radioButtonEncenderMaquina3->setChecked(true);
+        this->ui->radioButtonEncenderEnsambladora->setChecked(true);
+        this->ui->radioButtonEncenderHorno->setChecked(true);
 
         this->hiloPlanificador = new hilo_planificador();
         this->hiloMaquinaMasa1 = new hilo_maquinaMasa1();//cambiar nombre de la clase porque al final se usa la misma pero con
@@ -152,13 +154,21 @@ void VentanaPrincipal::on_btnIniciar_clicked(){
 
         this->hiloPlanificador->__init__(this->punteros->planificador,this->ui->lblCantidadGalletas,this->ui->lblMasa,this->ui->lblChoco);
         this->hiloMaquinaMasa1->__init__(this->punteros->maquinaMasa1,this->ui->lbl_MaquinaMasa1Procesada,this->ui->lbl_MaquinaMasa1EnProceso,this->ui->lbl_BandaTMasaActual,this->ui->lbl_BantaTMasaMax);
+        this->hiloMaquinaMasa1->tabla=this->ui->tableWidget;
         this->hiloMaquinaMasa2->__init__(this->punteros->maquinaMasa2,this->ui->lbl_MaquinaMasa2Procesada,this->ui->lbl_MaquinaMasa2EnProceso,this->ui->lbl_BandaTMasaActual,this->ui->lbl_BantaTMasaMax);
+        this->hiloMaquinaMasa2->tabla=this->ui->tableWidget;
         this->hiloMaquinaChoco->__init__(this->punteros->maquinaChocolate,this->ui->lbl_MaquinaChocoProcesada,this->ui->lbl_MaquinaChocoEnProceso,this->ui->lbl_BandaTChocoActual,this->ui->lbl_BandaTChocoMax);
+        this->hiloMaquinaChoco->tabla=this->ui->tableWidget;
         this->hiloCarrito->__init__(this->punteros->carrito);
+        this->hiloCarrito->tabla=this->ui->tableWidget;//tabla cola almacen
         this->hiloMaquinaEnsambladora->__init__(this->punteros->maquinaEnsambladora,this->ui->lbl_EnsambladoraProducida,this->ui->lbl_BandaTEnsambladoraActual,this->ui->lbl_BandaTEnsambladoraMax);
         this->hiloHorno->__init__(this->punteros->horno,this->ui->lbl_actualHorno,this->ui->lbl_horneadasHorno,this->ui->lbl_actualSupervisores);//orden label actualGalletas, horneadasGalletas, colaSiguienteActual
+        this->hiloHorno->tabla=this->ui->tablaBandejas;
         this->hiloSupervisores->__init__(this->punteros->supervisor1,this->punteros->supervisor2,this->ui->lbl_SupervisoresAceptadas,this->ui->lbl_SupervisoresRechazadas,this->ui->lbl_AceptadasSup2,this->ui->lbl_RechazadasSup2);//lblAceptadas,QLabel* lblRechazadas
+        this->hiloSupervisores->lbl_Actual=this->ui->lbl_actualSupervisores;
+        this->hiloSupervisores->lbl_Max=this->ui->lbl_SupervisoresMax;
         this->hiloEmpacadora->__init__(this->punteros->maquinaEmpacadora);
+        this->hiloEmpacadora->tabla=this->ui->tablaTransportes;
 
         this->hiloPlanificador->start();
         this->hiloMaquinaMasa1->start();
@@ -222,27 +232,39 @@ void VentanaPrincipal::on_btnPausa_clicked(){//FALTAN PAUSAS DE OTROS HILOS
         this->ui->radioButtonApagarMaquina1->setChecked(true);
         this->ui->radioButtonApagarMaquina2->setChecked(true);
         this->ui->radioButtonApagarMaquina3->setChecked(true);
+        this->ui->radioButtonApagarEnsambladora->setChecked(true);
+        this->ui->radioButtonApagarHorno->setChecked(true);
         //Pausa hilos
         this->hiloMaquinaMasa1->pausa=true;//Maquina masa 1
         this->hiloMaquinaMasa2->pausa=true;//Maquina masa 2
         this->hiloMaquinaChoco->pausa=true;//Maquina chocolate
         this->hiloPlanificador->pausa=true;//Planificador
         this->hiloMaquinaEnsambladora->pausa=true;
+        this->hiloCarrito->pausa=true;
+        this->hiloEmpacadora->pausa=true;
+        this->hiloSupervisores->pausa=true;
+        //this->hiloHorno->pausa=true;
+
     }
 }
 //Reanudar toda la ejecucion
 void VentanaPrincipal::on_btnReanudar_clicked(){//FALTAN PAUSAS DE OTROS HILOS
     this->pausa=false;
     if (this->hiloPlanificador!=NULL){
-        this->hiloMaquinaMasa1->pausa=false;
-        this->hiloMaquinaMasa2->pausa=false;
-        this->hiloMaquinaChoco->pausa=false;
-        this->hiloPlanificador->pausa=false;
-        this->hiloPlanificador->pausa=false;
+        this->hiloMaquinaMasa1->pausa=false;//Masa 1
+        this->hiloMaquinaMasa2->pausa=false;//Masa 2
+        this->hiloMaquinaChoco->pausa=false;//Choco
+        this->hiloPlanificador->pausa=false;//Planificador
+        this->hiloEmpacadora->pausa=false;//Empacadora
+        this->hiloMaquinaEnsambladora->pausa=false;//Ensambladora
+        this->hiloHorno->pausa=false;//Horno
+        this->hiloSupervisores->pausa=false;
         //Cambia los radio button
         this->ui->radioButtonEncenderMaquina1->setChecked(true);
         this->ui->radioButtonEncenderMaquina2->setChecked(true);
         this->ui->radioButtonEncenderMaquina3->setChecked(true);
+        this->ui->radioButtonEncenderEnsambladora->setChecked(true);
+        this->ui->radioButtonEncenderHorno->setChecked(true);
     }
 }
 //NO ESTA FUNCIONANDO BIEN
@@ -255,7 +277,8 @@ void VentanaPrincipal::on_btnDetener_clicked(){
     this->hiloMaquinaChoco->stop();
     this->hiloCarrito->stop();
     this->hiloPlanificador->stop();
-    this->hiloMaquinaEnsambladora->stop();
+    this->hiloEmpacadora->stop();
+    this->hiloSupervisores->stop();
     //Reinicia toda la mica, se supone jaja
     this->hiloMaquinaEnsambladora=NULL;
     this->hiloMaquinaMasa1=NULL;
@@ -263,7 +286,8 @@ void VentanaPrincipal::on_btnDetener_clicked(){
     this->hiloMaquinaChoco=NULL;
     this->hiloCarrito=NULL;
     this->hiloPlanificador=NULL;
-    this->hiloMaquinaEnsambladora=NULL;
+    this->hiloEmpacadora=NULL;
+    //this->hiloHorno=NULL;
     this->ui->lblCantidadGalletas->setText(QString::number(0));
     this->ui->lblChoco->setText(QString::number(0));
     this->ui->lblMasa->setText(QString::number(0));
@@ -287,3 +311,29 @@ void VentanaPrincipal::on_btnDetener_clicked(){
     this->ui->lbl_horneadasHorno->setText(QString::number(0));;
     this->ui->lbl_actualSupervisores->setText(QString::number(0));;
 }
+
+void VentanaPrincipal::on_btnCambiarEstadoEnsambladora_clicked(){
+    if(this->hiloPlanificador!=NULL){
+        if(this->ui->radioButtonApagarEnsambladora->isChecked()){
+            qDebug()<<"APAGAR ENSAMBLADORA";
+            this->hiloMaquinaEnsambladora->pausa=true;
+        }
+        if (this->ui->radioButtonEncenderEnsambladora->isChecked()){
+            qDebug()<<"ENCENDER ENSAMBLADORA";
+            this->hiloMaquinaEnsambladora->pausa=false;
+        }
+    }
+}
+void VentanaPrincipal::on_btnCambiarEstadoHorno_clicked(){
+    if(this->hiloHorno!=NULL){
+        if(this->ui->radioButtonApagarHorno->isChecked()){
+            qDebug()<<"APAGAR HORNO";
+            this->hiloHorno->pausa=true;
+        }
+        if (this->ui->radioButtonEncenderHorno->isChecked()){
+            qDebug()<<"ENCENDER HORNO";
+            this->hiloHorno->pausa=false;
+        }
+    }
+}
+

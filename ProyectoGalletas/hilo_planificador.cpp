@@ -25,6 +25,7 @@ void hilo_planificador::run(){
              if (this->corriendo==false)
                  break;
          }
+
          this->planificador->calcularCantidadGalletasSolicitadas();//Calcula cuantas galletas y masa/chocolate tiene que hacer
          this->planificador->maquinaMasa1->cantidadAProcesar=this->planificador->cantidadNecesariaMasa/2;//Lo reparte a las maquinas
          this->planificador->maquinaMasa2->cantidadAProcesar=this->planificador->cantidadNecesariaMasa/2;

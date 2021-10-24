@@ -9,6 +9,8 @@ class hilo_Supervisores: public QThread{
         QLabel*lbl_rechazo;
         QLabel*lbl_aproboSup2;
         QLabel*lbl_rechazoSup2;
+        QLabel*lbl_Actual;
+        QLabel*lbl_Max;
         Supervisor * supervisor1;
         Supervisor * supervisor2;
         bool corriendo;

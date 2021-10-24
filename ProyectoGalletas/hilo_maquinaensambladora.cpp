@@ -20,8 +20,8 @@ void hilo_MaquinaEnsambladora::run(){
     while(this->corriendo){
         while (this->maquinaEnsambladora->galletasHechas<this->maquinaEnsambladora->galletasAProcesar){
             //Desencolar y aumentar galletas
-            while (pausa){
-                qDebug()<<"Pausa manual ensambladora";
+            while (pausa || this->maquinaEnsambladora->colaSalida->actual>=this->maquinaEnsambladora->colaSalida->maximaCapacidad){
+                qDebug()<<"Pausa manual ensambladora o cola salida al max";
                 this->lbl_BandaTActual->setText(QString::number(this->maquinaEnsambladora->colaSalida->actual));
                 if (this->corriendo==false)
                     break;

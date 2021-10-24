@@ -10,6 +10,7 @@ class hilo_planificador: public QThread{//TODOS LOS HILOS HEREDAN DE QThread
         QLabel*lbl_masa;
         QLabel*lbl_choco;
         Planificador * planificador;
+
         bool corriendo;
         bool pausa;
 

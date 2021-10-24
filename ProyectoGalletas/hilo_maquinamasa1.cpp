@@ -22,8 +22,8 @@ void hilo_maquinaMasa1::run(){
     qDebug()<<"A PEDIR MAQUINA "<<this->maquinaMasa1->id<<": "<<this->maquinaMasa1->maximaCapacidad-this->maquinaMasa1->capacidadActual;
     while(this->corriendo){
         while(this->maquinaMasa1->cantidadProcesada<this->maquinaMasa1->cantidadAProcesar){
-            while (this->pausa){
-                qDebug()<<"Pausa manual de maquina: "<<this->maquinaMasa1->id;
+            while (this->pausa||this->maquinaMasa1->cola->actual>=this->maquinaMasa1->cola->maximaCapacidad){
+                qDebug()<<"Pausa manual de maquina o cola de salida llego al max: "<<this->maquinaMasa1->id;
                 if (this->corriendo==false)
                     break;
                 sleep(3);
@@ -35,6 +35,11 @@ void hilo_maquinaMasa1::run(){
                 if(yaEncole==false){//Encola si pedir es diferente de !=0
                     if (pedir!=0){
                         this->maquinaMasa1->colaPeticiones->encolar(pedir,this->maquinaMasa1->id);//cantidad soli, id maquina
+                        this->tabla->insertRow(this->tabla->rowCount());
+                        //cantidad, id, estado -> son las columnas de la tabla
+                        this->tabla->setItem(this->tabla->rowCount()-1,0,new QTableWidgetItem(QString::number(pedir)));
+                        this->tabla->setItem(this->tabla->rowCount()-1,1,new QTableWidgetItem(QString::number(this->maquinaMasa1->id)));
+                        this->tabla->setItem(this->tabla->rowCount()-1,2,new QTableWidgetItem("Pendiente"));
                         yaEncole=true;
                     }
                 }

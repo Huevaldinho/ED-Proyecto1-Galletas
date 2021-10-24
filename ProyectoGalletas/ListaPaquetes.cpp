@@ -14,7 +14,7 @@ void ListaPaquetes::insertar(int cantidadGalletasPorPaquete,QString _nombre,int 
         this->primerNodo = new Nodo(cantidadGalletasPorPaquete, _nombre,_cantidadPaquetes,procesoPaquetes,duracionPaquetes,probabilidad);
         this->primerNodo->siguiente= primerNodo;
         this->primerNodo->anterior = primerNodo;
-        this->listaTransportadores->insertarTransportador(_nombre,100,0,0);
+        this->listaTransportadores->insertarTransportador(_nombre,100,0,0);//(int _maximo,int _tiempoTransporte,int _actuales,QString _tipoPaquete
     }else{
         Nodo * buscado=buscar(cantidadGalletasPorPaquete,_nombre);
         if (buscado!=NULL){

@@ -6,7 +6,6 @@
 #include <QMovie>
 #include <QLabel>
 #include <QDebug>
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class VentanaPrincipal; }
 QT_END_NAMESPACE
@@ -24,6 +23,9 @@ class VentanaPrincipal : public QMainWindow{Q_OBJECT
         hilo_Horno*hiloHorno;
         hilo_Supervisores * hiloSupervisores;
         hilo_Empacadora * hiloEmpacadora;
+        QTableWidget * tabla;
+        QTableWidget * tablaBandejas;
+        QTableWidget * tablaTransportes;
         bool pausa;
         bool corriendo;
 
@@ -44,6 +46,12 @@ class VentanaPrincipal : public QMainWindow{Q_OBJECT
                                                                                                                                         void on_btnCambiarEstadoMaquina3_clicked();
 
                                                                                                                                                                                 void on_btnReanudar_clicked();
+
+                                                                                                                                                                                                                        void on_btnCambiarEstadoEnsambladora_clicked();
+
+                                                                                                                                                                                                                                                                void on_btnCambiarEstadoHorno_clicked();
+
+
 
                                         private:
         Ui::VentanaPrincipal *ui;
