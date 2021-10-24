@@ -525,7 +525,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem14 = new QTableWidgetItem();
         tablaTransportes->setHorizontalHeaderItem(3, __qtablewidgetitem14);
         tablaTransportes->setObjectName(QString::fromUtf8("tablaTransportes"));
-        tablaTransportes->setGeometry(QRect(1170, 490, 401, 121));
+        tablaTransportes->setGeometry(QRect(1160, 490, 411, 121));
         tablaTransportes->setFont(font6);
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
@@ -692,7 +692,7 @@ public:
         label_3->setText(QCoreApplication::translate("VentanaPrincipal", "Transportadores", nullptr));
         lbl_PAUSA->setText(QString());
         label_4->setText(QCoreApplication::translate("VentanaPrincipal", "Total de Galletas:", nullptr));
-        lbl_TotalGalletas->setText(QCoreApplication::translate("VentanaPrincipal", "TextLabel", nullptr));
+        lbl_TotalGalletas->setText(QString());
     } // retranslateUi
 
 };

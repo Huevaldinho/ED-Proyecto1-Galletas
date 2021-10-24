@@ -9,81 +9,92 @@ void hilo_Empacadora::__init__(MaquinaEmpacadora * _empacadora){
     this->empacadora=_empacadora;
 }
 void hilo_Empacadora::run(){
-    double totalGalletas=0;
+    this->corriendo=true;
     double galletas=0;
+    double galletasEnviadas=0;
     double paquetesEnviados=0;
     double excedente = 0;
-    this->corriendo=true;
+    bool flag=true;
     qDebug()<<"Corre hilo empacadora";
     this->empacadora->paquetes->setProbabilidades();
-
+    Nodo * tmp = this->empacadora->paquetes->primerNodo;//Tipos de paquetes
     while (this->corriendo){
         while(this->pausa || this->empacadora->cola->frente==NULL){
             qDebug()<<"Pausa hilo empacadora por frente null o this->pausa==true";
             sleep(2);
         }
         qDebug()<<"Cantidad de galletas en empacadora: "<<galletas;
-        Nodo * tmp = this->empacadora->paquetes->primerNodo;//Tipos de paquetes
-        int proba=100;
-        do{
-            galletas=this->empacadora->cola->contarGalletas();//Cuenta galletas que tiene la empacadora
-            srand(time(0));
-            int probaGenerada=0 +rand()%((proba+1)-0);
-            qDebug()<<"Probabilidad generada: "<<probaGenerada;
-            sleep(1);
+        while(tmp!=NULL){
+            flag=true;
+            galletas=this->empacadora->cola->contarGalletas()-galletasEnviadas+excedente;//Cuenta galletas que tiene la empacadora
+            qDebug()<<"Galletas: "<<galletas;
             paquetesEnviados=tmp->procesoPaquetesEnsambladora;//Cantidad de paquetes procesados
             qDebug()<<"Paquetes Enviados: "<<paquetesEnviados;
             sleep(1);
-            if(probaGenerada<tmp->probabilidad){
-                while (paquetesEnviados*tmp->cantidadGalletas>galletas){
+            int proba=100;
+            while (galletas<this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->maximo*tmp->cantidadGalletas){
+                qDebug()<<"Dormido porque no tiene suficientes galletas";
+                qDebug()<<"Galletas actuales: "<<galletas;
+                qDebug()<<"Solicitadas: "<<paquetesEnviados;
+                galletas=this->empacadora->cola->contarGalletas()-galletasEnviadas+excedente;//Cuenta galletas que tiene la empacadora
+                sleep(2);
+            }
+            while (flag==true){
+                galletas=this->empacadora->cola->contarGalletas()-galletasEnviadas+excedente;//Cuenta galletas que tiene la empacadora
+                qDebug()<<"Galletas: "<<galletas;
+                while (galletas<this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->maximo*tmp->cantidadGalletas){
                     qDebug()<<"Dormido porque no tiene suficientes galletas";
                     qDebug()<<"Galletas actuales: "<<galletas;
                     qDebug()<<"Solicitadas: "<<paquetesEnviados;
-                    galletas=this->empacadora->cola->contarGalletas();//Cuenta galletas que tiene la empacadora
+                    galletas=this->empacadora->cola->contarGalletas()-galletasEnviadas+excedente;//Cuenta galletas que tiene la empacadora
                     sleep(2);
                 }
-                if (this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales>=this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->maximo){
-                    QString qstr = tmp->nombre;
-                    qDebug()<<qstr<<" ya tiene todos los paquetes: "<<(this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales);
-                    sleep(2);
-                    //mandar a llamar al almacen y modificar actual de ese tipo de transporte
-                    //tipo, actual,max
-                    this->tabla->insertRow(this->tabla->rowCount());
-                    this->tabla->setItem(this->tabla->rowCount()-1,0,new QTableWidgetItem(QString(tmp->nombre)));
-                    this->tabla->setItem(this->tabla->rowCount()-1,1,new QTableWidgetItem(QString::number(this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales)));
-                    this->tabla->setItem(this->tabla->rowCount()-1,2,new QTableWidgetItem(QString::number(this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->maximo)));
-                    this->tabla->setItem(this->tabla->rowCount()-1,3,new QTableWidgetItem(QString::number(this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->totalEnviados)));
-                    totalGalletas+=this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->totalEnviados*tmp->cantidadGalletas;
-                    lbl_galletasTotales->setText(QString::number(totalGalletas));
-                    this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales=0;
-                    tmp=tmp->siguiente;
-                    continue;
-                }else{
-                    this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales+=paquetesEnviados;
-                    this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->totalEnviados+=paquetesEnviados;
-                    //Si se paso de paquetes quita el exceso
-                    if (this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->totalEnviados>tmp->cantidadPaquetes){
-                        excedente=this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->totalEnviados-tmp->cantidadPaquetes;
-                        this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales-=(excedente);
-                        galletas+=(excedente*tmp->cantidadGalletas);
-                        galletas=this->empacadora->cola->contarGalletas();//Cuenta galletas que tiene la empacadora
-                    }else{
-                        galletas-=tmp->procesoPaquetesEnsambladora*tmp->cantidadGalletas;
-                        //Tiene la posibilidad de cual mandar
-                        qDebug()<<"tmp->probabilidad: "<<tmp->probabilidad;
-                        qDebug()<<"Transporte:"<<this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales;
-                        qDebug()<<"Total enviados : "<<this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->totalEnviados;
-                        sleep(this->empacadora->tiempoEmpaque);
-                }
+                qDebug()<<"UN ciclo del flag";
+                srand(time(0));
+                int probaGenerada=0 +rand()%((proba+1)-0);
+                qDebug()<<"Probabilidad generada: "<<probaGenerada;
+                sleep(1);
+                if(probaGenerada<tmp->probabilidad){
+                    if (this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales>=this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->maximo){
+                        QString qstr = tmp->nombre;
+                        qDebug()<<qstr<<" ya tiene todos los paquetes: "<<(this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales);
+                        sleep(2);
+                        //mandar a llamar al almacen y modificar actual de ese tipo de transporte
+                        //tipo, actual,max
+                        this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->totalEnviados+=this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales;
+                        this->tabla->insertRow(this->tabla->rowCount());
+                        this->tabla->setItem(this->tabla->rowCount()-1,0,new QTableWidgetItem(QString(tmp->nombre)));
+                        this->tabla->setItem(this->tabla->rowCount()-1,1,new QTableWidgetItem(QString::number(this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales)));
+                        this->tabla->setItem(this->tabla->rowCount()-1,2,new QTableWidgetItem(QString::number(this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->maximo)));
+                        this->tabla->setItem(this->tabla->rowCount()-1,3,new QTableWidgetItem(QString::number(this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->totalEnviados)));
 
+                        lbl_galletasTotales->setText(QString::number(this->empacadora->cola->contarGalletas()));
+                        galletasEnviadas+=this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales;
+                        this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales=0;
+                        sleep(this->empacadora->tiempoEmpaque);
+                        excedente=0;
+                        if (this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->totalEnviados==tmp->cantidadPaquetes){
+                            qDebug()<<"CAMBIO EL TMP NOOOO AMAZING";
+                            tmp=tmp->siguiente;
+                        }
+                        else continue;
+                    }else{
+                        qDebug()<<"Entrada del else";
+                        this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales+=paquetesEnviados;
+                        if (this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales>tmp->cantidadPaquetes){
+                            excedente=this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales-tmp->cantidadPaquetes;
+                            this->empacadora->paquetes->listaTransportadores->transporteParaEnviar(tmp->nombre)->actuales-=excedente;
+                            excedente*=tmp->cantidadGalletas;
+                        }
+                    }
+                }else{
+                    proba-=tmp->probabilidad;
+                    sleep(2);
                 }
-            }else{
-                proba-=tmp->probabilidad;
-                sleep(2);
             }
-            paquetesEnviados=0;
-            tmp=tmp->siguiente;
-        }while(tmp!=NULL);
+
+        }
+        lbl_galletasTotales->setText(QString::number(this->empacadora->cola->contarGalletas()));
 
     }
 }

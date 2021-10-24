@@ -30,7 +30,6 @@ void hilo_Supervisores::run(){
             this->supervisor2->quitarGalletas(this->supervisor2->colaSupervisores->frente);//Probabilidad super 2
             this->supervisor1->colaEmpacadora->encolar(this->supervisor1->colaSupervisores->desencolar()->dato);//Encola en la empacadora
            //desencola colaSupervisores
-           qDebug()<<"Encola en banda empacadora: "<<this->supervisor1->colaEmpacadora->frente->dato;
         }
         this->lbl_Actual->setText(QString::number(this->supervisor1->colaSupervisores->actual));
         this->lbl_Max->setText(QString::number(this->supervisor1->colaSupervisores->maximaCapacidad));

@@ -1,20 +1,19 @@
 #ifndef VENTANACONFIGURAR_H
 #define VENTANACONFIGURAR_H
 
-#include <QMainWindow>
 #include "Punteros.h"
 #include <QMainWindow>
 #include <QMovie>
 #include <QLabel>
 #include <QDebug>
-
-namespace Ui {
-    class VentanaConfigurar;
-}
+#include <QMessageBox>
+QT_BEGIN_NAMESPACE
+namespace Ui {class VentanaConfigurar;}
+QT_END_NAMESPACE
 
 class VentanaConfigurar : public QMainWindow{Q_OBJECT
     public:
-        explicit VentanaConfigurar(QWidget *parent = nullptr);
+        VentanaConfigurar(QWidget *parent = nullptr);
         Punteros*punteros;
         bool ok;
         ~VentanaConfigurar();

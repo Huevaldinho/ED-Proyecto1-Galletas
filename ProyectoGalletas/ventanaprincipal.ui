@@ -1541,9 +1541,9 @@
    <widget class="QTableWidget" name="tablaTransportes">
     <property name="geometry">
      <rect>
-      <x>1170</x>
+      <x>1160</x>
       <y>490</y>
-      <width>401</width>
+      <width>411</width>
       <height>121</height>
      </rect>
     </property>
@@ -1660,7 +1660,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

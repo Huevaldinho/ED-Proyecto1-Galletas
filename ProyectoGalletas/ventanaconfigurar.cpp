@@ -4,9 +4,7 @@
 
 VentanaConfigurar::VentanaConfigurar(QWidget *parent) :QMainWindow(parent),ui(new Ui::VentanaConfigurar){
     ui->setupUi(this);
-}
 
-VentanaConfigurar::~VentanaConfigurar(){
     this->punteros=NULL;
     ok=true;
     this->ui->rBtn_bnd1On->setChecked(true);
@@ -15,6 +13,9 @@ VentanaConfigurar::~VentanaConfigurar(){
     this->ui->rBtn_bnd4Off->setChecked(true);
     this->ui->rBtn_bnd5Off->setChecked(true);
     this->ui->rBtn_bnd6Off->setChecked(true);
+}
+
+VentanaConfigurar::~VentanaConfigurar(){
     delete ui;
 }
 //Insertar pedido paquetes

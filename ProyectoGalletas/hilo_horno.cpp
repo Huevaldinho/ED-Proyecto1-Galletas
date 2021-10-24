@@ -17,7 +17,6 @@ void hilo_Horno::run(){
     double tmpActual=0;
     while (this->corriendo){//estaba como while true
         while (this->pausa||this->horno->colaSalida->actual>=this->horno->colaSalida->maximaCapacidad){
-            qDebug()<<"Horno en pausa manual o por cola salida al maximo";
             sleep(2);
         }
         this->horno->capacidadTotalGalletas();
@@ -27,21 +26,16 @@ void hilo_Horno::run(){
             while (tmp!=NULL){
                 while (tmp->actual<tmp->capacidadGalletas){//Mientras la bandeja tenga menos de la capacidad max se llena
                     while (this->horno->colaEntrada->frente==NULL){
-                        qDebug()<<"Pausa horno porque frente cola es NULL";
                         this->lbl_BandaTActual->setText(QString::number(tmpActual));
                         sleep(3);
                     }
                     double datoFuera =this->horno->colaEntrada->desencolar()->dato;
-                    qDebug()<<"DatoFuera:  "<<datoFuera;
                     tmp->actual+=datoFuera;
-                    qDebug()<<"tmp->actual: "<<tmp->actual;
                     tmp->horneadas+=datoFuera;
-                    qDebug()<<"tmp->horneadas: "<<tmp->horneadas;
                     this->lbl_BandaTActual->setText(QString::number(tmp->actual));
                 }
                 if (tmp->actual>tmp->capacidadGalletas){
                     double excedente = tmp->capacidadGalletas-tmp->actual;
-                    qDebug()<<"Excedente: "<<excedente;
                     if (excedente<0)
                         excedente*=-1;
                     //this->horno->colaEntrada->frente->dato+=excedente;
@@ -53,38 +47,6 @@ void hilo_Horno::run(){
                 //#, actual, procesadas
                 this->tabla->setItem(this->tabla->rowCount()-i,0,new QTableWidgetItem(QString::number(tmp->actual)));
                 this->tabla->setItem(this->tabla->rowCount()-i,1,new QTableWidgetItem(QString::number(tmp->horneadas)));
-//                switch(i){
-//                case 1:{
-//                    this->tabla->setItem(this->tabla->rowCount()-1,0,new QTableWidgetItem(QString::number(tmp->actual)));
-//                    this->tabla->setItem(this->tabla->rowCount()-1,1,new QTableWidgetItem(QString::number(tmp->horneadas)));
-//                    break;
-//                }
-//                case 2:{
-//                    this->tabla->setItem(this->tabla->rowCount()-2,0,new QTableWidgetItem(QString::number(tmp->actual)));
-//                    this->tabla->setItem(this->tabla->rowCount()-2,1,new QTableWidgetItem(QString::number(tmp->horneadas)));
-//                    break;
-//                }
-//                case 3:{
-//                    this->tabla->setItem(this->tabla->rowCount()-3,0,new QTableWidgetItem(QString::number(tmp->actual)));
-//                    this->tabla->setItem(this->tabla->rowCount()-3,1,new QTableWidgetItem(QString::number(tmp->horneadas)));
-//                    break;
-//                }
-//                case 4:{
-//                    this->tabla->setItem(this->tabla->rowCount()-4,0,new QTableWidgetItem(QString::number(tmp->actual)));
-//                    this->tabla->setItem(this->tabla->rowCount()-4,1,new QTableWidgetItem(QString::number(tmp->horneadas)));
-//                    break;
-//                }
-//                case 5:{
-//                    this->tabla->setItem(this->tabla->rowCount()-5,0,new QTableWidgetItem(QString::number(tmp->actual)));
-//                    this->tabla->setItem(this->tabla->rowCount()-5,1,new QTableWidgetItem(QString::number(tmp->horneadas)));
-//                    break;
-//                }
-//                case 6:{
-//                    this->tabla->setItem(this->tabla->rowCount()-6,0,new QTableWidgetItem(QString::number(tmp->actual)));
-//                    this->tabla->setItem(this->tabla->rowCount()-6,1,new QTableWidgetItem(QString::number(tmp->horneadas)));
-//                    break;
-//                }
-                //}
                 i++;//numeros de bandeja
                 tmpActual=tmp->actual;
                 this->lbl_BandaTActual->setText(QString::number(tmpActual));
@@ -94,7 +56,6 @@ void hilo_Horno::run(){
             NodoBandeja*moment=this->horno->bandejas->primeraBandeja;
             double totalGalletas=0;
             int j =1;
-            qDebug()<<"ANTES DE MOMENT";
             while (moment!=NULL){//encolar galletas en supervisores
                 totalGalletas+=moment->horneadas;
                 this->lbl_BandaTMax->setText(QString::number(totalGalletas));//horneadasGalletas

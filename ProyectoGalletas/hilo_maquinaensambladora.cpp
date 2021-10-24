@@ -21,7 +21,6 @@ void hilo_MaquinaEnsambladora::run(){
         while (this->maquinaEnsambladora->galletasHechas<this->maquinaEnsambladora->galletasAProcesar){
             //Desencolar y aumentar galletas
             while (pausa || this->maquinaEnsambladora->colaSalida->actual>=this->maquinaEnsambladora->colaSalida->maximaCapacidad){
-                qDebug()<<"Pausa manual ensambladora o cola salida al max";
                 this->lbl_BandaTActual->setText(QString::number(this->maquinaEnsambladora->colaSalida->actual));
                 if (this->corriendo==false)
                     break;
@@ -29,7 +28,6 @@ void hilo_MaquinaEnsambladora::run(){
             }
             for (int i=0;i<this->maquinaEnsambladora->produceNGalletas;i++){
                 while (this->maquinaEnsambladora->colaEntradaMasa->frente==NULL || this->maquinaEnsambladora->colaEntradaChocolate->frente==NULL){
-                    qDebug()<<"Hilo ensambladora dormido";
                     this->lbl_totalProduccion->setText(QString::number(this->maquinaEnsambladora->galletasHechas));
                     sleep(2);
                     if (this->corriendo==false)
@@ -55,7 +53,6 @@ void hilo_MaquinaEnsambladora::run(){
             cantidadGalletas=0;
             sleep(this->maquinaEnsambladora->duracion);
             while (this->maquinaEnsambladora->colaSalida->maximaCapacidad==this->maquinaEnsambladora->colaSalida->actual){
-                qDebug()<<"La Cola de ensambladora horno esta llena, ensambladora dormida";
                 sleep(5);
             }
             //Este if no estaba es para probar
