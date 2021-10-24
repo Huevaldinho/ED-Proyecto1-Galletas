@@ -21,11 +21,16 @@ VentanaConfigurar::~VentanaConfigurar(){
 void VentanaConfigurar::on_btn_InsIns_clicked(){
     this->punteros->paquetes->insertar(this->ui->txt_InsCntGalletas->text().toInt(&ok),this->ui->txt_InsNom->text(),this->ui->txt_InsCntPaq->text().toInt(&ok),1,1,0);
     this->punteros->paquetes->setProbabilidades();
+    this->ui->txt_InsCntGalletas->setText("0");
+    this->ui->txt_InsCntPaq->setText("0");
+    this->ui->txt_InsNom->setText("");
 }
 //Modificar receta
 void VentanaConfigurar::on_btn_RecIns_clicked(){
     this->punteros->receta->cantidadChocolate=this->ui->txt_RecCntChocoGall->text().toDouble(&ok);
     this->punteros->receta->cantidadMasa=this->ui->txt_RecCntMasaGall->text().toDouble(&ok);
+    this->ui->txt_RecCntChocoGall->setText("0");
+    this->ui->txt_RecCntMasaGall->setText("0");
 }
 //Modificar carrito
 void VentanaConfigurar::on_btn_CarIns_clicked(){

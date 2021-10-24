@@ -8,6 +8,8 @@ class hilo_Empacadora: public QThread{
     public:
         MaquinaEmpacadora * empacadora;
         QTableWidget * tabla;
+        QTableWidget * tablaAF;
+        QLabel * lbl_galletasTotales;
         bool corriendo;
         bool pausa;
         hilo_Empacadora();

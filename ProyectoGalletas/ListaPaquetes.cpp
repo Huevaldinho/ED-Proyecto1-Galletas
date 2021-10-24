@@ -14,7 +14,7 @@ void ListaPaquetes::insertar(int cantidadGalletasPorPaquete,QString _nombre,int 
         this->primerNodo = new Nodo(cantidadGalletasPorPaquete, _nombre,_cantidadPaquetes,procesoPaquetes,duracionPaquetes,probabilidad);
         this->primerNodo->siguiente= primerNodo;
         this->primerNodo->anterior = primerNodo;
-        this->listaTransportadores->insertarTransportador(_nombre,100,0,0);//(int _maximo,int _tiempoTransporte,int _actuales,QString _tipoPaquete
+        this->listaTransportadores->insertarTransportador(_nombre,1,0,0);//(int _maximo,int _tiempoTransporte,int _actuales,QString _tipoPaquete
     }else{
         Nodo * buscado=buscar(cantidadGalletasPorPaquete,_nombre);
         if (buscado!=NULL){
@@ -24,7 +24,7 @@ void ListaPaquetes::insertar(int cantidadGalletasPorPaquete,QString _nombre,int 
             nuevo->anterior = primerNodo->anterior;
             this->primerNodo->anterior->siguiente = nuevo;
             this->primerNodo->anterior = nuevo;
-            this->listaTransportadores->insertarTransportador(_nombre,100,0,0);
+            this->listaTransportadores->insertarTransportador(_nombre,1,0,0);
         }
     }
     this->largo++;
@@ -36,7 +36,7 @@ Nodo * ListaPaquetes::buscar(int _dato,QString _nombre){
         Nodo * tmp = this->primerNodo;
         do{
             int n = tmp->cantidadGalletas;
-            if (n == _dato /*&(tmp->nombre==_nombre)*/)
+            if (n == _dato &&tmp->nombre==_nombre)
                 return tmp;
             tmp = tmp->siguiente;
         }while(tmp!=this->primerNodo);

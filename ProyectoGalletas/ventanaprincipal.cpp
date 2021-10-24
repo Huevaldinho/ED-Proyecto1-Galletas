@@ -13,19 +13,7 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
     this->hiloSupervisores=NULL;
     this->hiloEmpacadora=NULL;
     this->punteros=NULL;
-//    this->punteros->paquetes->insertar(4,"Paquetito",4,5,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
-//    this->punteros->paquetes->insertar(16,"Tubos",1,1,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
-//    //this->punteros->paquetes->insertar(16,"Paquetes",2,2,1,0);//(cantidaGalletas,nombre,cantidadPaquetes,procesoPaquetes,tiempoProceso)
-//    //this->punteros->paquetes->insertar(16,"Tubos",3);
-//    //this->punteros->paquetes->insertar(10,"Paquetes",5);
 
-
-//    this->punteros->paquetes->setProbabilidades();
-//    this->punteros->paquetes->imprimir();
-
-//    this->punteros->maquinaChocolate->cantidadEnviadaABanda=5;
-//    this->punteros->supervisor1->probabilidadDesecho=80;
-//    this->punteros->supervisor2->probabilidadDesecho=95;
 
     QPixmap pix (":/Recursos/img/cookie.png");
     int w = this->ui->lbl_TextGalletasPlani->width();
@@ -122,11 +110,6 @@ VentanaPrincipal::VentanaPrincipal(QWidget *parent): QMainWindow(parent), ui(new
     int h13 = this->ui->lbl_imgAlmacenFinal->height();
     this->ui->lbl_imgAlmacenFinal->setPixmap(pix13.scaled(w13,h13,Qt::KeepAspectRatio));
 
-//    QMovie *movie = new QMovie("//GIFPlanificador.gif");
-//    QLabel *processLabel = new QLabel(this);
-//    this->ui->lbl_GIFPlanificador->setMovie(movie);
-//    movie->start();
-
 }
 VentanaPrincipal::~VentanaPrincipal(){
     delete ui;
@@ -169,6 +152,7 @@ void VentanaPrincipal::on_btnIniciar_clicked(){
         this->hiloSupervisores->lbl_Max=this->ui->lbl_SupervisoresMax;
         this->hiloEmpacadora->__init__(this->punteros->maquinaEmpacadora);
         this->hiloEmpacadora->tabla=this->ui->tablaTransportes;
+        this->hiloEmpacadora->lbl_galletasTotales=this->ui->lbl_TotalGalletas;
 
         this->hiloPlanificador->start();
         this->hiloMaquinaMasa1->start();
@@ -226,7 +210,10 @@ void VentanaPrincipal::on_btnCambiarEstadoMaquina3_clicked(){
 //Pausa toda la ejecucion
 void VentanaPrincipal::on_btnPausa_clicked(){//FALTAN PAUSAS DE OTROS HILOS
 
-     this->pausa=true;
+    this->pausa=true;
+    this->ui->lbl_PAUSA->setEnabled(true);
+    this->ui->lbl_PAUSA->setText("La simulación está en pausa");
+
     if (this->hiloPlanificador!=NULL){
         //Cambia los radio button
         this->ui->radioButtonApagarMaquina1->setChecked(true);
@@ -249,8 +236,12 @@ void VentanaPrincipal::on_btnPausa_clicked(){//FALTAN PAUSAS DE OTROS HILOS
 }
 //Reanudar toda la ejecucion
 void VentanaPrincipal::on_btnReanudar_clicked(){//FALTAN PAUSAS DE OTROS HILOS
+
     this->pausa=false;
+    this->ui->lbl_PAUSA->setText("La simulación se ha reanudado");
+    this->ui->lbl_PAUSA->setEnabled(false);
     if (this->hiloPlanificador!=NULL){
+        this->hiloCarrito->pausa=false;//Carrito
         this->hiloMaquinaMasa1->pausa=false;//Masa 1
         this->hiloMaquinaMasa2->pausa=false;//Masa 2
         this->hiloMaquinaChoco->pausa=false;//Choco
@@ -269,47 +260,52 @@ void VentanaPrincipal::on_btnReanudar_clicked(){//FALTAN PAUSAS DE OTROS HILOS
 }
 //NO ESTA FUNCIONANDO BIEN
 void VentanaPrincipal::on_btnDetener_clicked(){
-    //Primero detiene los hilos
-    //this->hiloHorno->stop();//con este peta
-    this->hiloMaquinaEnsambladora->stop();
-    this->hiloMaquinaMasa1->stop();
-    this->hiloMaquinaMasa2->stop();
-    this->hiloMaquinaChoco->stop();
-    this->hiloCarrito->stop();
-    this->hiloPlanificador->stop();
-    this->hiloEmpacadora->stop();
-    this->hiloSupervisores->stop();
-    //Reinicia toda la mica, se supone jaja
-    this->hiloMaquinaEnsambladora=NULL;
-    this->hiloMaquinaMasa1=NULL;
-    this->hiloMaquinaMasa2=NULL;
-    this->hiloMaquinaChoco=NULL;
-    this->hiloCarrito=NULL;
-    this->hiloPlanificador=NULL;
-    this->hiloEmpacadora=NULL;
-    //this->hiloHorno=NULL;
-    this->ui->lblCantidadGalletas->setText(QString::number(0));
-    this->ui->lblChoco->setText(QString::number(0));
-    this->ui->lblMasa->setText(QString::number(0));
-    this->ui->lbl_BandaTChocoActual->setText(QString::number(0));
-    this->ui->lbl_BandaTChocoMax->setText(QString::number(0));
-    this->ui->lbl_BandaTEnsambladoraActual->setText(QString::number(0));
-    this->ui->lbl_BandaTEnsambladoraMax->setText(QString::number(0));;
-    this->ui->lbl_BandaTMasaActual->setText(QString::number(0));;
-    this->ui->lbl_BantaTMasaMax->setText(QString::number(0));;
-    this->ui->lbl_EnsambladoraProducida->setText(QString::number(0));;
-    this->ui->lbl_Horno->setText(QString::number(0));
-    this->ui->lbl_MaquinaChocoEnProceso->setText(QString::number(0));;
-    this->ui->lbl_MaquinaChocoProcesada->setText(QString::number(0));;
-    this->ui->lbl_MaquinaEnsambladora->setText(QString::number(0));;
-    this->ui->lbl_MaquinaMasa1EnProceso->setText(QString::number(0));;
-    this->ui->lbl_MaquinaMasa1Procesada->setText(QString::number(0));;
-    this->ui->lbl_MaquinaMasa2EnProceso->setText(QString::number(0));;
-    this->ui->lbl_MaquinaMasa2Procesada->setText(QString::number(0));;
-    this->ui->lbl_Supervisores->setText(QString::number(0));;
-    this->ui->lbl_actualHorno->setText(QString::number(0));;
-    this->ui->lbl_horneadasHorno->setText(QString::number(0));;
-    this->ui->lbl_actualSupervisores->setText(QString::number(0));;
+    if (this->hiloPlanificador!=NULL){
+        //Primero detiene los hilos
+        //this->hiloHorno->stop();//con este peta
+        this->hiloPlanificador->stop();
+        this->hiloMaquinaEnsambladora->stop();
+        this->hiloMaquinaMasa1->stop();
+        this->hiloMaquinaMasa2->stop();
+        this->hiloMaquinaChoco->stop();
+        this->hiloCarrito->stop();
+        this->hiloEmpacadora->stop();
+        this->hiloSupervisores->stop();
+        this->hiloMaquinaEnsambladora=NULL;
+        this->hiloMaquinaMasa1=NULL;
+        this->hiloMaquinaMasa2=NULL;
+        this->hiloMaquinaChoco=NULL;
+        this->hiloCarrito=NULL;
+        this->hiloPlanificador=NULL;
+        this->hiloEmpacadora=NULL;
+        //this->hiloHorno=NULL;
+        this->ui->lblCantidadGalletas->setText(QString::number(0));
+        this->ui->lblChoco->setText(QString::number(0));
+        this->ui->lblMasa->setText(QString::number(0));
+        this->ui->lbl_BandaTChocoActual->setText(QString::number(0));
+        this->ui->lbl_BandaTChocoMax->setText(QString::number(0));
+        this->ui->lbl_BandaTEnsambladoraActual->setText(QString::number(0));
+        this->ui->lbl_BandaTEnsambladoraMax->setText(QString::number(0));;
+        this->ui->lbl_BandaTMasaActual->setText(QString::number(0));;
+        this->ui->lbl_BantaTMasaMax->setText(QString::number(0));;
+        this->ui->lbl_EnsambladoraProducida->setText(QString::number(0));;
+        this->ui->lbl_MaquinaChocoEnProceso->setText(QString::number(0));;
+        this->ui->lbl_MaquinaChocoProcesada->setText(QString::number(0));;
+        this->ui->lbl_MaquinaMasa1EnProceso->setText(QString::number(0));;
+        this->ui->lbl_MaquinaMasa1Procesada->setText(QString::number(0));;
+        this->ui->lbl_MaquinaMasa2EnProceso->setText(QString::number(0));;
+        this->ui->lbl_MaquinaMasa2Procesada->setText(QString::number(0));;
+        this->ui->lbl_actualHorno->setText(QString::number(0));;
+        this->ui->lbl_horneadasHorno->setText(QString::number(0));;
+        this->ui->lbl_actualSupervisores->setText(QString::number(0));;
+        Punteros * nuevosPunteros = new Punteros();
+        nuevosPunteros->setPunteros();
+        this->punteros=nuevosPunteros;
+    }else{
+        QMessageBox* reply=new QMessageBox();
+        reply->setText("La simulación ya está detenida");
+        reply->show();
+    }
 }
 
 void VentanaPrincipal::on_btnCambiarEstadoEnsambladora_clicked(){

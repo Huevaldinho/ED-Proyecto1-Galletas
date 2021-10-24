@@ -14,16 +14,11 @@ void hilo_maquinaMasa1::__init__(MaquinaMezclaMasaChocolate * maquina,QLabel * l
 }
 void hilo_maquinaMasa1::run(){
     this->corriendo=true;
-    qDebug()<<"Entra hilo "<<this->maquinaMasa1->id;
-    qDebug()<<"Procesada "<<this->maquinaMasa1->id<<": "<<this->maquinaMasa1->cantidadProcesada;
-    qDebug()<<"A procesar por "<<this->maquinaMasa1->id<<": "<<this->maquinaMasa1->cantidadAProcesar;
     sleep(2);
     bool yaEncole=false;
-    qDebug()<<"A PEDIR MAQUINA "<<this->maquinaMasa1->id<<": "<<this->maquinaMasa1->maximaCapacidad-this->maquinaMasa1->capacidadActual;
     while(this->corriendo){
         while(this->maquinaMasa1->cantidadProcesada<this->maquinaMasa1->cantidadAProcesar){
             while (this->pausa||this->maquinaMasa1->cola->actual>=this->maquinaMasa1->cola->maximaCapacidad){
-                qDebug()<<"Pausa manual de maquina o cola de salida llego al max: "<<this->maquinaMasa1->id;
                 if (this->corriendo==false)
                     break;
                 sleep(3);
@@ -70,7 +65,7 @@ void hilo_maquinaMasa1::run(){
                 //el error de las colas se arregla con una cola que solo tenga un contador en vez de la cola.
                 //nodos con mas o menos cantidad que hace que la proxima maquina reciba menos o mas
                 //si se usa solo un contador como acumulador es mas facil porque solo se resta
-                if (this->maquinaMasa1->cola->actual>(this->maquinaMasa1->cantidadAProcesar*2)&(this->maquinaMasa1->id==1 ||this->maquinaMasa1->id==2)){
+                if (this->maquinaMasa1->cola->actual>(this->maquinaMasa1->cantidadAProcesar*2)&&(this->maquinaMasa1->id==1 ||this->maquinaMasa1->id==2)){
                     this->maquinaMasa1->cola->actual=this->maquinaMasa1->cantidadAProcesar*2;
                 }else if (this->maquinaMasa1->id==3){
                     this->maquinaMasa1->cola->actual=this->maquinaMasa1->cantidadAProcesar;

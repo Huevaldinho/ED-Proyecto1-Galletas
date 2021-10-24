@@ -12,7 +12,7 @@ void hilo_carrito::run(){
     this->corriendo=true;
     sleep(6);//this->carrito->cola->frente!=NULL
     //estaba como while true
-    bool primera=true;
+    //bool primera=true;
     while (this->corriendo){//se sale porque borramos el frente y por eso la maquina no avanza
 
         if(this->carrito->cola->frente==NULL){
@@ -29,9 +29,13 @@ void hilo_carrito::run(){
                 this->tabla->setItem(this->tabla->rowCount()-1,0,new QTableWidgetItem(QString::number(this->carrito->capacidadTransporteMezcla)));
                 this->tabla->setItem(this->tabla->rowCount()-1,1,new QTableWidgetItem(QString::number(this->carrito->cola->frente->idMaquina)));
                 this->tabla->setItem(this->tabla->rowCount()-1,2,new QTableWidgetItem("Procesada"));
-                bool ok=true;
-                if ((this->carrito->maquinaMasa1->capacidadActual>this->tabla->itemAt(0,0)->text().toInt(&ok) )&& (primera==false))
-                    this->tabla->removeRow(0);
+                sleep(1);
+//                bool ok=true;
+
+//                if (primera==false){
+//                    if ((this->carrito->maquinaMasa1->capacidadActual>this->tabla->itemAt(0,0)->text().toInt(&ok) ))
+//                        this->tabla->removeRow(0);
+//                }
             }
             else
                 this->pausa=true;
@@ -44,11 +48,13 @@ void hilo_carrito::run(){
                 this->tabla->setItem(this->tabla->rowCount()-1,0,new QTableWidgetItem(QString::number(this->carrito->capacidadTransporteMezcla)));
                 this->tabla->setItem(this->tabla->rowCount()-1,1,new QTableWidgetItem(QString::number(this->carrito->cola->frente->idMaquina)));
                 this->tabla->setItem(this->tabla->rowCount()-1,2,new QTableWidgetItem("Procesada"));
-                bool ok=true;
+                sleep(1);
+//                bool ok=true;
 
-                if (primera==false)
-                    if ((this->carrito->maquinaMasa1->capacidadActual>this->tabla->itemAt(0,0)->text().toInt(&ok)))
-                        this->tabla->removeRow(0);
+//                if (primera==false){
+//                    if ((this->carrito->maquinaMasa2->capacidadActual>this->tabla->itemAt(0,0)->text().toInt(&ok)))
+//                        this->tabla->removeRow(0);
+//                }
             }
             else
                 this->pausa=true;
@@ -61,10 +67,12 @@ void hilo_carrito::run(){
                 this->tabla->setItem(this->tabla->rowCount()-1,0,new QTableWidgetItem(QString::number(this->carrito->capacidadTransporteMezcla)));
                 this->tabla->setItem(this->tabla->rowCount()-1,1,new QTableWidgetItem(QString::number(this->carrito->cola->frente->idMaquina)));
                 this->tabla->setItem(this->tabla->rowCount()-1,2,new QTableWidgetItem("Procesada"));
-                bool ok=true;
-
-                if ((this->carrito->maquinaMasa1->capacidadActual>this->tabla->itemAt(0,0)->text().toInt(&ok) )&& (primera==false))
-                    this->tabla->removeRow(0);
+                sleep(1);
+//                bool ok=true;
+//                if (primera==false){
+//                    if ((this->carrito->maquinaChocolate->capacidadActual>this->tabla->itemAt(0,0)->text().toInt(&ok)))
+//                        this->tabla->removeRow(0);
+//                }
             }
             else
                 this->pausa=true;
@@ -75,7 +83,7 @@ void hilo_carrito::run(){
             sleep(1);
         }
         sleep(this->carrito->duracion);
-        primera=false;
+        //primera=false;
     }
     qDebug()<<"DETENER HILO CARRITO";
 }
